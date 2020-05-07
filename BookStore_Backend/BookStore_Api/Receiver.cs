@@ -12,11 +12,11 @@ namespace BookStore_Api
         public void Receive()
         {
 
-            MessageQueue Msmq = new MessageQueue(@".\Private$\Msmq");
+            MessageQueue BookMSMQ = new MessageQueue(@".\Private$\Msmq");
             List<string> msmqReceive = new List<string>();
             try
             {
-                Message[] Messages = Msmq.GetAllMessages();
+                Message[] Messages = BookMSMQ.GetAllMessages();
 
                 if (Messages.Length > 0)
                 {
@@ -24,9 +24,9 @@ namespace BookStore_Api
                     {
                         msg.Formatter = new XmlMessageFormatter(new string[] { "System.String,mscorlib" });
                         string Result = msg.Body.ToString();
-                        Msmq.Receive();
+                        BookMSMQ.Receive();
                         msmqReceive.Add(Result);
-                        Msmq.Refresh();
+                        BookMSMQ.Refresh();
                     }
                 }
                 else
@@ -46,7 +46,7 @@ namespace BookStore_Api
                     tw.WriteLine(s);
 
                 tw.Close();
-                Msmq.Close();
+                BookMSMQ.Close();
             }
 
         }
