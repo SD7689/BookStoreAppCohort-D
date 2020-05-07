@@ -38,7 +38,7 @@ namespace BookStore_Api
             services.AddTransient<IBook, BookImp>();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "ParkingLot_Problem", Version = "v1" });
+                c.SwaggerDoc("v1", new Info { Title = "BookStore_App", Version = "v1" });
             });
         }
 
