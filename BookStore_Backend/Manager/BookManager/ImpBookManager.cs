@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Microsoft.AspNetCore.Http;
+using Model;
 using Repository.BookRepo;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,11 @@ namespace Manager.BookManager
         public IEnumerable<Book> GetAllBook()
         {
             return this.irepo.GetAllBook();
+        }
+
+        public string Image(IFormFile file, int id)
+        {
+            return irepo.Image(file, id);
         }
     }
 }

@@ -48,5 +48,16 @@ namespace BookStore_Api.Controllers
         {
             return this.manager.GetAllBook();
         }
+        [Route("AddBookImage")]
+        [HttpPost]
+        public ActionResult AddBookImage(IFormFile file,int id)
+        {
+            var result = this.manager.Image(file, id);
+            if (result != null)
+            {
+                return this.Ok(result);
+            }
+            return this.BadRequest();
+        }
     }
 }
