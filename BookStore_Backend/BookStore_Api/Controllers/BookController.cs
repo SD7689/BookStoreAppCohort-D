@@ -13,6 +13,7 @@ namespace BookStore_Api.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
+        private readonly Sender sender = new Sender();
         private readonly IManager manager;
 
         public BookController(IManager manager)
@@ -30,6 +31,7 @@ namespace BookStore_Api.Controllers
         public async Task<IActionResult> AddBook(Book book)
         {
             var result = await this.manager.AddBook(book);
+            sender.Send("Add the book details");
             if (result == 1)
             {
                 return this.Ok(book);
@@ -46,6 +48,7 @@ namespace BookStore_Api.Controllers
         [HttpGet]
         public IEnumerable<Book> GetAllBook()
         {
+            sender.Send("Get all books details");
             return this.manager.GetAllBook();
         }
     }
