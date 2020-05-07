@@ -1,14 +1,30 @@
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #333;
+  background-color: #791212;
   overflow: hidden;
   display: flex;
+  height: 50px;
+  align-items: center;
+  position: fixed;
+  width: 100%;
 }
 
 .book-icon {
   margin-left: 7em;
   margin-right: 12px;
-  margin-top: 11px;
+  margin-top: 5px;
+  color: whitesmoke;
+}
+.cart-icon{
+  color: whitesmoke;
+}
+.bookicon{
+  font-size: 24px;
+}
+
+.book-title{
+  color: whitesmoke;
+  font-family: monospace;
 }
 
 .search-bar{
@@ -17,29 +33,45 @@
 }
 
 .search {
-  width: 231%;
-  border-radius: 3px;
-  height: 20px;
+  width: 403px;
+  border-radius: 4px;
+  height: 17px;
+  opacity: 76%;
+
 }
 
 .cart-div{
   display: flex;
-    margin-left: 39em;
+  color: whitesmoke;
+  font-size: 13px;
+  font-family: monospace;
+  width: 117px;
+  padding-left: 372px;
 }
 
-.cart-icon {
-  margin-top: 19px;
+.App-logo{
+  display: flex;
+    padding: 0px;
+    height: 50%;
+}
+
+.cart-icon-div {
+  margin-top: 14px;
     margin-left: 6px;
 }
-
+.p-footer{
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  padding-top: 13px;
+}
 .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #333;
-  color: white;
-  text-align: center;
+  position: relative;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    height: 45px;
 }
 
 /* Style the links inside the navigation bar */
@@ -68,4 +100,98 @@
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
   display: none;
+}
+
+.book-card-div {
+  box-shadow: 6px 10px 20px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 256px;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin: 10px;
+  height: 322px;
+
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+.MuiContainer-root {
+  padding-left: 44px !important;
+}
+
+.card-header{
+  padding-top: 75px;
+  padding-left: 126px;
+  padding-bottom: 1px;
+  display: flex;
+  justify-content: space-between;
+}
+.sort-by-div{
+  margin-right: 133px;
+}
+.select-bar{
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #eae6e6;
+}
+.book-title-div{
+  position: relative;
+  left: 23px;
+    font-family: cursive;
+}
+.author-name-div{
+  position: relative;
+  left: 23px;
+  top: -19px;
+  font-family: cursive;
+  font-size: 13px;
+  color: #968e8e;
+}
+.book-price-div{
+  position: relative;
+  left: 23px;
+    top: -32px;
+    font-family: cursive;
+}
+
+.button-div{
+  position: relative;
+    display: flex;
+    justify-content: space-around;
+    bottom: 20px;
+}
+.add-bag-button{
+  height: 29px;
+  width: 110px;
+  background-color: #545050;
+  color: whitesmoke;
+  font-family: cursive;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.wishlist-button{
+  width: 84px;
+    background-color: #ce3a3a;
+    color: whitesmoke;
+    font-family: cursive;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.MuiContainer-maxWidthLg {
+    margin-left: 22px !important;
+}
+.BookCard-Header {
+  font-size: 22px;
+  font-family: cursive;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-left: 50px;
 }
