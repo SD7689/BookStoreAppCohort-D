@@ -15,6 +15,8 @@ namespace BookStore_Api
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
+            Receiver receiver = new Receiver();
+            receiver.Receive();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
