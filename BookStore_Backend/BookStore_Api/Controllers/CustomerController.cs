@@ -36,6 +36,17 @@ namespace BookStore_Api.Controllers
 
             return this.BadRequest();
         }
+        /// <summary>
+        /// Add GetCustomerAddress 
+        /// </summary>
+        /// <param name="enterAddres"></param>
+        /// <returns></returns>
+        [Route("GetCustomerAddress")]
+        [HttpGet]
+        public CustomerAdress GetCustomerAddress(int bookId)
+        {
+            return this.imanager.GetCustomerAddress(bookId);
+        }
 
     }
 }
