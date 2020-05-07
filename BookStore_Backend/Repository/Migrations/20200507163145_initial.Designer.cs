@@ -10,8 +10,8 @@ using Repository;
 namespace Repository.Migrations
 {
     [DbContext(typeof(BookStoreDBContext))]
-    [Migration("20200507111249_init")]
-    partial class init
+    [Migration("20200507163145_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -92,7 +92,7 @@ namespace Repository.Migrations
 
             modelBuilder.Entity("Model.Cart", b =>
                 {
-                    b.HasOne("Model.Book", "book")
+                    b.HasOne("Model.Book", "Book")
                         .WithMany()
                         .HasForeignKey("BookID");
                 });
