@@ -21,5 +21,10 @@ namespace Repository.CustomerRepo
             var result = bookStoreDB.SaveChangesAsync();
             return result;
         }
+
+        public CustomerAdress GetCustomerAddress(int bookId)
+        {
+            return bookStoreDB.Address.Find(bookId);
+        }
     }
 }

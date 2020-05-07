@@ -9,5 +9,6 @@ namespace Repository.CustomerRepo
    public interface ICustomer
     {
         Task<int> AddCustomerAddress(CustomerAdress address);
+        CustomerAdress GetCustomerAddress(int bookId);
     }
 }
