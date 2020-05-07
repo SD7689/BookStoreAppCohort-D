@@ -10,5 +10,6 @@ namespace Repository.BookRepo
     {
         Task<int> AddBook(Book book);
         IEnumerable<Book> GetAllBook();
+       
     }
 }

@@ -10,5 +10,6 @@ namespace Manager.BookManager
     {
         Task<int> AddBook(Book book);
         IEnumerable<Book> GetAllBook();
+       
     }
 }

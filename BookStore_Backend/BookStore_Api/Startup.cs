@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Manager.BookManager;
+using Manager.CustomerManager;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -14,6 +15,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Repository;
 using Repository.BookRepo;
+using Repository.CustomerRepo;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace BookStore_Api
@@ -34,8 +36,11 @@ namespace BookStore_Api
             
             services.AddDbContextPool<BookStoreDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("UserDbConnection")));
             services.AddTransient<IManager, ImpBookManager>();
-            
+            services.AddTransient<ICustomerManager, ImpCustomerManager>();
+
             services.AddTransient<IBook, BookImp>();
+            services.AddTransient<ICustomer, ImpCustomer>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "ParkingLot_Problem", Version = "v1" });
