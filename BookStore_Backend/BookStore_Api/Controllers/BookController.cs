@@ -19,6 +19,12 @@ namespace BookStore_Api.Controllers
         {
             this.manager = manager;
         }
+
+        /// <summary>
+        /// Add book detail
+        /// </summary>
+        /// <param name="book"></param>
+        /// <returns> IActionResult. </returns>
         [Route("AddBook")]
         [HttpPost]
         public async Task<IActionResult> AddBook(Book book)
@@ -32,7 +38,10 @@ namespace BookStore_Api.Controllers
             return this.BadRequest();
         }
 
-
+        /// <summary>
+        /// Get all Books details
+        /// </summary>
+        /// <returns> List of Book </returns>
         [Route("GetAllBook")]
         [HttpGet]
         public IEnumerable<Book> GetAllBook()
