@@ -8,10 +8,10 @@ export class Header extends Component {
         return (
             <div className ="topnav" id="myTopnav">
                 <div className='book-icon'>
-                <MenuBookRoundedIcon fontSize='large'/>
+                <MenuBookRoundedIcon className="bookicon"/>
                 </div>
                 <div className ='book-title'>
-                <h3  className="logo-title">Book Store</h3>
+                <h2  className="logo-title">BookStore</h2>
                 </div>
                 <div className='search-bar'>
                 <input className ='search' type="text" placeholder="Search..">
@@ -19,8 +19,8 @@ export class Header extends Component {
                 </div>
                 <div className='cart-div'>
                     <h3>Cart</h3>
-                    <div className='cart-icon'>
-                    <AddShoppingCartTwoToneIcon fontSize='medium'/>
+                    <div className='cart-icon-div'>
+                    <AddShoppingCartTwoToneIcon className="cart-icon" fontSize='medium'/>
                     </div>
                 </div>
             </div>
