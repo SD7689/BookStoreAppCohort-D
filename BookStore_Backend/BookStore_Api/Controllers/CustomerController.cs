@@ -13,6 +13,7 @@ namespace BookStore_Api.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
+        private readonly Sender sender = new Sender();
         private readonly ICustomerManager imanager;
         public CustomerController(ICustomerManager imanager)
         {
@@ -29,6 +30,7 @@ namespace BookStore_Api.Controllers
         public async Task<IActionResult> AddCustomerAddress(CustomerAdress address)
         {
             var result = await this.imanager.AddCustomerAddress(address);
+            sender.Send("Add custmor address");
             if (result == 1)
             {
                 return this.Ok(address);
@@ -45,6 +47,7 @@ namespace BookStore_Api.Controllers
         [HttpGet]
         public CustomerAdress GetCustomerAddress(int bookId)
         {
+            sender.Send("Get all address");
             return this.imanager.GetCustomerAddress(bookId);
         }
 

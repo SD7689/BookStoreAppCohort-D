@@ -36,11 +36,13 @@ namespace BookStore_Api.Controllers
                 return this.BadRequest();
             }
         }
+
         [Route("RemoveCart")]
         [HttpDelete]
         public IActionResult RemoveCart(int cartId)
         {
             var cartData = this.manager.RemoveCart(cartId);
+            sender.Send("Remove book in cart");
             if (cartData != null)
             {
                 return this.Ok(cartData);
