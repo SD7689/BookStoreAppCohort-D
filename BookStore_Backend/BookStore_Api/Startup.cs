@@ -31,8 +31,10 @@ namespace BookStore_Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            
             services.AddDbContextPool<BookStoreDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("UserDbConnection")));
             services.AddTransient<IManager, ImpBookManager>();
+            
             services.AddTransient<IBook, BookImp>();
             services.AddSwaggerGen(c =>
             {
