@@ -13,6 +13,7 @@ namespace BookStore_Api.Controllers
     [ApiController]
     public class CartController : ControllerBase
     {
+        private readonly Sender sender = new Sender();
         private readonly ICartManager manager;
 
         public CartController(ICartManager manager)
@@ -25,6 +26,7 @@ namespace BookStore_Api.Controllers
         public async Task<IActionResult> AddBook(Cart cart)
         {
             var result = await this.manager.AddToCart(cart);
+            sender.Send("Add book in cart");
             if (result == 1)
             {
                 return this.Ok(cart);

@@ -12,7 +12,7 @@ namespace BookStore_Api
         public void Receive()
         {
 
-            MessageQueue BookMSMQ = new MessageQueue(@".\Private$\Msmq");
+            MessageQueue BookMSMQ = new MessageQueue(@".\Private$\BookMSMQ");
             List<string> msmqReceive = new List<string>();
             try
             {
