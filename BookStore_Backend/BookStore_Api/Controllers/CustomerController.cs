@@ -21,7 +21,7 @@ namespace BookStore_Api.Controllers
         }
 
         /// <summary>
-        /// Add Customer Address
+        /// Add Customer Address.
         /// </summary>
         /// <param name="address"></param>
         /// <returns></returns>

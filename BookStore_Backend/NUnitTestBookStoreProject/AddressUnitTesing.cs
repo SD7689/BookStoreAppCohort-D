@@ -1,14 +1,12 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace NUnitTestBookStoreProject
 {
-    public class Tests
+    public class AddressUnitTesing
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
         public void Test1()
         {
