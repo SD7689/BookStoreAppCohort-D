@@ -28,11 +28,11 @@ namespace BookStore_Api.Controllers
             {
                 return this.Ok(book);
             }
-            else
-            {
+          
                 return this.BadRequest();
-            }
         }
+
+
         [Route("GetAllBook")]
         [HttpGet]
         public IEnumerable<Book> GetAllBook()
