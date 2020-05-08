@@ -1,6 +1,7 @@
 using BookStore_Api.Controllers;
 using Manager.BookManager;
 using Model;
+using Moq;
 using NUnit.Framework;
 using Repository;
 using Repository.BookRepo;
@@ -10,14 +11,55 @@ namespace NUnitTestBookStoreProject
 {
     public class BookUnitTesting
     {
-        private static Book book;
+        /*private static Book book;
         private static readonly BookStoreDBContext bookStoreDB;
-        readonly BookImp bookImp = new BookImp(bookStoreDB);
+        readonly BookImp bookImp = new BookImp(bookStoreDB);*/
+        Book book = new Book();
         [Test]
-        public void Test1()
+        public void AddBookTestInController()
         {
-            Task<int> actual =bookImp.AddBook(book);
-            Assert.AreEqual(actual, 1);
+            var service = new Mock<IManager>();
+            var controller = new BookController(service.Object);
+
+            book.BookTitle = "Never Happen Twice";
+            book.AutherName = "BDEC";
+            book.BookImage = "images.jpg";
+            book.BookPrice = 85.00;
+            book.NumberOfBooks = 50;
+            var data = controller.AddBook(book);
+            Assert.NotNull(data);
+
+        }
+
+        [Test]
+        public void AddBookTestInManager()
+        {
+            var service = new Mock<IBook>();
+            var manager = new ImpBookManager(service.Object);
+            book.BookTitle = "Never Happen Twice";
+            book.AutherName = "BDEC";
+            book.BookImage = "images.jpg";
+            book.BookPrice = 85.00;
+            book.NumberOfBooks = 50;
+            var data = manager.AddBook(book);
+            Assert.NotNull(data);
+        }
+
+        [Test]
+        public void GetAllBookTestControler()
+        {
+            var service = new Mock<IManager>();
+            var controller = new BookController(service.Object);
+            var data = controller.GetAllBook();
+            Assert.NotNull(data);
+        }
+        [Test]
+        public void GetAllBookTestInManager()
+        {
+            var service = new Mock<IBook>();
+            var manager = new ImpBookManager(service.Object);
+            var data = manager.GetAllBook();
+            Assert.NotNull(data);
         }
     }
 }
