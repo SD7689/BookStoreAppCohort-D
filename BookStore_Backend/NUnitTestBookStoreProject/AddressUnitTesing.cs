@@ -11,12 +11,12 @@ namespace NUnitTestBookStoreProject
     public class AddressUnitTesing
     {
         [Test]
-        public void GetAddress_ShouldReturnAllAddress()
+        public void GetAddress_ShouldReturnAddress()
         {
             var service = new Mock<ICustomerManager>();
             var Controller = new CustomerController(service.Object);
-            Controller.GetCustomerAddress(1);
-            Assert.IsNotNull(1);
+           var data= Controller.GetCustomerAddress(1);
+            Assert.IsNotNull(data);
         }
 
     }
