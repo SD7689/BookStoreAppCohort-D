@@ -12,7 +12,7 @@ namespace BookStore_Api
         public void Receive()
         {
 
-            MessageQueue BookMSMQ = new MessageQueue(@".\Private$\Msmq");
+            MessageQueue BookMSMQ = new MessageQueue(@".\Private$\BookMSMQ");
             List<string> msmqReceive = new List<string>();
             try
             {
@@ -40,7 +40,7 @@ namespace BookStore_Api
             }
             finally
             {
-                TextWriter tw = new StreamWriter(@"C:\Users\Kuldeep\Desktop\BookStoreAppCohort-D\BookStore_Backend\BookStore_Api\ReceiveMessage.txt");
+                TextWriter tw = new StreamWriter(@"C:\Users\Anoop Kumar\Desktop\BookStoreAppCohort-D\BookStore_Backend\BookStore_Api\ReceiveMessage.txt");
 
                 foreach (String s in msmqReceive)
                     tw.WriteLine(s);
