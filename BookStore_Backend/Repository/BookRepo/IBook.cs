@@ -12,6 +12,6 @@ namespace Repository.BookRepo
         Task<int> AddBook(Book book);
         IEnumerable<Book> GetAllBook();
         string Image(IFormFile file, int id);
-       
+        int GetNumOfBook();
     }
 }

@@ -44,9 +44,6 @@ namespace BookStore_Api
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "BookStorWeb API", Version = "v1" });
-
-                c.SwaggerDoc("v1", new Info { Title = "BookStore_App", Version = "v1" });
-
             });
         }
 

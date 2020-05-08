@@ -58,7 +58,11 @@ namespace Repository.BookRepo
             {
                 return e.Message;
             }
-        
+        }
+        public int GetNumOfBook()
+        {
+            var NumOfBook=bookStoreDB.Book.Count<Book>();
+            return NumOfBook;
         }
     }
 }
