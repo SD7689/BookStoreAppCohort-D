@@ -13,15 +13,15 @@ namespace BookStore_Api
             try
             {
                 MessageQueue BookMSMQ = null;
-                if (MessageQueue.Exists(@".\Private$\Msmq"))
+                if (MessageQueue.Exists(@".\Private$\BookMSMQ"))
                 {
-                    BookMSMQ = new MessageQueue(@".\Private$\Msmq");
+                    BookMSMQ = new MessageQueue(@".\Private$\BookMSMQ");
                 }
                 else
                 {
-                    BookMSMQ = MessageQueue.Create(@".\Private$\Msmq");
+                    BookMSMQ = MessageQueue.Create(@".\Private$\BookMSMQ");
                 }
-                BookMSMQ.Send(value.ToString(), "Message send");
+                BookMSMQ.Send(value, "Message send");
             }
             catch (Exception e)
             {
