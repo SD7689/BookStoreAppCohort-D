@@ -1,4 +1,7 @@
-﻿using NUnit.Framework;
+﻿using BookStore_Api.Controllers;
+using Manager.CustomerManager;
+using Moq;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,9 +11,13 @@ namespace NUnitTestBookStoreProject
     public class AddressUnitTesing
     {
         [Test]
-        public void Test1()
+        public void GetAddress_ShouldReturnAllAddress()
         {
-            Assert.Pass();
+            var service = new Mock<ICustomerManager>();
+            var Controller = new CustomerController(service.Object);
+            Controller.GetCustomerAddress(1);
+            Assert.IsNotNull(1);
         }
+
     }
 }
