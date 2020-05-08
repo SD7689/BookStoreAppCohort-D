@@ -5,11 +5,13 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore_Api", "BookStore_Api.csproj", "{D1C367AB-C04B-4C5A-8D31-E8821D96EBC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "..\Model\Model.csproj", "{66C8698F-480E-499F-B3B8-D41F2608350F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "..\Model\Model.csproj", "{66C8698F-480E-499F-B3B8-D41F2608350F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Manager", "..\Manager\Manager.csproj", "{6386A1D7-8B7D-4640-ADC3-1A56057AE152}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Manager", "..\Manager\Manager.csproj", "{6386A1D7-8B7D-4640-ADC3-1A56057AE152}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "..\Repository\Repository.csproj", "{FD1C8AF5-7395-4AA7-AB7C-6CC64E2BCDE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "..\Repository\Repository.csproj", "{FD1C8AF5-7395-4AA7-AB7C-6CC64E2BCDE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStoreUnitTest", "..\BookStoreUnitTest\BookStoreUnitTest.csproj", "{C81F82E8-86B8-410E-97FE-22134806CE8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{FD1C8AF5-7395-4AA7-AB7C-6CC64E2BCDE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD1C8AF5-7395-4AA7-AB7C-6CC64E2BCDE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD1C8AF5-7395-4AA7-AB7C-6CC64E2BCDE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C81F82E8-86B8-410E-97FE-22134806CE8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C81F82E8-86B8-410E-97FE-22134806CE8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C81F82E8-86B8-410E-97FE-22134806CE8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C81F82E8-86B8-410E-97FE-22134806CE8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
