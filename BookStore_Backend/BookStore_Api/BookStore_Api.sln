@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Manager", "..\Manager\Manag
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "..\Repository\Repository.csproj", "{FD1C8AF5-7395-4AA7-AB7C-6CC64E2BCDE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTestBookStoreProject", "..\NUnitTestBookStoreProject\NUnitTestBookStoreProject.csproj", "{929E9097-249B-4B65-AFF5-C263D725C9F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitTestBookStoreProject", "..\NUnitTestBookStoreProject\NUnitTestBookStoreProject.csproj", "{929E9097-249B-4B65-AFF5-C263D725C9F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
