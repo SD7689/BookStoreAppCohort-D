@@ -29,5 +29,9 @@ namespace Manager.BookManager
         {
             return irepo.Image(file, id);
         }
+        public int GetNumOfBook()
+        {
+            return irepo.GetNumOfBook();
+        }
     }
 }

@@ -62,5 +62,17 @@ namespace BookStore_Api.Controllers
             }
             return this.BadRequest();
         }
+        [Route("NumOfBooks")]
+        [HttpGet]
+        public ActionResult NumOfBooks()
+        {
+            var count = manager.GetNumOfBook();
+            if (count >0)
+            {
+                return this.Ok(count);
+            }
+            return this.BadRequest();
+        }
+
     }
 }

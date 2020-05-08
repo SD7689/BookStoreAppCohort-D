@@ -1,6 +1,9 @@
 using BookStore_Api.Controllers;
 using Manager.BookManager;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Model;
+using Moq;
 using NUnit.Framework;
 using Repository;
 using Repository.BookRepo;
@@ -10,14 +13,24 @@ namespace NUnitTestBookStoreProject
 {
     public class BookUnitTesting
     {
-        private static Book book;
-        private static readonly BookStoreDBContext bookStoreDB;
-        readonly BookImp bookImp = new BookImp(bookStoreDB);
+
         [Test]
-        public void Test1()
+        public void Test_GetNumber_Books()
         {
-            Task<int> actual =bookImp.AddBook(book);
-            Assert.AreEqual(actual, 1);
+            var service = new Mock<IManager>();
+            var Controller = new BookController(service.Object);
+            var actual = Controller.NumOfBooks();
+            Assert.IsNotNull(actual);
+        }
+
+        [Test]
+        public void Test_ImageUpload()
+        {
+            IFormFile file=null;
+            var service = new Mock<IManager>();
+            var Controller = new BookController(service.Object);
+            var actual = Controller.AddBookImage(file, 2);
+            Assert.IsNotNull(actual);
         }
     }
 }
