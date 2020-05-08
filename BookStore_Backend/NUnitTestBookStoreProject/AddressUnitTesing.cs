@@ -15,14 +15,13 @@ namespace NUnitTestBookStoreProject
     {
         CustomerAdress address = new CustomerAdress()
         {
-          BookID=1,
           FullName="Imran",
           PhoneNumber=7847456,
           Email="Imr57@gmail.com",
-          Address="gfe",
+          Address="ABC",
           Pincode=845,
-          Citytown="frer",
-          Landmark="jwhj"
+          Citytown="MTY",
+          Landmark="BTM"
 
         };
         [Test]
@@ -34,6 +33,14 @@ namespace NUnitTestBookStoreProject
             var data = manager.AddCustomerAddress(address);
             Assert.NotNull(data);
            
+        }
+        [Test]
+        public void AddAddressControllerTest()
+        {
+            var service = new Mock<ICustomerManager>();
+            var controller = new CustomerController(service.Object);
+            var data = controller.AddCustomerAddress(address);
+            Assert.IsNotNull(data);
         }
     }
 }
