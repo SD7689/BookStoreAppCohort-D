@@ -24,7 +24,7 @@
 
 .book-title{
   color: whitesmoke;
-  font-family: monospace;
+  font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .search-bar{
@@ -44,22 +44,24 @@
   display: flex;
   color: whitesmoke;
   font-size: 13px;
-  font-family: monospace;
+  font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   width: 117px;
   padding-left: 372px;
 }
 
 .App-logo{
   display: flex;
-    padding: 0px;
-    height: 46%;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 49%;
+    width: 56%;
     padding-right: -135px;
-    margin-left: 9px;
-    margin-top: 18px;
+    /* margin-left: 65px; */
+    margin-top: 15px;
 }
 .book-count-div{
   color: #847575;
-  margin-right: 764px;
+  margin-right: 752px;
   margin-top: 11px;
   font-size: 11px;
 }
@@ -147,24 +149,25 @@
   height: 30px;
   border: 1px solid black;
   border-radius: 5px;
+  width: 141px;
   /*background-color: #eae6e6;*/
 }
 .book-title-div{
-    left: 23px;
-    font-family: cursive;
-    margin-left: 8px;
+    font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin-left: 20px;
 }
 .author-name-div{
-  font-family: cursive;
+  font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
   color: #968e8e;
-  margin-left: 8px;
+  margin-left: 20px;
   margin-top: -15px;
 }
 .book-price-div{
-    font-family: cursive;
-    margin-left: 8px;
+    font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin-left: 20px;
     margin-top: -9px;
+    font-weight: 500;
 }
 
 .button-div{
@@ -177,7 +180,7 @@
   width: 110px;
   background-color: #791212;
   color: whitesmoke;
-  font-family: cursive;
+  font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   border: 1px solid black;
   border-radius: 5px;
 }
@@ -188,6 +191,7 @@
 }
 .add-bag-button:focus{
   width:174px;
+  background-color:#a22121;
   margin-left: 7px;
   margin-right:7px;
 }
@@ -195,14 +199,18 @@
   width: 79px;
     background-color: #ffffff;
     color: black;
-    font-family: cursive;
+    font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     border: 1px solid black;
     border-radius: 5px;
 }
 .wishlist-button:hover{
   background-color: #f7f3f3;
   transition-duration: .3s;
+  width: 83px;
+}
+.wishlist-button:focus{
   width: 93px;
+  background-color: #efe3e3;
 }
 .MuiContainer-maxWidthLg {
     margin-left: 22px !important;
@@ -216,4 +224,62 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   padding-left: 80px;
+}
+.order-placed-container{
+  /*border: 1px solid black;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*margin-top: 81px;*/
+  height: 609px;
+  flex-direction: column;
+}
+.table-div{
+  position: relative;
+    top: 52px;
+    width: 772px;
+    height: 52px;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+table {
+  font-family:  adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+.order-image-div{
+  height: 112px;
+    position: absolute;
+    top: 83px;
+    left: 580px;
+}
+.order-info{
+  text-align: center;
+  font-weight: 600;
+  font-family:  adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.continue-shopping-button-div{
+display: flex;
+    /* margin-top: 2px; */
+    position: absolute;
+    top: 551px;
+    height: 35px;
+}
+.continue-shopping-button{
+  background-color: dodgerblue;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    width: 190px;
+    font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.continue-shopping-button:hover{
+  background-color: #007bf3;
 }

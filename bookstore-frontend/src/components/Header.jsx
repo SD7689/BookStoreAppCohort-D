@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 import MenuBookRoundedIcon from '@material-ui/icons/MenuBookRounded';
 import AddShoppingCartTwoToneIcon from '@material-ui/icons/AddShoppingCartTwoTone';
+import {Search} from '@material-ui/icons'
+import  {Typography, TextField, InputAdornment} from '@material-ui/core';
 
 export class Header extends Component {
     render()
@@ -14,8 +16,19 @@ export class Header extends Component {
                 <h2  className="logo-title">BookStore</h2>
                 </div>
                 <div className='search-bar'>
-                <input className ='search' type="text" placeholder="Search..">
-                    </input>
+                <TextField
+                        variant='outlined'
+                        className='search'
+                        InputProps={{
+                            startAdornment: (
+                                <InputAdornment position="start">
+                                    <Search />
+                                </InputAdornment>
+                            ),
+                        }}
+                        id="outlined-basic"
+                        placeholder='Search...'
+                    />
                 </div>
                 <div className='cart-div'>
                     <h3>Cart</h3>

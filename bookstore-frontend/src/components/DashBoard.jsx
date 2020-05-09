@@ -2,6 +2,14 @@ import React,{Component} from 'react';
 import {Header} from './Header';
 import {BookCard} from './BookCard';
 import {Footer} from './Footer';
+import Demobook from '../Asserts/Demobook.jpg'
+import nightBook from '../Asserts/nightBook.jpg'
+import beauty from '../Asserts/beauty.jpg'
+import winzar from '../Asserts/winzar.jpg'
+import hypocrite from '../Asserts/hypocrite.jpg'
+import journey from '../Asserts/journey.jpg'
+import neighbouring from '../Asserts/neighbouring.jpg'
+import west from '../Asserts/west.jpg'
 
 export class DashBoard extends Component {
     state={
@@ -12,7 +20,7 @@ export class DashBoard extends Component {
             authorName : "Amitabh Bachan",
             price : 1235,
             description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
+            image :  Demobook 
         },
         {
             bookid : 212323,
@@ -20,7 +28,7 @@ export class DashBoard extends Component {
             authorName : "Jay",
             price : 12356,
             description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
+            image :  nightBook 
 
         },
         {
@@ -29,7 +37,7 @@ export class DashBoard extends Component {
             authorName : "Rowler",
             price : 45394,
             description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
+            image : west
 
         },
         {
@@ -38,7 +46,7 @@ export class DashBoard extends Component {
             authorName : "K Smith",
             price : 45394,
             description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
+            image : winzar
 
         },
         {
@@ -47,7 +55,7 @@ export class DashBoard extends Component {
             authorName : "xyz",
             price : 45394,
             description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
+            image : hypocrite
 
         },
         {
@@ -56,7 +64,7 @@ export class DashBoard extends Component {
             authorName : "shivam",
             price : 45394,
             description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
+            image : neighbouring
 
         },
         {
@@ -65,7 +73,7 @@ export class DashBoard extends Component {
             authorName : "shivam",
             price : 45394,
             description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
+            image : beauty
 
         },
         {
@@ -74,7 +82,7 @@ export class DashBoard extends Component {
             authorName : "shivam",
             price : 45394,
             description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
+            image : journey
 
         },
         {
@@ -83,7 +91,7 @@ export class DashBoard extends Component {
             authorName : "shivam",
             price : 45394,
             description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
+            image : Demobook
 
         },
         {
@@ -92,53 +100,7 @@ export class DashBoard extends Component {
             authorName : "shivam",
             price : 45394,
             description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
-
-        },
-        
-        {
-            bookid : 212323,
-            bookName : "JK rowling",
-            authorName : "shivam",
-            price : 45394,
-            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
-
-        },
-        {
-            bookid : 212323,
-            bookName : "JK rowling",
-            authorName : "shivam",
-            price : 45394,
-            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
-
-        },
-        {
-            bookid : 212323,
-            bookName : "JK rowling",
-            authorName : "shivam",
-            price : 45394,
-            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
-
-        },
-        {
-            bookid : 212323,
-            bookName : "JK rowling",
-            authorName : "shivam",
-            price : 45394,
-            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
-
-        },
-        {
-            bookid : 212323,
-            bookName : "JK rowling",
-            authorName : "shivam",
-            price : 45394,
-            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
+            image : west
 
         },
         
@@ -148,7 +110,7 @@ export class DashBoard extends Component {
             authorName : "shivam",
             price : 45394,
             description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
+            image : winzar
 
         },
         {
@@ -157,7 +119,7 @@ export class DashBoard extends Component {
             authorName : "shivam",
             price : 45394,
             description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
+            image : hypocrite
 
         },
         {
@@ -166,7 +128,7 @@ export class DashBoard extends Component {
             authorName : "shivam",
             price : 45394,
             description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
+            image : west
 
         },
         {
@@ -175,7 +137,7 @@ export class DashBoard extends Component {
             authorName : "shivam",
             price : 45394,
             description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
+            image : Demobook
 
         },
         {
@@ -184,53 +146,7 @@ export class DashBoard extends Component {
             authorName : "shivam",
             price : 45394,
             description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
-
-        },
-        
-        {
-            bookid : 212323,
-            bookName : "JK rowling",
-            authorName : "shivam",
-            price : 45394,
-            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
-
-        },
-        {
-            bookid : 212323,
-            bookName : "JK rowling",
-            authorName : "shivam",
-            price : 45394,
-            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
-
-        },
-        {
-            bookid : 212323,
-            bookName : "JK rowling",
-            authorName : "shivam",
-            price : 45394,
-            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
-
-        },
-        {
-            bookid : 212323,
-            bookName : "JK rowling",
-            authorName : "shivam",
-            price : 45394,
-            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
-
-        },
-        {
-            bookid : 212323,
-            bookName : "JK rowling",
-            authorName : "shivam",
-            price : 45394,
-            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
+            image : nightBook
 
         },
         
@@ -240,9 +156,9 @@ export class DashBoard extends Component {
             authorName : "shivam",
             price : 45394,
             description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
+            image : journey
 
-        }
+        },
     ]
     }
     render()

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import Container from '@material-ui/core/Container';
 
 export class BookCard extends Component {
@@ -12,7 +11,8 @@ export class BookCard extends Component {
                         this.props.books.map((ele) => {
                             return (
                                 <div className="book-card-div">
-                                    <img src={logo} className="App-logo" />
+                                    
+                                    <img src={ ele.image } className="App-logo" />
                                     <div className="book-item-info">
                                         <div className="book-title-div">
                                             <h4 >{ele.bookName}</h4>
@@ -21,7 +21,7 @@ export class BookCard extends Component {
                                             <p>{ele.authorName}</p>
                                         </div>
                                         <div className="book-price-div">
-                                            <p>{ele.price}</p>
+                                            <p>Rs. {ele.price}/-</p>
                                         </div>
                                     </div>
                                     <div className="button-div">
