@@ -26,11 +26,15 @@ namespace NUnitTestBookStoreProject
         [Test]
         public void Test_ImageUpload()
         {
+
             IFormFile file=null;
             var service = new Mock<IManager>();
             var Controller = new BookController(service.Object);
             var actual = Controller.AddBookImage(file, 2);
             Assert.IsNotNull(actual);
+
+            Assert.Pass();
+
         }
     }
 }

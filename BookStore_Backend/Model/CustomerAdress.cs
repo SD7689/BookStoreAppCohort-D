@@ -12,8 +12,8 @@ namespace Model
    public class CustomerAdress
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int BookID { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int CustomerId { get; set; }
         [Required]
         public string FullName { get; set; }
         [Required]

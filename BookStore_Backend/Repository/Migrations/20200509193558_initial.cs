@@ -11,8 +11,7 @@ namespace Repository.Migrations
                 name: "Address",
                 columns: table => new
                 {
-                    BookID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CustomerId = table.Column<int>(nullable: false),
                     FullName = table.Column<string>(nullable: false),
                     PhoneNumber = table.Column<int>(nullable: false),
                     Email = table.Column<string>(nullable: false),
@@ -23,7 +22,7 @@ namespace Repository.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Address", x => x.BookID);
+                    table.PrimaryKey("PK_Address", x => x.CustomerId);
                 });
 
             migrationBuilder.CreateTable(

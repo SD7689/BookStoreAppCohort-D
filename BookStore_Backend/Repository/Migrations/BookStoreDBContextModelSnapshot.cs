@@ -60,9 +60,7 @@ namespace Repository.Migrations
 
             modelBuilder.Entity("Model.CustomerAdress", b =>
                 {
-                    b.Property<int>("BookID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("CustomerId");
 
                     b.Property<string>("Address")
                         .IsRequired();
@@ -83,7 +81,7 @@ namespace Repository.Migrations
 
                     b.Property<int>("Pincode");
 
-                    b.HasKey("BookID");
+                    b.HasKey("CustomerId");
 
                     b.ToTable("Address");
                 });
