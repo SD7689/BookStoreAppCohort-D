@@ -20,7 +20,7 @@ namespace Manager.CartManager
             return this.manager.AddToCart(cart);
         }
 
-        public IEnumerable<Cart> GetAllCartValue()
+        public IEnumerable<Book> GetAllCartValue()
         {
             return this.manager.GetAllCartValue();
         }
