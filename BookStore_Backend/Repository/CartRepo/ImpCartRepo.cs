@@ -45,5 +45,10 @@ namespace Repository.CartRepo
             }
             return cart;
         }
+        public int NumOfBook()
+        {
+            int count = bookStoreDB.Cart.Count<Cart>();
+            return count;
+        }
     }
 }

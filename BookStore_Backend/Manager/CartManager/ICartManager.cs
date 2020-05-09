@@ -10,6 +10,11 @@ namespace Manager.CartManager
     {
         Task<int> AddToCart(Cart cart);
         Cart RemoveCart(int CartID);
+
+        
+        int NumOfBook();
+
         IEnumerable<Book> GetAllCartValue();
+
     }
 }

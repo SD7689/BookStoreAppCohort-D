@@ -29,5 +29,9 @@ namespace Manager.CartManager
         {
             return this.manager.RemoveCart(CartID);
         }
+        public int NumOfBook()
+        {
+            return this.manager.NumOfBook();
+        }
     }
 }
