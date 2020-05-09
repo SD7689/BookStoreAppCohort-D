@@ -56,6 +56,7 @@ namespace BookStore_Api.Controllers
         public ActionResult AddBookImage(IFormFile file,int id)
         {
             var result = this.manager.Image(file, id);
+            sender.Send("Image Uploaded ");
             if (result != null)
             {
                 return this.Ok(result);
@@ -67,6 +68,7 @@ namespace BookStore_Api.Controllers
         public ActionResult NumOfBooks()
         {
             var count = manager.GetNumOfBook();
+            sender.Send("Count the number of books");
             if (count >0)
             {
                 return this.Ok(count);
