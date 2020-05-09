@@ -22,6 +22,11 @@ namespace Repository.CartRepo
             return result;
         }
 
+        public IEnumerable<Cart> GetAllCartValue()
+        {
+            return bookStoreDB.Cart;
+        }
+
         public Cart RemoveCart(int CartID)
         {
             Cart cart = bookStoreDB.Cart.Find(CartID);

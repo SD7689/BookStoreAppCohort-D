@@ -20,6 +20,11 @@ namespace Manager.CartManager
             return this.manager.AddToCart(cart);
         }
 
+        public IEnumerable<Cart> GetAllCartValue()
+        {
+            return this.manager.GetAllCartValue();
+        }
+
         public Cart RemoveCart(int CartID)
         {
             return this.manager.RemoveCart(CartID);
