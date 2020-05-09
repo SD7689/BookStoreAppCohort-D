@@ -1,6 +1,7 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,6 +37,11 @@ namespace Repository.CartRepo
                 bookStoreDB.SaveChanges();
             }
             return cart;
+        }
+        public int NumOfBook()
+        {
+            int count = bookStoreDB.Cart.Count<Cart>();
+            return count;
         }
     }
 }

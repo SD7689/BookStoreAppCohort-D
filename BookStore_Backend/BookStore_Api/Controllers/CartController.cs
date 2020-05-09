@@ -55,5 +55,12 @@ namespace BookStore_Api.Controllers
         {
             return this.manager.GetAllCartValue();
         }
+        [Route("NumOfBook")]
+        [HttpGet]
+        public ActionResult BookCount()
+        {
+            var count=this.manager.NumOfBook();
+            return this.Ok(count);
+        }
     }
 }
