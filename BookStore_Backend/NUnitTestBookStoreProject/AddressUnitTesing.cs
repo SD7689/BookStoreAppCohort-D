@@ -15,7 +15,7 @@ namespace NUnitTestBookStoreProject
     {
         CustomerAdress address = new CustomerAdress()
         {
-          FullName="Imran",
+          FullName="Itr",
           PhoneNumber=7847456,
           Email="Imr57@gmail.com",
           Address="ABC",
@@ -42,5 +42,6 @@ namespace NUnitTestBookStoreProject
             var data = controller.AddCustomerAddress(address);
             Assert.IsNotNull(data);
         }
+
     }
 }
