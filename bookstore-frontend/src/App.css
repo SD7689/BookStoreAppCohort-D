@@ -35,8 +35,8 @@
 .search {
   width: 403px;
   border-radius: 4px;
-  height: 17px;
-  opacity: 76%;
+  height: 24px;
+  opacity: 90%;
 
 }
 
@@ -52,9 +52,17 @@
 .App-logo{
   display: flex;
     padding: 0px;
-    height: 50%;
+    height: 46%;
+    padding-right: -135px;
+    margin-left: 9px;
+    margin-top: 18px;
 }
-
+.book-count-div{
+  color: #847575;
+  margin-right: 764px;
+  margin-top: 11px;
+  font-size: 11px;
+}
 .cart-icon-div {
   margin-top: 14px;
     margin-left: 6px;
@@ -103,18 +111,20 @@
 }
 
 .book-card-div {
-  box-shadow: 6px 10px 20px 0 rgba(0,0,0,0.2);
+  box-shadow: 14px 10px 11px 0px rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 256px;
+  width: 228px;
   border-radius: 5px;
   border: 1px solid black;
-  margin: 10px;
+  margin: 17px;
   height: 322px;
 
 }
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+.book-card-div:hover {
+  box-shadow: 11px 11px 11px 5px rgba(0, 0, 0, 0.30);
+  /*height: 323px;*/
+  /*width:229px;*/
 }
 
 
@@ -124,64 +134,76 @@
 
 .card-header{
   padding-top: 75px;
-  padding-left: 126px;
+  padding-left: 164px;
   padding-bottom: 1px;
   display: flex;
   justify-content: space-between;
 }
+
 .sort-by-div{
-  margin-right: 133px;
+  margin-right: 166px;
 }
 .select-bar{
   height: 30px;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: #eae6e6;
+  /*background-color: #eae6e6;*/
 }
 .book-title-div{
-  position: relative;
-  left: 23px;
+    left: 23px;
     font-family: cursive;
+    margin-left: 8px;
 }
 .author-name-div{
-  position: relative;
-  left: 23px;
-  top: -19px;
   font-family: cursive;
   font-size: 13px;
   color: #968e8e;
+  margin-left: 8px;
+  margin-top: -15px;
 }
 .book-price-div{
-  position: relative;
-  left: 23px;
-    top: -32px;
     font-family: cursive;
+    margin-left: 8px;
+    margin-top: -9px;
 }
 
 .button-div{
-  position: relative;
     display: flex;
     justify-content: space-around;
-    bottom: 20px;
+    margin: 5px;
 }
 .add-bag-button{
   height: 29px;
   width: 110px;
-  background-color: #545050;
+  background-color: #791212;
   color: whitesmoke;
   font-family: cursive;
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 5px;
+}
+.add-bag-button:hover{
+  background-color:#a22121;
+  transition-duration: .3s;
+  width: 115px;
+}
+.add-bag-button:focus{
+  width:174px;
+  margin-left: 7px;
+  margin-right:7px;
 }
 .wishlist-button{
-  width: 84px;
-    background-color: #ce3a3a;
-    color: whitesmoke;
+  width: 79px;
+    background-color: #ffffff;
+    color: black;
     font-family: cursive;
     border: 1px solid black;
-    border-radius: 10px;
+    border-radius: 5px;
 }
-
+.wishlist-button:hover{
+  background-color: #f7f3f3;
+  transition-duration: .3s;
+  width: 93px;
+}
 .MuiContainer-maxWidthLg {
     margin-left: 22px !important;
 }
@@ -193,5 +215,5 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  padding-left: 50px;
+  padding-left: 80px;
 }

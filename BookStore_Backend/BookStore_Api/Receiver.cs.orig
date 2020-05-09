@@ -40,7 +40,11 @@ namespace BookStore_Api
             }
             finally
             {
+<<<<<<< HEAD
                 TextWriter tw = new StreamWriter(@"C:\Users\ASUS\Desktop\BookStoreAppCohort-D\BookStore_Backend\BookStore_Api\ReceiveMessage.txt");
+=======
+                TextWriter tw = new StreamWriter(@"C:\Users\acer\Desktop\BookStoreAppCohort-D\BookStore_Backend\BookStore_Api\ReceiveMessage.txt");
+>>>>>>> Imran-Backend
 
                 foreach (String s in msmqReceive)
                     tw.WriteLine(s);
