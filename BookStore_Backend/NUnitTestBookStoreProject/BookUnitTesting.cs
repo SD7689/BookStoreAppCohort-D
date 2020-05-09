@@ -13,9 +13,6 @@ namespace NUnitTestBookStoreProject
 {
     public class BookUnitTesting
     {
-        /*private static Book book;
-        private static readonly BookStoreDBContext bookStoreDB;
-        readonly BookImp bookImp = new BookImp(bookStoreDB);*/
         Book book = new Book();
         [Test]
         public void AddBookTestInController()
