@@ -10,6 +10,8 @@ namespace Repository.CartRepo
     public class ImpCartRepo:ICartRepo
     {
         private readonly BookStoreDBContext bookStoreDB;
+        public  List<Cart> cartList = new List<Cart>();
+        public  List<Book> getAllCartByBookType = new List<Book>();
 
         public ImpCartRepo(BookStoreDBContext bookStoreDB)
         {
@@ -23,9 +25,14 @@ namespace Repository.CartRepo
             return result;
         }
 
-        public IEnumerable<Cart> GetAllCartValue()
+        public IEnumerable<Book> GetAllCartValue()
         {
-            return bookStoreDB.Cart;
+            cartList= bookStoreDB.Cart.ToList();
+            for(int i=0;i<cartList.Count;i++)
+            {
+                getAllCartByBookType.Add(bookStoreDB.Book.Find(cartList[i].BookId));
+            }
+            return getAllCartByBookType;
         }
 
         public Cart RemoveCart(int CartID)
