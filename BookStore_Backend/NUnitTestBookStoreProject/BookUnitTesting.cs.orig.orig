@@ -13,6 +13,12 @@ namespace NUnitTestBookStoreProject
 {
     public class BookUnitTesting
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        /*private static Book book;
+        private static readonly BookStoreDBContext bookStoreDB;
+        readonly BookImp bookImp = new BookImp(bookStoreDB);*/
         Book book = new Book();
         [Test]
         public void AddBookTestInController()
@@ -59,7 +65,8 @@ namespace NUnitTestBookStoreProject
             var manager = new ImpBookManager(service.Object);
             var data = manager.GetAllBook();
             Assert.NotNull(data);
-        }
+=======
+>>>>>>> master
 
         [Test]
         public void Test_GetNumber_Books()
@@ -78,7 +85,10 @@ namespace NUnitTestBookStoreProject
             var Controller = new BookController(service.Object);
             var actual = Controller.AddBookImage(file, 2);
             Assert.IsNotNull(actual);
-            Assert.Pass();
+<<<<<<< HEAD
+=======
+>>>>>>> 11904c615f96796450a5a30733390c626504133b
+>>>>>>> master
         }
     }
 }

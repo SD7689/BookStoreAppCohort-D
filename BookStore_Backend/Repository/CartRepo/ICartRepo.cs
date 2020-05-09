@@ -10,5 +10,6 @@ namespace Repository.CartRepo
     {
         Task<int> AddToCart(Cart cart);
         Cart RemoveCart(int CartID);
+        IEnumerable<Cart> GetAllCartValue();
     }
 }

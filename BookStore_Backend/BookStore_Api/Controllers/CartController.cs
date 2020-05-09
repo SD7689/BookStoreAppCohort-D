@@ -49,5 +49,11 @@ namespace BookStore_Api.Controllers
             }
             return this.BadRequest();
         }
+        [Route("GetCartValue")]
+        [HttpGet]
+        public IEnumerable<Cart> GetCartValue()
+        {
+            return this.manager.GetAllCartValue();
+        }
     }
 }

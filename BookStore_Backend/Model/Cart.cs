@@ -11,6 +11,6 @@ namespace Model
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CartID { get; set; }
-        public Book Book { get; set; }
+        public int BookId { get; set; }
     }
 }
