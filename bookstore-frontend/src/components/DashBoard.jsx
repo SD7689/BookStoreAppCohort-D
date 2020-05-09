@@ -9,15 +9,15 @@ export class DashBoard extends Component {
         {
             bookid : 212323,
             bookName : "Baghban",
-            authorName : "shreyash kaushal",
+            authorName : "Amitabh Bachan",
             price : 1235,
             description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
             image : ""
         },
         {
             bookid : 212323,
-            bookName : "biography",
-            authorName : "saad samim",
+            bookName : "Jayant Biography",
+            authorName : "Jay",
             price : 12356,
             description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
             image : ""
@@ -26,7 +26,25 @@ export class DashBoard extends Component {
         {
             bookid : 212323,
             bookName : "JK rowling",
-            authorName : "shivam",
+            authorName : "Rowler",
+            price : 45394,
+            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
+            image : ""
+
+        },
+        {
+            bookid : 212323,
+            bookName : "Harry Potter",
+            authorName : "K Smith",
+            price : 45394,
+            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
+            image : ""
+
+        },
+        {
+            bookid : 212323,
+            bookName : "Biography",
+            authorName : "xyz",
             price : 45394,
             description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
             image : ""
@@ -68,6 +86,154 @@ export class DashBoard extends Component {
             image : ""
 
         },
+        {
+            bookid : 212323,
+            bookName : "JK rowling",
+            authorName : "shivam",
+            price : 45394,
+            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
+            image : ""
+
+        },
+        
+        {
+            bookid : 212323,
+            bookName : "JK rowling",
+            authorName : "shivam",
+            price : 45394,
+            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
+            image : ""
+
+        },
+        {
+            bookid : 212323,
+            bookName : "JK rowling",
+            authorName : "shivam",
+            price : 45394,
+            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
+            image : ""
+
+        },
+        {
+            bookid : 212323,
+            bookName : "JK rowling",
+            authorName : "shivam",
+            price : 45394,
+            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
+            image : ""
+
+        },
+        {
+            bookid : 212323,
+            bookName : "JK rowling",
+            authorName : "shivam",
+            price : 45394,
+            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
+            image : ""
+
+        },
+        {
+            bookid : 212323,
+            bookName : "JK rowling",
+            authorName : "shivam",
+            price : 45394,
+            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
+            image : ""
+
+        },
+        
+        {
+            bookid : 212323,
+            bookName : "JK rowling",
+            authorName : "shivam",
+            price : 45394,
+            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
+            image : ""
+
+        },
+        {
+            bookid : 212323,
+            bookName : "JK rowling",
+            authorName : "shivam",
+            price : 45394,
+            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
+            image : ""
+
+        },
+        {
+            bookid : 212323,
+            bookName : "JK rowling",
+            authorName : "shivam",
+            price : 45394,
+            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
+            image : ""
+
+        },
+        {
+            bookid : 212323,
+            bookName : "JK rowling",
+            authorName : "shivam",
+            price : 45394,
+            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
+            image : ""
+
+        },
+        {
+            bookid : 212323,
+            bookName : "JK rowling",
+            authorName : "shivam",
+            price : 45394,
+            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
+            image : ""
+
+        },
+        
+        {
+            bookid : 212323,
+            bookName : "JK rowling",
+            authorName : "shivam",
+            price : 45394,
+            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
+            image : ""
+
+        },
+        {
+            bookid : 212323,
+            bookName : "JK rowling",
+            authorName : "shivam",
+            price : 45394,
+            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
+            image : ""
+
+        },
+        {
+            bookid : 212323,
+            bookName : "JK rowling",
+            authorName : "shivam",
+            price : 45394,
+            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
+            image : ""
+
+        },
+        {
+            bookid : 212323,
+            bookName : "JK rowling",
+            authorName : "shivam",
+            price : 45394,
+            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
+            image : ""
+
+        },
+        {
+            bookid : 212323,
+            bookName : "JK rowling",
+            authorName : "shivam",
+            price : 45394,
+            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
+            image : ""
+
+        },
+        
         {
             bookid : 212323,
             bookName : "JK rowling",
@@ -86,6 +252,7 @@ export class DashBoard extends Component {
                <Header/>
                <div className='card-header'>
                         <div className="BookCard-Header">Books</div>
+                        <div className="book-count-div">(128 items)</div>
                         <div class="sort-by-div">
                     <select className="select-bar">
                         <option>Sort By</option>

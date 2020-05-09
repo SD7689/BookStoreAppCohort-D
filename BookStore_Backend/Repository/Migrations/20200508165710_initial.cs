@@ -49,23 +49,12 @@ namespace Repository.Migrations
                 {
                     CartID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    BookID = table.Column<int>(nullable: true)
+                    BookId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Cart", x => x.CartID);
-                    table.ForeignKey(
-                        name: "FK_Cart_Book_BookID",
-                        column: x => x.BookID,
-                        principalTable: "Book",
-                        principalColumn: "BookID",
-                        onDelete: ReferentialAction.Restrict);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Cart_BookID",
-                table: "Cart",
-                column: "BookID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -74,10 +63,10 @@ namespace Repository.Migrations
                 name: "Address");
 
             migrationBuilder.DropTable(
-                name: "Cart");
+                name: "Book");
 
             migrationBuilder.DropTable(
-                name: "Book");
+                name: "Cart");
         }
     }
 }
