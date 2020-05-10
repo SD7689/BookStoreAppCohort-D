@@ -24,7 +24,7 @@
 
 .book-title{
   color: whitesmoke;
-  font-family: monospace;
+  font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .search-bar{
@@ -32,11 +32,18 @@
     margin-left: 4em;
 }
 
+
+
+.MuiInput-root {
+  position: relative;
+  height: 42px;
+}
+
 .search {
   width: 403px;
   border-radius: 4px;
-  height: 24px;
-  opacity: 90%;
+  background-color: white;
+    height: 41px;
 
 }
 
@@ -44,22 +51,24 @@
   display: flex;
   color: whitesmoke;
   font-size: 13px;
-  font-family: monospace;
+  font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   width: 117px;
   padding-left: 372px;
 }
 
 .App-logo{
   display: flex;
-    padding: 0px;
-    height: 46%;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 49%;
+    width: 56%;
     padding-right: -135px;
-    margin-left: 9px;
-    margin-top: 18px;
+    /* margin-left: 65px; */
+    margin-top: 15px;
 }
 .book-count-div{
   color: #847575;
-  margin-right: 764px;
+  margin-right: 752px;
   margin-top: 11px;
   font-size: 11px;
 }
@@ -147,24 +156,25 @@
   height: 30px;
   border: 1px solid black;
   border-radius: 5px;
+  width: 141px;
   /*background-color: #eae6e6;*/
 }
 .book-title-div{
-    left: 23px;
-    font-family: cursive;
-    margin-left: 8px;
+    font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin-left: 20px;
 }
 .author-name-div{
-  font-family: cursive;
+  font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
   color: #968e8e;
-  margin-left: 8px;
+  margin-left: 20px;
   margin-top: -15px;
 }
 .book-price-div{
-    font-family: cursive;
-    margin-left: 8px;
+    font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin-left: 20px;
     margin-top: -9px;
+    font-weight: 500;
 }
 
 .button-div{
@@ -177,7 +187,7 @@
   width: 110px;
   background-color: #791212;
   color: whitesmoke;
-  font-family: cursive;
+  font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   border: 1px solid black;
   border-radius: 5px;
 }
@@ -188,6 +198,7 @@
 }
 .add-bag-button:focus{
   width:174px;
+  background-color:#a22121;
   margin-left: 7px;
   margin-right:7px;
 }
@@ -195,14 +206,18 @@
   width: 79px;
     background-color: #ffffff;
     color: black;
-    font-family: cursive;
+    font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     border: 1px solid black;
     border-radius: 5px;
 }
 .wishlist-button:hover{
   background-color: #f7f3f3;
   transition-duration: .3s;
+  width: 83px;
+}
+.wishlist-button:focus{
   width: 93px;
+  background-color: #efe3e3;
 }
 .MuiContainer-maxWidthLg {
     margin-left: 22px !important;
@@ -216,4 +231,261 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   padding-left: 80px;
+}
+
+/* OrderPlaced Css */
+
+.order-placed-container{
+  /*border: 1px solid black;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*margin-top: 81px;*/
+  height: 609px;
+  flex-direction: column;
+}
+.table-div{
+  position: relative;
+    top: 52px;
+    width: 772px;
+    height: 52px;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+table {
+  font-family:  adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+.order-image-div{
+  height: 112px;
+    position: absolute;
+    top: 83px;
+    left: 580px;
+}
+.order-info{
+  text-align: center;
+  font-weight: 600;
+  font-family:  adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.continue-shopping-button-div{
+display: flex;
+    /* margin-top: 2px; */
+    position: absolute;
+    top: 551px;
+    height: 35px;
+}
+.continue-shopping-button{
+  background-color: dodgerblue;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    width: 190px;
+    font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.continue-shopping-button:hover{
+  background-color: #007bf3;
+}
+
+/* AddCartComponent Css */
+
+.cart-component
+{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1565px;
+}
+
+.MuiGrid-spacing-xs-5 {
+  width: calc(100% + 40px);
+  margin: -20px;
+  margin-top: 117px;
+}
+
+.grid-div{
+  margin-top: -189px;
+}
+
+.order-details-div{
+  display: flex;
+}
+
+.cart-title-div {
+  padding: 1px;
+  margin-left: 24px;
+}
+
+.img-book {
+  width: 212px;
+  border: 2px solid;
+  margin-left: 26px;
+  margin-bottom: 15px;
+}
+
+.plus-btn {
+  border-radius: 20px;
+    border: 1px solid;
+    background: #10af10;
+    margin: 6px;
+    width: 32px;
+}
+
+.input-type{
+  width: 51px;
+    height: 20px;
+    text-align: center;
+    padding-top: 10px;
+    border: 2px solid blue;
+    border-radius: 11px;
+}
+.quantity-div {
+  margin-bottom: 12px;
+  align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.remove-btn {
+  margin-left: 20px;
+    height: 29px;
+    width: 73px;
+    border: 2px solid brown;
+    color: brown;
+    background: white;
+    border-radius: 3px;
+}
+
+.order-logo{
+  width: 118px;
+    margin-left: 47px;
+    margin-top: 2px;
+}
+
+.icon {
+  margin-left: -3px;
+}
+
+.minus-btn {
+  border-radius: 20px;
+    border: 1px solid;
+    background: #d00c0c;
+    margin: 6px;
+    width: 32px;
+}
+
+.checkout-div{
+  display: flex;
+    justify-content: flex-end;
+    padding: 14px;
+    margin-right: 45px;
+}
+
+.checkout-button {
+  color: whitesmoke;
+    background-color: #0D47A1;
+    height: 31px;
+    width: 160px;
+    border-radius: 5px;
+    border: 1px;
+}
+
+.order-sumary{
+  border: 1px solid #757575;
+  box-shadow: inset 2px 3px 3px -1px #9E9E9E, 1px 3px 3px 0px #9E9E9E, 2px 2px 3px 2px #9E9E9E;
+    border-radius: 2px;
+}
+
+.cart-order{
+  border: 1px solid #757575;
+  box-shadow: inset 2px 3px 3px -1px #9E9E9E, 1px 3px 3px 0px #9E9E9E, 2px 2px 3px 2px #9E9E9E;
+    border-radius: 2px;
+}
+
+.Customer-address-div{
+  border: 1px solid #757575;
+  box-shadow: inset 2px 3px 3px -1px #9E9E9E, 1px 3px 3px 0px #9E9E9E, 2px 2px 3px 2px #9E9E9E;
+    border-radius: 2px;
+}
+
+.address-title{
+  padding: 1px;
+  margin-left: 24px;
+}
+
+.row-1{
+  display: flex;
+    justify-content: space-around;
+    margin-left: -43px;
+    padding: 15px;
+}
+
+.row-2{
+  display: flex;
+    justify-content: space-around;
+    margin-left: -43px;
+    padding: 15px;
+}
+
+.row-3{
+  display: flex;
+    justify-content: space-around;
+    margin-left: -43px;
+    padding: 15px;
+}
+
+.row-4{
+  display: flex;
+    justify-content: space-around;
+    margin-left: -43px;
+    padding: 15px;
+}
+
+.MuiFormControl-root {
+  border: 1px solid black;
+}
+
+.text-field-address{
+  width: 900px;
+}
+
+.text{
+  width:30px;
+  height:30px;
+}
+
+.text-field{
+  border-radius: 2px;
+  width: 395px;
+}
+
+.radio-div{
+  padding: 22px;
+}
+
+.radio-values{
+  display:flex;
+}
+
+
+.continue-div{
+  display: flex;
+    justify-content: flex-end;
+    padding: 14px;
+    margin-right: 45px;
+}
+.address-button{
+  color: whitesmoke;
+    background-color: #0D47A1;
+    height: 31px;
+    width: 160px;
+    border-radius: 5px;
+    border: 1px;
 }

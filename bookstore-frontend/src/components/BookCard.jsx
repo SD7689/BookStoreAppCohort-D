@@ -5,14 +5,13 @@ import Container from '@material-ui/core/Container';
 export class BookCard extends Component {
     render() {
         return (
-
             <Container maxWidth="lg">
                 <div className="card-container">
                     {
                         this.props.books.map((ele) => {
                             return (
                                 <div className="book-card-div">
-                                    <img src={logo} className="App-logo" />
+                                    <img src={ ele.image } className="App-logo" />
                                     <div className="book-item-info">
                                         <div className="book-title-div">
                                             <h4 >{ele.bookName}</h4>
@@ -34,7 +33,6 @@ export class BookCard extends Component {
                     }
                 </div>
             </Container>
-
         );
     }
 }
