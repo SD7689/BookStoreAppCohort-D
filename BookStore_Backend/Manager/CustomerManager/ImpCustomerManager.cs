@@ -19,9 +19,9 @@ namespace Manager.CustomerManager
             return this.irepo.AddCustomerAddress(address);
         }
 
-        public CustomerAdress GetCustomerAddress(int bookId)
+        public CustomerAdress GetCustomerAddress(string Email_Id)
         {
-            return this.irepo.GetCustomerAddress(bookId);
+            return this.irepo.GetCustomerAddress(Email_Id);
         }
     }
 }
