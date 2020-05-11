@@ -21,10 +21,10 @@ namespace NUnitTestBookStoreProject
             var controller = new BookController(service.Object);
 
             book.BookTitle = "Never Happen Twice";
-            book.AutherName = "BDEC";
+            book.AuthorName = "BDEC";
             book.BookImage = "images.jpg";
             book.BookPrice = 85.00;
-            book.NumberOfBooks = 50;
+            book.Availability = true;
             var data = controller.AddBook(book);
             Assert.NotNull(data);
 
@@ -36,10 +36,10 @@ namespace NUnitTestBookStoreProject
             var service = new Mock<IBook>();
             var manager = new ImpBookManager(service.Object);
             book.BookTitle = "Never Happen Twice";
-            book.AutherName = "BDEC";
+            book.AuthorName = "BDEC";
             book.BookImage = "images.jpg";
             book.BookPrice = 85.00;
-            book.NumberOfBooks = 50;
+            book.Availability = true;
             var data = manager.AddBook(book);
             Assert.NotNull(data);
         }
