@@ -11,7 +11,7 @@ namespace Repository.Migrations
                 name: "Address",
                 columns: table => new
                 {
-                    BookID = table.Column<int>(nullable: false)
+                    CustomerID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     FullName = table.Column<string>(nullable: false),
                     PhoneNumber = table.Column<int>(nullable: false),
@@ -23,7 +23,7 @@ namespace Repository.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Address", x => x.BookID);
+                    table.PrimaryKey("PK_Address", x => x.CustomerID);
                 });
 
             migrationBuilder.CreateTable(
@@ -55,6 +55,18 @@ namespace Repository.Migrations
                 {
                     table.PrimaryKey("PK_Cart", x => x.CartID);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Email = table.Column<string>(nullable: false),
+                    Password = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Email);
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -67,6 +79,9 @@ namespace Repository.Migrations
 
             migrationBuilder.DropTable(
                 name: "Cart");
+
+            migrationBuilder.DropTable(
+                name: "Users");
         }
     }
 }

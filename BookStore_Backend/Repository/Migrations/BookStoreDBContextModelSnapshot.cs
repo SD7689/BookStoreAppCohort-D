@@ -57,7 +57,7 @@ namespace Repository.Migrations
 
             modelBuilder.Entity("Model.CustomerAdress", b =>
                 {
-                    b.Property<int>("BookID")
+                    b.Property<int>("CustomerID")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -80,9 +80,21 @@ namespace Repository.Migrations
 
                     b.Property<int>("Pincode");
 
-                    b.HasKey("BookID");
+                    b.HasKey("CustomerID");
 
                     b.ToTable("Address");
+                });
+
+            modelBuilder.Entity("Model.User", b =>
+                {
+                    b.Property<string>("Email")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Password");
+
+                    b.HasKey("Email");
+
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

@@ -13,7 +13,7 @@ namespace Model
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int BookID { get; set; }
+        public int CustomerID { get; set; }
         [Required]
         public string FullName { get; set; }
         [Required]
