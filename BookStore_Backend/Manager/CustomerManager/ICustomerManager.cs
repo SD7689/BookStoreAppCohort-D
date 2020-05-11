@@ -9,6 +9,6 @@ namespace Manager.CustomerManager
    public interface ICustomerManager
     {
         Task<int> AddCustomerAddress(CustomerAdress address);
-        CustomerAdress GetCustomerAddress(int bookId);
+        CustomerAdress GetCustomerAddress(string email);
     }
 }

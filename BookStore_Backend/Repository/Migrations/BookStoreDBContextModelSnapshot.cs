@@ -24,8 +24,10 @@ namespace Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AutherName")
+                    b.Property<string>("AuthorName")
                         .IsRequired();
+
+                    b.Property<bool>("Availability");
 
                     b.Property<string>("BookImage")
                         .IsRequired();
@@ -34,8 +36,6 @@ namespace Repository.Migrations
 
                     b.Property<string>("BookTitle")
                         .IsRequired();
-
-                    b.Property<int>("NumberOfBooks");
 
                     b.HasKey("BookID");
 
@@ -50,6 +50,8 @@ namespace Repository.Migrations
 
                     b.Property<int>("BookId");
 
+                    b.Property<int>("NumOfCopies");
+
                     b.HasKey("CartID");
 
                     b.ToTable("Cart");
@@ -57,32 +59,42 @@ namespace Repository.Migrations
 
             modelBuilder.Entity("Model.CustomerAdress", b =>
                 {
-                    b.Property<int>("BookID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("Email")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Address")
                         .IsRequired();
 
-                    b.Property<string>("Citytown")
-                        .IsRequired();
+                    b.Property<string>("AddressType");
 
-                    b.Property<string>("Email")
+                    b.Property<string>("Citytown")
                         .IsRequired();
 
                     b.Property<string>("FullName")
                         .IsRequired();
 
-                    b.Property<string>("Landmark")
-                        .IsRequired();
+                    b.Property<string>("Landmark");
 
                     b.Property<int>("PhoneNumber");
 
                     b.Property<int>("Pincode");
 
-                    b.HasKey("BookID");
+                    b.HasKey("Email");
 
                     b.ToTable("Address");
+                });
+
+            modelBuilder.Entity("Model.User", b =>
+                {
+                    b.Property<string>("Email")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Password")
+                        .IsRequired();
+
+                    b.HasKey("Email");
+
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }
