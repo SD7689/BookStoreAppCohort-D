@@ -26,5 +26,13 @@ namespace Repository.CustomerRepo
         {
             return bookStoreDB.Address.Find(Email_Id);
         }
+
+        public Object Login(string Email_Id, string Password)
+        {
+            CustomerAdress customerAdress=  bookStoreDB.Address.Find(Email_Id);
+            if (customerAdress.Password == Password || customerAdress != null)
+                return customerAdress;
+            return "Please Enter the Valid Email_Id and Password ";
+        }
     }
 }

@@ -10,5 +10,6 @@ namespace Manager.CustomerManager
     {
         Task<int> AddCustomerAddress(CustomerAdress address);
         CustomerAdress GetCustomerAddress(string Email_Id);
+        CustomerAdress Login(string Email_Id, string Password);
     }
 }
