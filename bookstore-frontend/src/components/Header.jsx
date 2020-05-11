@@ -31,10 +31,12 @@ export class Header extends Component {
                     />
                 </div>
                 <div className='cart-div'>
+                    
                     <h3>Cart</h3>
                     <div className='cart-icon-div'>
                     <AddShoppingCartTwoToneIcon className="cart-icon" fontSize='medium'/>
                     </div>
+                    <span className="counter-div">{this.props.cartCounter}</span>
                 </div>
             </div>
         );
