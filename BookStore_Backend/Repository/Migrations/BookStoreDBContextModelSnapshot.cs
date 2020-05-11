@@ -50,6 +50,8 @@ namespace Repository.Migrations
 
                     b.Property<int>("BookId");
 
+                    b.Property<int>("BooksCount");
+
                     b.HasKey("CartID");
 
                     b.ToTable("Cart");
@@ -57,17 +59,13 @@ namespace Repository.Migrations
 
             modelBuilder.Entity("Model.CustomerAdress", b =>
                 {
-                    b.Property<int>("BookID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("Email")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Address")
                         .IsRequired();
 
                     b.Property<string>("Citytown")
-                        .IsRequired();
-
-                    b.Property<string>("Email")
                         .IsRequired();
 
                     b.Property<string>("FullName")
@@ -76,11 +74,14 @@ namespace Repository.Migrations
                     b.Property<string>("Landmark")
                         .IsRequired();
 
+                    b.Property<string>("Password")
+                        .IsRequired();
+
                     b.Property<int>("PhoneNumber");
 
                     b.Property<int>("Pincode");
 
-                    b.HasKey("BookID");
+                    b.HasKey("Email");
 
                     b.ToTable("Address");
                 });

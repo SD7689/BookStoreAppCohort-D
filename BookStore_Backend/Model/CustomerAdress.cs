@@ -12,14 +12,12 @@ namespace Model
    public class CustomerAdress
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int BookID { get; set; }
+        [Required]
+        public string Email { get; set; }
         [Required]
         public string FullName { get; set; }
         [Required]
         public int PhoneNumber { get; set; }
-        [Required]
-        public string Email { get; set; }
         [Required]
         public string Address { get; set; }
         [Required]
@@ -28,6 +26,8 @@ namespace Model
         public string Citytown { get; set; }
         [Required]
         public string Landmark { get; set; }
+        [Required]
+        public string Password { get; set; }
 
     }
 }
