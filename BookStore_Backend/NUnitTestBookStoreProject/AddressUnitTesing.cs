@@ -3,7 +3,6 @@ using Manager.CustomerManager;
 using Model;
 using Moq;
 using NUnit.Framework;
-using Repository;
 using Repository.CustomerRepo;
 using System;
 using System.Collections.Generic;
