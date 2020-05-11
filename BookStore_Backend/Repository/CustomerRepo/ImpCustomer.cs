@@ -27,6 +27,12 @@ namespace Repository.CustomerRepo
             return bookStoreDB.Address.Find(Email_Id);
         }
 
+        /// <summary>
+        /// Custmor login Methods.
+        /// </summary>
+        /// <param name="Email_Id">Email_Id.</param>
+        /// <param name="Password">Password.</param>
+        /// <returns>Object.</returns>
         public Object Login(string Email_Id, string Password)
         {
             CustomerAdress customerAdress=  bookStoreDB.Address.Find(Email_Id);
