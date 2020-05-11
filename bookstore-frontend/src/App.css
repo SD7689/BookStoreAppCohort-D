@@ -43,7 +43,7 @@
   width: 403px;
   border-radius: 4px;
   background-color: white;
-    height: 41px;
+    height: 35px;
 
 }
 
@@ -301,7 +301,7 @@ display: flex;
   display: flex;
     align-items: center;
     justify-content: center;
-    height: 1565px;
+    height: 1423px;
 }
 
 .MuiGrid-spacing-xs-5 {
@@ -333,9 +333,14 @@ display: flex;
 .plus-btn {
   border-radius: 20px;
     border: 1px solid;
-    background: #10af10;
     margin: 6px;
-    width: 32px;
+    width: 27px;
+    height: 25px;
+    width: 28px;
+}
+
+.MuiInputBase-input {
+  height:7px !important;
 }
 
 .input-type{
@@ -344,13 +349,13 @@ display: flex;
     text-align: center;
     padding-top: 10px;
     border: 2px solid blue;
-    border-radius: 11px;
+    border-radius: 5px;
 }
 .quantity-div {
-  margin-bottom: 12px;
   align-items: center;
     justify-content: center;
     display: flex;
+    padding: 14px;
 }
 
 .remove-btn {
@@ -370,15 +375,16 @@ display: flex;
 }
 
 .icon {
-  margin-left: -3px;
+  margin-left: -5px;
+  margin-top: -1px;
 }
 
 .minus-btn {
   border-radius: 20px;
     border: 1px solid;
-    background: #d00c0c;
     margin: 6px;
-    width: 32px;
+    width: 27px;
+    height: 25px;
 }
 
 .checkout-div{
@@ -407,6 +413,7 @@ display: flex;
   border: 1px solid #757575;
   box-shadow: inset 2px 3px 3px -1px #9E9E9E, 1px 3px 3px 0px #9E9E9E, 2px 2px 3px 2px #9E9E9E;
     border-radius: 2px;
+    margin-top: 176px;
 }
 
 .Customer-address-div{
@@ -448,9 +455,9 @@ display: flex;
     padding: 15px;
 }
 
-.MuiFormControl-root {
+/* .MuiFormControl-root {
   border: 1px solid black;
-}
+} */
 
 .text-field-address{
   width: 900px;
@@ -467,7 +474,7 @@ display: flex;
 }
 
 .radio-div{
-  padding: 22px;
+  margin-left: 27px;
 }
 
 .radio-values{

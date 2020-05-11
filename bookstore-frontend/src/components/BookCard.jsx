@@ -20,7 +20,7 @@ export class BookCard extends Component {
                                             <p>{ele.authorName}</p>
                                         </div>
                                         <div className="book-price-div">
-                                            <p>{ele.price}</p>
+                                            <p>Rs. {ele.price}</p>
                                         </div>
                                     </div>
                                     <div className="button-div">
@@ -33,6 +33,7 @@ export class BookCard extends Component {
                     }
                 </div>
             </Container>
+           
         );
     }
 }
