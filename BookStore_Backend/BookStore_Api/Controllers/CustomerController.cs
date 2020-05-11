@@ -51,5 +51,11 @@ namespace BookStore_Api.Controllers
             return this.imanager.GetCustomerAddress(Email_Id);
         }
 
+        [Route("CustmorLogin")]
+        [HttpGet]
+        public object CustmorLogin(string Email_Id, string Password)
+        {
+            return this.imanager.Login(Email_Id, Password);
+        }
     }
 }
