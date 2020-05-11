@@ -6,12 +6,11 @@ using System.Text;
 
 namespace Model
 {
-   public class Cart
+    public class User
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int CartID { get; set; }
-        public int BookId { get; set; }
-        public int NumOfCopies { get; set; }
+        public string Email { get; set; }
+        [Required]
+        public string Password { get; set; }
     }
 }

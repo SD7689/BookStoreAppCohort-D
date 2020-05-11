@@ -11,11 +11,11 @@ namespace BookStore_Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CustomerController : ControllerBase
+    public class CustomerAddressController : ControllerBase
     {
         private readonly Sender sender = new Sender();
         private readonly ICustomerManager imanager;
-        public CustomerController(ICustomerManager imanager)
+        public CustomerAddressController(ICustomerManager imanager)
         {
             this.imanager = imanager;
         }
@@ -45,10 +45,10 @@ namespace BookStore_Api.Controllers
         /// <returns></returns>
         [Route("GetCustomerAddress")]
         [HttpGet]
-        public CustomerAdress GetCustomerAddress(int bookId)
+        public CustomerAdress GetCustomerAddress(string email)
         {
             sender.Send("Get all address");
-            return this.imanager.GetCustomerAddress(bookId);
+            return this.imanager.GetCustomerAddress(email);
         }
 
     }

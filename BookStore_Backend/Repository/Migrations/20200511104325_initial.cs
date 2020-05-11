@@ -11,19 +11,18 @@ namespace Repository.Migrations
                 name: "Address",
                 columns: table => new
                 {
-                    BookID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Email = table.Column<string>(nullable: false),
                     FullName = table.Column<string>(nullable: false),
                     PhoneNumber = table.Column<int>(nullable: false),
-                    Email = table.Column<string>(nullable: false),
                     Address = table.Column<string>(nullable: false),
                     Pincode = table.Column<int>(nullable: false),
                     Citytown = table.Column<string>(nullable: false),
-                    Landmark = table.Column<string>(nullable: false)
+                    Landmark = table.Column<string>(nullable: true),
+                    AddressType = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Address", x => x.BookID);
+                    table.PrimaryKey("PK_Address", x => x.Email);
                 });
 
             migrationBuilder.CreateTable(
@@ -33,10 +32,10 @@ namespace Repository.Migrations
                     BookID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     BookTitle = table.Column<string>(nullable: false),
-                    AutherName = table.Column<string>(nullable: false),
+                    AuthorName = table.Column<string>(nullable: false),
                     BookImage = table.Column<string>(nullable: false),
                     BookPrice = table.Column<double>(nullable: false),
-                    NumberOfBooks = table.Column<int>(nullable: false)
+                    Availability = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -49,11 +48,24 @@ namespace Repository.Migrations
                 {
                     CartID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    BookId = table.Column<int>(nullable: false)
+                    BookId = table.Column<int>(nullable: false),
+                    NumOfCopies = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Cart", x => x.CartID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Email = table.Column<string>(nullable: false),
+                    Password = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Email);
                 });
         }
 
@@ -67,6 +79,9 @@ namespace Repository.Migrations
 
             migrationBuilder.DropTable(
                 name: "Cart");
+
+            migrationBuilder.DropTable(
+                name: "Users");
         }
     }
 }
