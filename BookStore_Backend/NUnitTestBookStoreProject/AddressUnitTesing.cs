@@ -1,5 +1,6 @@
 ﻿using BookStore_Api.Controllers;
 using Manager.CustomerManager;
+<<<<<<< HEAD
 
 using Moq;
 using NUnit.Framework;
@@ -7,6 +8,12 @@ using NUnit.Framework;
 using Model;
 using Repository;
 
+=======
+using Model;
+using Moq;
+using NUnit.Framework;
+using Repository;
+>>>>>>> 27c0d5b3e85f55f3be70bdfaeda7a57e78cf9e5a
 using Repository.CustomerRepo;
 using System;
 using System.Collections.Generic;
@@ -17,6 +24,7 @@ namespace NUnitTestBookStoreProject
 {
     public class AddressUnitTesing
     {
+<<<<<<< HEAD
 
        
 
@@ -26,12 +34,20 @@ namespace NUnitTestBookStoreProject
           FullName="Aythhgg",
           PhoneNumber=7847456,
           Email="ff57@gmail.com",
+=======
+        CustomerAdress address = new CustomerAdress()
+        {
+          FullName="Imran",
+          PhoneNumber=7847456,
+          Email="Imr57@gmail.com",
+>>>>>>> 27c0d5b3e85f55f3be70bdfaeda7a57e78cf9e5a
           Address="ABC",
           Pincode=845,
           Citytown="MTY",
           Landmark="BTM"
 
         };
+<<<<<<< HEAD
        
         [Test]
         public void AddAddressManagerTest()
@@ -84,5 +100,26 @@ namespace NUnitTestBookStoreProject
         //    var result=this.
         //}
 
+=======
+        [Test]
+        public void AddAddressManagerTest()
+        {
+            var repo = new Mock<ICustomer>();
+            var manager = new ImpCustomerManager(repo.Object);
+           
+            var data = manager.AddCustomerAddress(address);
+            Assert.NotNull(data);
+           
+        }
+        [Test]
+        public void AddAddressControllerTest()
+        {
+            var service = new Mock<ICustomerManager>();
+            var controller = new CustomerAddressController(service.Object);
+            var data = controller.AddCustomerAddress(address);
+            Assert.IsNotNull(data);
+        }
+        
+>>>>>>> 27c0d5b3e85f55f3be70bdfaeda7a57e78cf9e5a
     }
 }

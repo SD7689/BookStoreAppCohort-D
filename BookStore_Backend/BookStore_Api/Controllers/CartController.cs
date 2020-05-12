@@ -23,7 +23,7 @@ namespace BookStore_Api.Controllers
 
         [Route("AddToCart")]
         [HttpPost]
-        public async Task<IActionResult> AddBook(Cart cart)
+        public async Task<IActionResult> AddToCart(Cart cart)
         {
             var result = await this.manager.AddToCart(cart);
             sender.Send("Add book in cart");
@@ -48,6 +48,19 @@ namespace BookStore_Api.Controllers
                 return this.Ok(cartData);
             }
             return this.BadRequest();
+        }
+        [Route("GetCartValue")]
+        [HttpGet]
+        public IEnumerable<Book> GetCartValue()
+        {
+            return this.manager.GetAllCartValue();
+        }
+        [Route("NumOfBook")]
+        [HttpGet]
+        public ActionResult BookCount()
+        {
+            var count=this.manager.NumOfBook();
+            return this.Ok(count);
         }
     }
 }

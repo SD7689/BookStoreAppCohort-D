@@ -10,13 +10,26 @@
 }
 
 .book-icon {
-  margin-left: 7em;
-  margin-right: 12px;
-  margin-top: 5px;
+  margin-left: 13em;
+  margin-right: 15px;
+  margin-top: 3px;
   color: whitesmoke;
 }
 .cart-icon{
   color: whitesmoke;
+}
+.counter-div{
+  margin-top: 8px;
+    /* border: 1px solid; */
+    border-radius: 240px;
+    height: 12px;
+    /* width: 53px; */
+    margin-left: -5px;
+    padding: 6px;
+    padding-top: 0px;
+    font-size: 13px;
+    color: black;
+    background: whitesmoke;
 }
 .bookicon{
   font-size: 24px;
@@ -24,7 +37,10 @@
 
 .book-title{
   color: whitesmoke;
-  font-family: monospace;
+  font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* display: flex; */
+  /* align-items: center; */
+  margin-top: -3px;
 }
 
 .search-bar{
@@ -32,29 +48,53 @@
     margin-left: 4em;
 }
 
+.MuiInputBase-root{
+  padding-left: 7px;
+  color: gray;
+}
+
+.MuiInput-root {
+  position: relative;
+  height: 42px;
+}
+
 .search {
   width: 403px;
   border-radius: 4px;
-  height: 17px;
-  opacity: 76%;
+  background-color: white;
+    /*height: 30px;*/
+    opacity: 90%;
 
 }
-
+.MuiTextField-root{
+  height: 30px;
+  opacity: 90%;
+}
 .cart-div{
   display: flex;
   color: whitesmoke;
   font-size: 13px;
-  font-family: monospace;
+  font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   width: 117px;
   padding-left: 372px;
 }
 
 .App-logo{
   display: flex;
-    padding: 0px;
+    padding-left: 47px;
+    padding-right: 47px;
     height: 50%;
+    width: 58%;
+    padding-right: -135px;
+    /* margin-left: 65px; */
+    margin-top: 12px;
 }
-
+.book-count-div{
+  color: #847575;
+  margin-top: 11px;
+  font-size: 11px;
+  margin-left: -771px;
+}
 .cart-icon-div {
   margin-top: 14px;
     margin-left: 6px;
@@ -63,15 +103,15 @@
   font-size: 13px;
   display: flex;
   justify-content: center;
-  padding-top: 13px;
+  padding-top: 12px;
 }
 .footer {
-  position: relative;
+   position: relative;
     width: 100%;
     background-color: #333;
     color: white;
-    text-align: center;
     height: 45px;
+    bottom: 0px;
 }
 
 /* Style the links inside the navigation bar */
@@ -103,95 +143,384 @@
 }
 
 .book-card-div {
-  box-shadow: 6px 10px 20px 0 rgba(0,0,0,0.2);
+  box-shadow: 14px 10px 11px 0px rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 256px;
+  width: 228px;
   border-radius: 5px;
   border: 1px solid black;
-  margin: 10px;
+  margin: 22px;
   height: 322px;
 
 }
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+.book-card-div:hover {
+  box-shadow: 11px 11px 11px 5px rgba(0, 0, 0, 0.30);
+  /*height: 323px;*/
+  /*width:229px;*/
 }
 
 
 .MuiContainer-root {
   padding-left: 44px !important;
-}
 
+}
+.MuiContainer-maxWidthLg{
+  max-width: 1320px !important;
+}
 .card-header{
   padding-top: 75px;
-  padding-left: 126px;
+  padding-left: 164px;
   padding-bottom: 1px;
   display: flex;
   justify-content: space-between;
 }
+
 .sort-by-div{
-  margin-right: 133px;
+  margin-right: 230px;
 }
 .select-bar{
   height: 30px;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: #eae6e6;
+  width: 141px;
+  /*background-color: #eae6e6;*/
 }
 .book-title-div{
-  position: relative;
-  left: 23px;
-    font-family: cursive;
+    font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin-left: 20px;
 }
 .author-name-div{
-  position: relative;
-  left: 23px;
-  top: -19px;
-  font-family: cursive;
+  font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 13px;
   color: #968e8e;
+  margin-left: 20px;
+  margin-top: -15px;
 }
 .book-price-div{
-  position: relative;
-  left: 23px;
-    top: -32px;
-    font-family: cursive;
+    font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin-left: 20px;
+    margin-top: -9px;
+    font-weight: 500;
 }
 
 .button-div{
-  position: relative;
     display: flex;
     justify-content: space-around;
-    bottom: 20px;
+    margin: 5px;
 }
 .add-bag-button{
   height: 29px;
   width: 110px;
-  background-color: #545050;
+  background-color: #791212;
   color: whitesmoke;
-  font-family: cursive;
+  font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 5px;
+}
+.add-bag-button:hover{
+  background-color:#a22121;
+  transition-duration: .3s;
+  width: 115px;
+}
+.add-bag-button:focus{
+  width:174px;
+  background-color:#a22121;
+  margin-left: 7px;
+  margin-right:7px;
 }
 .wishlist-button{
-  width: 84px;
-    background-color: #ce3a3a;
-    color: whitesmoke;
-    font-family: cursive;
+  width: 79px;
+    background-color: #ffffff;
+    color: black;
+    font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     border: 1px solid black;
-    border-radius: 10px;
+    border-radius: 5px;
 }
-
+.wishlist-button:hover{
+  background-color: #f7f3f3;
+  transition-duration: .3s;
+  width: 83px;
+}
+.wishlist-button:focus{
+  width: 93px;
+  background-color: #efe3e3;
+}
 .MuiContainer-maxWidthLg {
     margin-left: 22px !important;
 }
 .BookCard-Header {
   font-size: 22px;
   font-family: cursive;
+  margin-left: 60px;
 }
 .card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  padding-left: 50px;
+  padding-left: 133px;
+  min-height: 578px;
+}
+
+/* OrderPlaced Css */
+
+.order-placed-container{
+  /*border: 1px solid black;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*margin-top: 81px;*/
+  height: 609px;
+  flex-direction: column;
+}
+.table-div{
+  position: relative;
+    top: 52px;
+    width: 772px;
+    height: 52px;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+table {
+  font-family:  adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+.order-image-div{
+  height: 112px;
+    position: absolute;
+    top: 83px;
+    left: 580px;
+}
+.order-info{
+  text-align: center;
+  font-weight: 600;
+  font-family:  adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.continue-shopping-button-div{
+display: flex;
+    /* margin-top: 2px; */
+    position: absolute;
+    top: 551px;
+    height: 35px;
+}
+.continue-shopping-button{
+  background-color: dodgerblue;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    width: 190px;
+    font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.continue-shopping-button:hover{
+  background-color: #007bf3;
+}
+
+/* AddCartComponent Css */
+
+.cart-component
+{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1423px;
+}
+
+.MuiGrid-spacing-xs-5 {
+  width: calc(100% + 40px);
+  margin: -20px;
+  margin-top: 117px;
+}
+
+.grid-div{
+  margin-top: -189px;
+}
+
+.order-details-div{
+  display: flex;
+}
+
+.cart-title-div {
+  padding: 1px;
+  margin-left: 24px;
+}
+
+.img-book {
+  width: 212px;
+  border: 2px solid;
+  margin-left: 26px;
+  margin-bottom: 15px;
+}
+
+.plus-btn {
+  border-radius: 20px;
+    border: 1px solid;
+    margin: 6px;
+    width: 27px;
+    height: 25px;
+    width: 28px;
+}
+
+.MuiInputBase-input {
+  height:7px !important;
+}
+
+.input-type{
+  width: 51px;
+    height: 20px;
+    text-align: center;
+    padding-top: 10px;
+    border: 2px solid blue;
+    border-radius: 5px;
+}
+.quantity-div {
+  align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 14px;
+}
+
+.remove-btn {
+  margin-left: 20px;
+    height: 29px;
+    width: 73px;
+    border: 2px solid brown;
+    color: brown;
+    background: white;
+    border-radius: 3px;
+}
+
+.order-logo{
+  width: 118px;
+    margin-left: 47px;
+    margin-top: 2px;
+}
+
+.icon {
+  margin-left: -5px;
+  margin-top: -1px;
+}
+
+.minus-btn {
+  border-radius: 20px;
+    border: 1px solid;
+    margin: 6px;
+    width: 27px;
+    height: 25px;
+}
+
+.checkout-div{
+  display: flex;
+    justify-content: flex-end;
+    padding: 14px;
+    margin-right: 45px;
+}
+
+.checkout-button {
+  color: whitesmoke;
+    background-color: #0D47A1;
+    height: 31px;
+    width: 160px;
+    border-radius: 5px;
+    border: 1px;
+}
+
+.order-sumary{
+  border: 1px solid #757575;
+  box-shadow: inset 2px 3px 3px -1px #9E9E9E, 1px 3px 3px 0px #9E9E9E, 2px 2px 3px 2px #9E9E9E;
+    border-radius: 2px;
+}
+
+.cart-order{
+  border: 1px solid #757575;
+  box-shadow: inset 2px 3px 3px -1px #9E9E9E, 1px 3px 3px 0px #9E9E9E, 2px 2px 3px 2px #9E9E9E;
+    border-radius: 2px;
+    margin-top: 176px;
+}
+
+.Customer-address-div{
+  border: 1px solid #757575;
+  box-shadow: inset 2px 3px 3px -1px #9E9E9E, 1px 3px 3px 0px #9E9E9E, 2px 2px 3px 2px #9E9E9E;
+    border-radius: 2px;
+}
+
+.address-title{
+  padding: 1px;
+  margin-left: 24px;
+}
+
+.row-1{
+  display: flex;
+    justify-content: space-around;
+    margin-left: -43px;
+    padding: 15px;
+}
+
+.row-2{
+  display: flex;
+    justify-content: space-around;
+    margin-left: -43px;
+    padding: 15px;
+}
+
+.row-3{
+  display: flex;
+    justify-content: space-around;
+    margin-left: -43px;
+    padding: 15px;
+}
+
+.row-4{
+  display: flex;
+    justify-content: space-around;
+    margin-left: -43px;
+    padding: 15px;
+}
+
+/* .MuiFormControl-root {
+  border: 1px solid black;
+} */
+
+.text-field-address{
+  width: 900px;
+}
+
+.text{
+  width:30px;
+  height:30px;
+}
+
+.text-field{
+  border-radius: 2px;
+  width: 395px;
+}
+
+.radio-div{
+  margin-left: 27px;
+}
+
+.radio-values{
+  display:flex;
+}
+
+
+.continue-div{
+  display: flex;
+    justify-content: flex-end;
+    padding: 14px;
+    margin-right: 45px;
+}
+.address-button{
+  color: whitesmoke;
+    background-color: #0D47A1;
+    height: 31px;
+    width: 160px;
+    border-radius: 5px;
+    border: 1px;
 }

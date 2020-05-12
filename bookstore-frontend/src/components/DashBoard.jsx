@@ -2,90 +2,56 @@ import React,{Component} from 'react';
 import {Header} from './Header';
 import {BookCard} from './BookCard';
 import {Footer} from './Footer';
+import axios from 'axios'
 
 export class DashBoard extends Component {
     state={
-        books:[
-        {
-            bookid : 212323,
-            bookName : "Baghban",
-            authorName : "shreyash kaushal",
-            price : 1235,
-            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
-        },
-        {
-            bookid : 212323,
-            bookName : "biography",
-            authorName : "saad samim",
-            price : 12356,
-            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
-
-        },
-        {
-            bookid : 212323,
-            bookName : "JK rowling",
-            authorName : "shivam",
-            price : 45394,
-            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
-
-        },
-        {
-            bookid : 212323,
-            bookName : "JK rowling",
-            authorName : "shivam",
-            price : 45394,
-            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
-
-        },
-        {
-            bookid : 212323,
-            bookName : "JK rowling",
-            authorName : "shivam",
-            price : 45394,
-            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
-
-        },
-        {
-            bookid : 212323,
-            bookName : "JK rowling",
-            authorName : "shivam",
-            price : 45394,
-            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
-
-        },
-        {
-            bookid : 212323,
-            bookName : "JK rowling",
-            authorName : "shivam",
-            price : 45394,
-            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
-
-        },
-        {
-            bookid : 212323,
-            bookName : "JK rowling",
-            authorName : "shivam",
-            price : 45394,
-            description : "bfjhgsbmhgszbxkvbgmbfdkjbvmbfmvbdxbcmf",
-            image : ""
-
-        }
-    ]
+        books:[],
+        NumOfBooks: 0,
+        cartCounter:0
     }
+
+    cartCountHandler = async () => {
+        const count = this.state.cartCounter + 1;
+        await this.setState({
+            cartCounter: count
+        })
+        console.log("counter", this.state.cartCounter)
+    }
+
+    componentDidMount() {
+        axios.get("https://localhost:44394/api/Book/GetAllBook")
+            .then(response => {
+                const books = response.data;
+                this.setState({
+                    books: books
+                })
+            })
+            axios.get("https://localhost:44394/api/Book/NumOfBooks")
+            .then(response => {
+                const NumOfBooks = response.data;
+                this.setState({
+                    NumOfBooks: NumOfBooks
+                })
+            })
+    }
+    /*componentDidMount() {
+        axios.get("https://localhost:44394/api/Book/NumOfBooks")
+            .then(response => {
+                const NumOfBooks = response.data;
+                this.setState({
+                    NumOfBooks: NumOfBooks
+                })
+            })
+    }*/
     render()
     {
         return (
            <div className ='dashboard-div'>
-               <Header/>
+               <Header cartCounter={this.state.cartCounter}/>
                <div className='card-header'>
                         <div className="BookCard-Header">Books</div>
+                        <div className="book-count-div">({this.state.NumOfBooks} items)</div>
                         <div class="sort-by-div">
                     <select className="select-bar">
                         <option>Sort By</option>
@@ -95,7 +61,7 @@ export class DashBoard extends Component {
                     </select>
             </div>
                </div>
-               <BookCard books={this.state.books} />
+               <BookCard cartCounter={this.cartCountHandler} books={this.state.books} />
                <Footer/>
            </div>
         );

@@ -17,12 +17,12 @@ namespace Model
         [Required]
         public string BookTitle { get; set; }
         [Required]
-        public string AutherName { get; set; }
+        public string AuthorName { get; set; }
         [Required]
         public string BookImage { get; set; }
         [Required]
         public double BookPrice { get; set; }
         [Required]
-        public int NumberOfBooks { get; set; }
+        public bool Availability { get; set; }
     }
 }
