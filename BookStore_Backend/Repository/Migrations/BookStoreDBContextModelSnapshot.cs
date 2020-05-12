@@ -24,8 +24,10 @@ namespace Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AutherName")
+                    b.Property<string>("AuthorName")
                         .IsRequired();
+
+                    b.Property<bool>("Availability");
 
                     b.Property<string>("BookImage")
                         .IsRequired();
@@ -34,8 +36,6 @@ namespace Repository.Migrations
 
                     b.Property<string>("BookTitle")
                         .IsRequired();
-
-                    b.Property<int>("NumberOfBooks");
 
                     b.HasKey("BookID");
 
@@ -71,8 +71,7 @@ namespace Repository.Migrations
                     b.Property<string>("FullName")
                         .IsRequired();
 
-                    b.Property<string>("Landmark")
-                        .IsRequired();
+                    b.Property<string>("Landmark");
 
                     b.Property<string>("Password")
                         .IsRequired();
@@ -84,6 +83,19 @@ namespace Repository.Migrations
                     b.HasKey("Email");
 
                     b.ToTable("Address");
+                });
+
+            modelBuilder.Entity("Model.User", b =>
+                {
+                    b.Property<string>("Email")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Password")
+                        .IsRequired();
+
+                    b.HasKey("Email");
+
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

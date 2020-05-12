@@ -11,11 +11,11 @@ namespace BookStore_Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CustomerController : ControllerBase
+    public class CustomerAddressController : ControllerBase
     {
         private readonly Sender sender = new Sender();
         private readonly ICustomerManager imanager;
-        public CustomerController(ICustomerManager imanager)
+        public CustomerAddressController(ICustomerManager imanager)
         {
             this.imanager = imanager;
         }
