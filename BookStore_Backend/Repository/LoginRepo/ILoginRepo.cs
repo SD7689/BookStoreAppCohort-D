@@ -8,7 +8,7 @@ namespace Repository.LoginRepo
 {
     public interface ILoginRepo
     {
-        bool Login(string email, string password);
+        Object Login(string email, string password);
         Task<int> AddUser(User user);
     }
 }

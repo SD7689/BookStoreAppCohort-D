@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace Manager.CartManager
 {
@@ -14,7 +15,7 @@ namespace Manager.CartManager
         
         int NumOfBook();
 
-        IEnumerable<Book> GetAllCartValue();
+        IQueryable GetAllCartValue();
 
     }
 }

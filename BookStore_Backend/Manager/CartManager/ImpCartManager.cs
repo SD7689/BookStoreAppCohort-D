@@ -2,6 +2,7 @@
 using Repository.CartRepo;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,7 +21,7 @@ namespace Manager.CartManager
             return this.manager.AddToCart(cart);
         }
 
-        public IEnumerable<Book> GetAllCartValue()
+        public IQueryable GetAllCartValue()
         {
             return this.manager.GetAllCartValue();
         }
