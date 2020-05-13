@@ -24,8 +24,16 @@ export class BookCard extends Component {
                                         </div>
                                     </div>
                                     <div className="button-div">
-                                        <button className="add-bag-button" onClick={this.props.cartCountHandler}>Add To Bag</button>
-                                        <button className="wishlist-button">Wishlist</button>
+                            
+                            {
+                                this.props.showWishlist?
+                                <button className="added-bag-button" onClick={this.props.cartCounter} disabled={this.props.disableButton} >{this.props.text}</button>
+                            :<>
+                            <button className="add-bag-button" onClick={this.props.cartCounter} >{this.props.text}</button>
+                            <button className="wishlist-button">Wishlist</button>
+                            </>
+                            }
+                            
                                     </div>
                                 </div>
                             );
