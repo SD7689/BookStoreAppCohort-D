@@ -1,6 +1,7 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,7 +15,7 @@ namespace Manager.CartManager
         
         int NumOfBook();
 
-        IEnumerable<Book> GetAllCartValue();
+        IQueryable GetAllCartValue();
 
     }
 }
