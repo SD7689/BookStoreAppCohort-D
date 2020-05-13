@@ -4,14 +4,17 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repository.CartRepo
+namespace Manager.CartManager
 {
-    public interface ICartRepo
+    public interface ICartManager
     {
         Task<int> AddToCart(Cart cart);
         Cart RemoveCart(int CartID);
+<<<<<<< HEAD
+        IEnumerable<Cart> GetAllCartValue();
         int NumOfBook();
+=======
         IEnumerable<Book> GetAllCartValue();
-
+>>>>>>> 23e2574da60b31734fabf1cb0ed8c8bdb05111d5
     }
 }

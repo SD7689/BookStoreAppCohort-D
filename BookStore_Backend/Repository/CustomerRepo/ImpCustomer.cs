@@ -22,10 +22,10 @@ namespace Repository.CustomerRepo
             return result;
         }
 
-        public CustomerAdress GetCustomerAddress(int bookId)
+        public CustomerAdress GetCustomerAddress(string email)
         {
             
-            return bookStoreDB.Address.Find(bookId);
+            return bookStoreDB.Address.Find(email);
         }
     }
 }

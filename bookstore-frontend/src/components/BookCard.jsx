@@ -5,27 +5,26 @@ import Container from '@material-ui/core/Container';
 export class BookCard extends Component {
     render() {
         return (
-
             <Container maxWidth="lg">
                 <div className="card-container">
                     {
                         this.props.books.map((ele) => {
                             return (
                                 <div className="book-card-div">
-                                    <img src={logo} className="App-logo" />
+                                    <img src={ ele.bookImage } className="App-logo" />
                                     <div className="book-item-info">
                                         <div className="book-title-div">
-                                            <h4 >{ele.bookName}</h4>
+                                            <h4 >{ele.bookTitle}</h4>
                                         </div>
                                         <div className="author-name-div">
-                                            <p>{ele.authorName}</p>
+                                            <p>{ele.autherName}</p>
                                         </div>
                                         <div className="book-price-div">
-                                            <p>{ele.price}</p>
+                                            <p>Rs. {ele.bookPrice}/-</p>
                                         </div>
                                     </div>
                                     <div className="button-div">
-                                        <button className="add-bag-button">Add To Bag</button>
+                                        <button className="add-bag-button" onClick={this.props.cartCountHandler}>Add To Bag</button>
                                         <button className="wishlist-button">Wishlist</button>
                                     </div>
                                 </div>
@@ -34,7 +33,7 @@ export class BookCard extends Component {
                     }
                 </div>
             </Container>
-
+           
         );
     }
 }
