@@ -11,11 +11,8 @@ namespace Repository.Migrations
                 name: "Address",
                 columns: table => new
                 {
-<<<<<<< HEAD:BookStore_Backend/Repository/Migrations/20200509193558_initial.cs
                     CustomerId = table.Column<int>(nullable: false),
-=======
-                    Email = table.Column<string>(nullable: false),
->>>>>>> 27c0d5b3e85f55f3be70bdfaeda7a57e78cf9e5a:BookStore_Backend/Repository/Migrations/20200511104325_initial.cs
+                    Email = table.Column<string>(nullable: true),
                     FullName = table.Column<string>(nullable: false),
                     PhoneNumber = table.Column<int>(nullable: false),
                     Address = table.Column<string>(nullable: false),
@@ -26,11 +23,7 @@ namespace Repository.Migrations
                 },
                 constraints: table =>
                 {
-<<<<<<< HEAD:BookStore_Backend/Repository/Migrations/20200509193558_initial.cs
                     table.PrimaryKey("PK_Address", x => x.CustomerId);
-=======
-                    table.PrimaryKey("PK_Address", x => x.Email);
->>>>>>> 27c0d5b3e85f55f3be70bdfaeda7a57e78cf9e5a:BookStore_Backend/Repository/Migrations/20200511104325_initial.cs
                 });
 
             migrationBuilder.CreateTable(

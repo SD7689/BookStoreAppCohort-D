@@ -79,13 +79,6 @@ namespace NUnitTestBookStoreProject
             var Controller = new BookController(service.Object);
             var actual = Controller.AddBookImage(file, 2);
             Assert.IsNotNull(actual);
-<<<<<<< HEAD
-
-            Assert.Pass();
-
-=======
-            Assert.Pass();
->>>>>>> 27c0d5b3e85f55f3be70bdfaeda7a57e78cf9e5a
         }
     }
 }

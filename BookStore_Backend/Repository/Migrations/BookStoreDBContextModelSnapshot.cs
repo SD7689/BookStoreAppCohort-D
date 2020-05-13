@@ -59,12 +59,7 @@ namespace Repository.Migrations
 
             modelBuilder.Entity("Model.CustomerAdress", b =>
                 {
-<<<<<<< HEAD
                     b.Property<int>("CustomerId");
-=======
-                    b.Property<string>("Email")
-                        .ValueGeneratedOnAdd();
->>>>>>> 27c0d5b3e85f55f3be70bdfaeda7a57e78cf9e5a
 
                     b.Property<string>("Address")
                         .IsRequired();
@@ -73,6 +68,8 @@ namespace Repository.Migrations
 
                     b.Property<string>("Citytown")
                         .IsRequired();
+
+                    b.Property<string>("Email");
 
                     b.Property<string>("FullName")
                         .IsRequired();
@@ -83,11 +80,7 @@ namespace Repository.Migrations
 
                     b.Property<int>("Pincode");
 
-<<<<<<< HEAD
                     b.HasKey("CustomerId");
-=======
-                    b.HasKey("Email");
->>>>>>> 27c0d5b3e85f55f3be70bdfaeda7a57e78cf9e5a
 
                     b.ToTable("Address");
                 });

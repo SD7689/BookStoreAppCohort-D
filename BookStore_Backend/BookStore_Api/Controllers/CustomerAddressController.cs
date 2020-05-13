@@ -45,18 +45,11 @@ namespace BookStore_Api.Controllers
         /// <returns></returns>
         [Route("GetCustomerAddress")]
         [HttpGet]
-<<<<<<< HEAD:BookStore_Backend/BookStore_Api/Controllers/CustomerController.cs
-        public CustomerAdress GetCustomerAddress(int addressId)
-        {
-            sender.Send("Get all address");
-            return this.imanager.GetCustomerAddress(addressId);
-=======
         public CustomerAdress GetCustomerAddress(string email)
         {
             sender.Send("Get all address");
             return this.imanager.GetCustomerAddress(email);
->>>>>>> 27c0d5b3e85f55f3be70bdfaeda7a57e78cf9e5a:BookStore_Backend/BookStore_Api/Controllers/CustomerAddressController.cs
-        }
+       }
 
     }
 }

@@ -12,12 +12,12 @@ namespace Model
    public class CustomerAdress
     {
         [Key]
-<<<<<<< HEAD
+
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CustomerId { get; set; }
-=======
+
         public string Email { get; set; }
->>>>>>> 27c0d5b3e85f55f3be70bdfaeda7a57e78cf9e5a
+
         [Required]
         public string FullName { get; set; }
         [Required]
