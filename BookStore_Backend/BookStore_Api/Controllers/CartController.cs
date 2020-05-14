@@ -51,7 +51,7 @@ namespace BookStore_Api.Controllers
         }
         [Route("GetCartValue")]
         [HttpGet]
-        public IEnumerable<Book> GetCartValue()
+        public IQueryable GetCartValue()
         {
             return this.manager.GetAllCartValue();
         }

@@ -20,16 +20,16 @@
 }
 .counter-div{
   margin-top: 8px;
-    /* border: 1px solid; */
-    border-radius: 240px;
+    border-radius: 480px;
     height: 12px;
-    /* width: 53px; */
-    margin-left: -5px;
-    padding: 6px;
+    margin-left: -12px;
+    padding: 5px;
     padding-top: 0px;
-    font-size: 13px;
+    font-size: 12px;
     color: black;
-    background: whitesmoke;
+    background: #fbe67d;
+    font-weight: 700;
+    border: none;
 }
 .bookicon{
   font-size: 24px;
@@ -90,10 +90,10 @@
     margin-top: 12px;
 }
 .book-count-div{
-  color: #847575;
+  color: #3c3636;
   margin-top: 11px;
-  font-size: 11px;
-  margin-left: -771px;
+  font-size: 13px;
+  margin-left: -777px;
 }
 .cart-icon-div {
   margin-top: 14px;
@@ -130,7 +130,11 @@
   background-color: #ddd;
   color: black;
 }
-
+.cart-button{
+  background: none;
+    border: none;
+    outline: none;
+}
 /* Add an active class to highlight the current page */
 .topnav a.active {
   background-color: #4CAF50;
@@ -154,7 +158,7 @@
 }
 
 .book-card-div:hover {
-  box-shadow: 11px 11px 11px 5px rgba(0, 0, 0, 0.30);
+  box-shadow: 11px 11px 11px 5px rgba(0, 0, 0, 0.40);
   /*height: 323px;*/
   /*width:229px;*/
 }
@@ -183,6 +187,7 @@
   border: 1px solid black;
   border-radius: 5px;
   width: 141px;
+  outline: none;
   /*background-color: #eae6e6;*/
 }
 .book-title-div{
@@ -194,12 +199,12 @@
   font-size: 13px;
   color: #968e8e;
   margin-left: 20px;
-  margin-top: -15px;
+  margin-top: -18px;
 }
 .book-price-div{
     font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     margin-left: 20px;
-    margin-top: -9px;
+    margin-top: -11px;
     font-weight: 500;
 }
 
@@ -216,6 +221,18 @@
   font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   border: 1px solid black;
   border-radius: 5px;
+  outline: none;
+}
+
+.added-bag-button{
+  height: 29px;
+  width: 187px;
+  background-color: dodgerblue;
+  color: whitesmoke;
+  font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
 }
 .add-bag-button:hover{
   background-color:#a22121;
@@ -223,7 +240,7 @@
   width: 115px;
 }
 .add-bag-button:focus{
-  width:174px;
+  /*width:174px;*/
   background-color:#a22121;
   margin-left: 7px;
   margin-right:7px;
@@ -235,6 +252,7 @@
     font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     border: 1px solid black;
     border-radius: 5px;
+    outline: none;
 }
 .wishlist-button:hover{
   background-color: #f7f3f3;
@@ -264,13 +282,16 @@
 /* OrderPlaced Css */
 
 .order-placed-container{
-  /*border: 1px solid black;*/
   display: flex;
-  justify-content: center;
+  /* height: 522px; */
+  /* justify-content: center; */
   align-items: center;
-  /*margin-top: 81px;*/
-  height: 609px;
+  /* margin-top: 81px; */
+  min-height: 683px;
   flex-direction: column;
+}
+.upper-image-div{
+  margin-top: 102px;
 }
 .table-div{
   position: relative;
@@ -294,7 +315,6 @@ table {
 }
 .order-image-div{
   height: 112px;
-    position: absolute;
     top: 83px;
     left: 580px;
 }
@@ -307,7 +327,7 @@ table {
 display: flex;
     /* margin-top: 2px; */
     position: absolute;
-    top: 551px;
+    top: 607px;
     height: 35px;
 }
 .continue-shopping-button{
@@ -317,6 +337,32 @@ display: flex;
     border-radius: 5px;
     width: 190px;
     font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.continue-cart-div{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+.continue-shopping-cart-button{
+  background-color: dodgerblue;
+  height: 32px;
+  /* margin-top: -99px; */
+  margin-block-start: auto;
+  /* padding-bottom: 5px; */
+  border: none;
+  color: white;
+  border-radius: 5px;
+  width: 190px;
+  font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.continue-shopping-details-button{
+  background-color: dodgerblue;
+  border: none;
+  color: white;
+  height: 32px;
+  border-radius: 5px;
+  width: 190px;
+  font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .continue-shopping-button:hover{
   background-color: #007bf3;
@@ -329,7 +375,7 @@ display: flex;
   display: flex;
     align-items: center;
     justify-content: center;
-    height: 1423px;
+    height: 1090px;
 }
 
 .MuiGrid-spacing-xs-5 {
@@ -348,22 +394,22 @@ display: flex;
 
 .cart-title-div {
   padding: 1px;
-  margin-left: 24px;
+  margin-left: 58px;
 }
 
 .img-book {
-  width: 212px;
-  border: 2px solid;
-  margin-left: 26px;
-  margin-bottom: 15px;
+  width: 220px;
+    /* border: 2px solid; */
+    margin-left: 26px;
+    margin-bottom: 15px;
 }
 
 .plus-btn {
   border-radius: 20px;
-    border: 1px solid;
+    border: 1px solid gray;
     margin: 6px;
     width: 27px;
-    height: 25px;
+    height: 27px;
     width: 28px;
 }
 
@@ -373,11 +419,11 @@ display: flex;
 
 .input-type{
   width: 51px;
-    height: 20px;
-    text-align: center;
-    padding-top: 10px;
-    border: 2px solid blue;
-    border-radius: 5px;
+  height: 20px;
+  text-align: center;
+  padding-top: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
 }
 .quantity-div {
   align-items: center;
@@ -388,18 +434,27 @@ display: flex;
 
 .remove-btn {
   margin-left: 20px;
-    height: 29px;
-    width: 73px;
-    border: 2px solid brown;
-    color: brown;
-    background: white;
-    border-radius: 3px;
+  height: 29px;
+  width: 73px;
+  border: 2px solid brown;
+  color: brown;
+  background: #efe7e7;
+  background: #f5eded;
+  border-radius: 3px;
+  outline: none;
 }
 
 .order-logo{
-  width: 118px;
-    margin-left: 47px;
-    margin-top: 2px;
+  width: 106px;
+  margin-left: 30px;
+  margin-top: 16px;
+  /* font-size: 31px; */
+  height: 134px;
+}
+.book-details-div{
+  margin-left: -23px;
+  /* margin-right: -159px; */
+  margin-top: -10px;
 }
 
 .icon {
@@ -409,7 +464,7 @@ display: flex;
 
 .minus-btn {
   border-radius: 20px;
-    border: 1px solid;
+    border: 1px solid gray;
     margin: 6px;
     width: 27px;
     height: 25px;
@@ -424,30 +479,33 @@ display: flex;
 
 .checkout-button {
   color: whitesmoke;
-    background-color: #0D47A1;
-    height: 31px;
-    width: 160px;
-    border-radius: 5px;
-    border: 1px;
+  background-color: dodgerblue;
+  height: 32px;
+  width: 190px;
+  border-radius: 5px;
+  border: 1px;
 }
 
 .order-sumary{
   border: 1px solid #757575;
-  box-shadow: inset 2px 3px 3px -1px #9E9E9E, 1px 3px 3px 0px #9E9E9E, 2px 2px 3px 2px #9E9E9E;
     border-radius: 2px;
 }
 
 .cart-order{
   border: 1px solid #757575;
-  box-shadow: inset 2px 3px 3px -1px #9E9E9E, 1px 3px 3px 0px #9E9E9E, 2px 2px 3px 2px #9E9E9E;
-    border-radius: 2px;
-    margin-top: 176px;
+  /* box-shadow: inset 2px 3px 3px -1px #9E9E9E, 1px 3px 3px 0px #9E9E9E, 2px 2px 3px 2px #9E9E9E; */
+  border-radius: 5px;
+  margin-top: 358px;
+  padding-bottom: 10px;
 }
-
+.MuiGrid-spacing-xs-5 {
+  width: calc(100% + 40px);
+  margin: -20px;
+  padding-bottom: 292px;
+  }
 .Customer-address-div{
   border: 1px solid #757575;
-  box-shadow: inset 2px 3px 3px -1px #9E9E9E, 1px 3px 3px 0px #9E9E9E, 2px 2px 3px 2px #9E9E9E;
-    border-radius: 2px;
+    border-radius: 5px;
 }
 
 .address-title{
@@ -510,11 +568,14 @@ display: flex;
 }
 
 
-.continue-div{
+.continue-details-div{
   display: flex;
-    justify-content: flex-end;
-    padding: 14px;
-    margin-right: 45px;
+  justify-content: flex-end;
+  /* padding: 11px; */
+  margin-right: 21px;
+  padding-bottom: 10px;
+  padding-right: -14px;
+  justify-content: flex-end;
 }
 .address-button{
   color: whitesmoke;

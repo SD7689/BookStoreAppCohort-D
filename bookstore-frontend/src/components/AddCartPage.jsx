@@ -18,7 +18,6 @@ export class AddCartPage extends Component {
 
         return (
             <>
-                <Header />
                 <div className="cart-component">
                     <Container maxWidth="lg">
                         <div className="grid-div">
@@ -51,16 +50,23 @@ export class AddCartPage extends Component {
                                                     <button className="plus-btn"><AddRoundedIcon className="icon" /></button>
                                                     <button className="remove-btn">Remove</button>
                                                 </div>
+                                                
                                             </div>
+                                        </div>
+                                        <div className="continue-cart-div">
+                                                <button className="continue-shopping-cart-button" onClick={this.props.showCustomerDetails}> PLACE ORDER </button>
                                         </div>
                                     </div>
                                 </Grid>
                                 <Grid item xs={10}>
                                     <div className="Customer-address-div">
                                         <div className="address-title">
-                                            <h3>Address Details</h3>
+                                            <h3>Customer Details</h3>
                                         </div>
-                                        <div className="address-form">
+                                        {
+                                            this.props.showDetails?
+                                            <>
+                                            <div className="address-form">
                                             <div className="row-1">
                                                 <TextField className="text-field" label="Name" variant="outlined" />
                                                 <TextField className="text-field" id="outlined-basic" label="Phone Number" variant="outlined" />
@@ -91,9 +97,14 @@ export class AddCartPage extends Component {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="continue-div">
-                                            <button className="address-button">CONTINUE</button>
+                                        <div className="continue-details-div">
+                                        <button className="continue-shopping-details-button"> CONTINUE </button>
                                         </div>
+                                        </>
+                                        :
+                                        null
+                                        }
+                                      
                                     </div>
                                 </Grid>
                                 <Grid item xs={10}>
@@ -126,7 +137,6 @@ export class AddCartPage extends Component {
                         </div>
                     </Container>
                 </div>
-                <Footer />
 
             </>
         );
