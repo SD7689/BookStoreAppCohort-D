@@ -24,7 +24,7 @@ namespace NUnitTestBookStoreProject
             book.AuthorName = "BDEC";
             book.BookImage = "images.jpg";
             book.BookPrice = 85.00;
-            book.Availability = true;
+            book.Availability = 10;
             var data = controller.AddBook(book);
             Assert.NotNull(data);
 
@@ -39,7 +39,7 @@ namespace NUnitTestBookStoreProject
             book.AuthorName = "BDEC";
             book.BookImage = "images.jpg";
             book.BookPrice = 85.00;
-            book.Availability = true;
+            book.Availability = 10;
             var data = manager.AddBook(book);
             Assert.NotNull(data);
         }

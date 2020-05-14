@@ -4,6 +4,8 @@ import { BookCard } from './BookCard';
 import { Footer } from './Footer';
 import axios from 'axios'
 import { AddCartPage } from './AddCartPage'
+//import { OrderPlaced } from './OrderPlaced'
+import OrderPlaced from '../components/OrderPlaced'
 
 export class DashBoard extends Component {
     state = {
@@ -15,7 +17,9 @@ export class DashBoard extends Component {
         disableButton: false,
         showAddCartPage: false,
         showCartCounter: false,
-        showCustomerDetails: false
+        showCustomerDetails: false,
+        clickedID : [] ,
+        showOrderPlacedPage: false
     }
 
     addToCartPageHandler = async () => {
@@ -24,7 +28,12 @@ export class DashBoard extends Component {
             showAddCartPage: !doesShowCartPage
         })
     }
-
+    orderPlacedPageHandler = async () => {
+        let doesShowOrderPlacedPage = this.state.showOrderPlacedPage;
+        await this.setState({
+            showOrderPlacedPage: !doesShowOrderPlacedPage
+        })
+    }
     customerDetailsShowHandler = async () => {
         let doesShowCustomerDetails = this.state.showCustomerDetails;
         await this.setState({
@@ -32,13 +41,17 @@ export class DashBoard extends Component {
         })
     }
 
-    cartCountHandler = async () => {
+    cartCountHandler = async (clickedID) => {
         let count = this.state.cartCounter;
         let doesShowWishlist = this.state.showWishlist;
         let doesDisableButton = this.state.disableButton
         let doesShowCartCounter = this.state.showCartCounter;
+        let clickedidArray = this.state.clickedID;
+        clickedidArray.push(clickedID);
+        console.log(clickedID);
         await this.setState({
             cartCounter: count + 1,
+            clickedID: [...clickedidArray],
             text: "Added To Bag",
             showWishlist: !doesShowWishlist,
             disableButton: !doesDisableButton,
@@ -48,14 +61,14 @@ export class DashBoard extends Component {
     }
 
     componentDidMount() {
-        axios.get("https://localhost:44394/api/Book/GetAllBook")
+        axios.get("https://localhost:5001/api/Book/GetAllBook")
             .then(response => {
                 const books = response.data;
                 this.setState({
                     books: books
                 })
             })
-        axios.get("https://localhost:44394/api/Book/NumOfBooks")
+        axios.get("https://localhost:5001/api/Book/NumOfBooks")
             .then(response => {
                 const NumOfBooks = response.data;
                 this.setState({
@@ -80,13 +93,23 @@ export class DashBoard extends Component {
     render() {
         return (
             <div className='dashboard-div'>
-                <Header cartCount={this.state.cartCounter} showAddCartPage={this.addToCartPageHandler} showCartCounter={this.state.showCartCounter}/>
+                <Header 
+                cartCount={this.state.cartCounter} 
+                showAddCartPage={this.addToCartPageHandler} 
+                showCartCounter={this.state.showCartCounter}
+                />
 
                 {
                     this.state.showAddCartPage ?
                         <>
-                            <AddCartPage showCustomerDetails={this.customerDetailsShowHandler} showDetails={this.state.showCustomerDetails}/>
-                        </>
+                            <AddCartPage 
+                            showCustomerDetails={this.customerDetailsShowHandler} 
+                            showDetails={this.state.showCustomerDetails}        
+        showOrderPlacedPage = {this.state.showOrderPlacedPage}
+        orderPlacedPageHandler = {this.orderPlacedPageHandler}
+
+                            />
+                       </>
                         :
                         <>
                             <div className='card-header'>
@@ -101,10 +124,15 @@ export class DashBoard extends Component {
                                     </select>
                                 </div>
                             </div>
-                            <BookCard cartCounter={this.cartCountHandler} books={this.state.books} text={this.state.text} showWishlist={this.state.showWishlist} disableButton={this.state.disableButton}  />
+                            <BookCard 
+                            cartCounter={this.cartCountHandler} 
+                            books={this.state.books} text={this.state.text} 
+                            showWishlist={this.state.showWishlist} 
+                            disableButton={this.state.disableButton}  
+                            />
                         </>
                 }
-
+               
                 <Footer />
             </div>
         );

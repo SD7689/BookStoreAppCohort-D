@@ -11,7 +11,8 @@ import Radio from '@material-ui/core/Radio';
 import RemoveRoundedIcon from '@material-ui/icons/RemoveRounded';
 import AddRoundedIcon from '@material-ui/icons/AddRounded';
 import Demobook from '../Asserts/Demobook.jpg'
-
+//import { OrderPlaced } from './OrderPlaced'
+import OrderPlaced from '../components/OrderPlaced'
 
 export class AddCartPage extends Component {
     render() {
@@ -129,7 +130,9 @@ export class AddCartPage extends Component {
                                             </div>
                                         </div>
                                         <div className="checkout-div">
-                                            <button className="checkout-button">CHECKOUT</button>
+                                            <button className="checkout-button" 
+                                            onClick={this.props.orderPlacedPageHandler}
+                                            >CHECKOUT</button>
                                         </div>
                                     </div>
                                 </Grid>
@@ -137,6 +140,7 @@ export class AddCartPage extends Component {
                         </div>
                     </Container>
                 </div>
+               
 
             </>
         );
