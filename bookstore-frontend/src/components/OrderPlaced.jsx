@@ -1,23 +1,13 @@
 import React, { Component } from 'react';
-//import Container from '@material-ui/core/Container';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import Celebration from '../Asserts/Celebration.png';
-//import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { useHistory } from 'react-router-dom';
 
 export default class OrderPlaced extends Component {
-    
-    continueShoppingClickedHandler = async (event) =>{ 
-        //event.preventDefault();
-        console.log("click ho gya raju");
-        await this.props.history.push('/')
-
-      }
     render() {
         return (
             <>
-                <Header />
+                
                 <div className="order-placed-container">
                     <div className="upper-image-div">
                         <img className="order-image-div" src={Celebration} />
@@ -48,11 +38,11 @@ export default class OrderPlaced extends Component {
                         </table>
                     </div>
                     <div className="continue-shopping-button-div">
-                        <button className="continue-shopping-button" onClick={this.continueShoppingClickedHandler}> CONTINUE SHOPPING</button>
+                        <button className="continue-shopping-button"> CONTINUE SHOPPING</button>
                         </div>
                 </div>
 
-                <Footer />
+               
             </>
         );
     }

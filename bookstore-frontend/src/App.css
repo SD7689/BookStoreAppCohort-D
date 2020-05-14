@@ -375,7 +375,7 @@ display: flex;
   display: flex;
     align-items: center;
     justify-content: center;
-    height: 1090px;
+    height: auto;
 }
 
 .MuiGrid-spacing-xs-5 {
@@ -385,7 +385,7 @@ display: flex;
 }
 
 .grid-div{
-  margin-top: -189px;
+  margin-top: -232px;
 }
 
 .order-details-div{
@@ -546,7 +546,7 @@ display: flex;
 } */
 
 .text-field-address{
-  width: 900px;
+  width: 918px;
 }
 
 .text{
