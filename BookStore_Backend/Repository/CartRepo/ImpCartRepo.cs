@@ -10,9 +10,6 @@ namespace Repository.CartRepo
     public class ImpCartRepo:ICartRepo
     {
         private readonly BookStoreDBContext bookStoreDB;
-        public  List<Cart> cartList = new List<Cart>();
-        public  List<Book> getAllCartByBookType = new List<Book>();
-
         public ImpCartRepo(BookStoreDBContext bookStoreDB)
         {
             this.bookStoreDB = bookStoreDB;

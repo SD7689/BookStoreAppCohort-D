@@ -42,7 +42,7 @@ namespace BookStore_Api
             services.AddTransient<IManager, ImpBookManager>();
             services.AddTransient<IBook, BookImp>();
             services.AddTransient<ICustomerManager, ImpCustomerManager>();
-            services.AddTransient<ICustomer, ImpCustomer>();
+            services.AddTransient<ICustomer, CustomerImp>();
             services.AddTransient<ICartManager, ImpCartManager>();
             services.AddTransient<ICartRepo, ImpCartRepo>();
             services.AddTransient<ILoginRepo, LoginRepo>();
