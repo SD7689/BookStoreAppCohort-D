@@ -24,12 +24,11 @@ namespace BookStore_Api.Controllers
         [HttpPost]
         public IActionResult LoginUser(string email, string password)
         {
-            var result = this.manager.Login(email, password);
-            if (result == true)
-            {
+            var result=this.manager.Login(email, password);
+            if (result != null)
                 return this.Ok(email);
-            }
-            return this.BadRequest();
+            return this.BadRequest("Login Failed");
+            
         }
         [Route("AddUser")]
         [HttpPost]
