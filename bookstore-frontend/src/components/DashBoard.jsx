@@ -6,20 +6,30 @@ import axios from 'axios'
 import { AddCartPage } from './AddCartPage'
 //import { OrderPlaced } from './OrderPlaced'
 import OrderPlaced from '../components/OrderPlaced'
+<<<<<<< HEAD
+=======
+import { AddCartRequestMethod } from '../Services/CartServices'
+>>>>>>> Jayant-Fullstack
 
 export class DashBoard extends Component {
     state = {
         books: [],
         NumOfBooks: 0,
         cartCounter: 0,
-        text: "Add To Bag",
+        
         showWishlist: false,
         disableButton: false,
         showAddCartPage: false,
         showCartCounter: false,
         showCustomerDetails: false,
+<<<<<<< HEAD
         clickedID : [] ,
         showOrderPlacedPage: false
+=======
+        clickedId: [],
+        showOrderPlacedPage: false,
+         cart:[]
+>>>>>>> Jayant-Fullstack
     }
 
     addToCartPageHandler = async () => {
@@ -28,6 +38,7 @@ export class DashBoard extends Component {
             showAddCartPage: !doesShowCartPage
         })
     }
+<<<<<<< HEAD
     orderPlacedPageHandler = async () => {
         let doesShowOrderPlacedPage = this.state.showOrderPlacedPage;
         await this.setState({
@@ -42,10 +53,19 @@ export class DashBoard extends Component {
     }
 
     cartCountHandler = async (clickedID) => {
+=======
+   
+    
+    cartCountHandler = (clickedID,bookAvailable) => {
+>>>>>>> Jayant-Fullstack
         let count = this.state.cartCounter;
         let doesShowWishlist = this.state.showWishlist;
-        let doesDisableButton = this.state.disableButton
+        let doesDisableButton = this.state.disableButton;
+        let clickedidArray = this.state.clickedId;
+        clickedidArray.push(clickedID);
+        console.log(" click id is",clickedID);
         let doesShowCartCounter = this.state.showCartCounter;
+<<<<<<< HEAD
         let clickedidArray = this.state.clickedID;
         clickedidArray.push(clickedID);
         console.log(clickedID);
@@ -53,10 +73,24 @@ export class DashBoard extends Component {
             cartCounter: count + 1,
             clickedID: [...clickedidArray],
             text: "Added To Bag",
+=======
+        this.setState({
+            cartCounter: count + 1,
+           
+            clickedId: [...clickedidArray],
+>>>>>>> Jayant-Fullstack
             showWishlist: !doesShowWishlist,
             disableButton: !doesDisableButton,
             showCartCounter: !doesShowCartCounter
         })
+        var cart = {
+            bookId: clickedID ,
+            numOfCopies: bookAvailable
+        }
+       const response = AddCartRequestMethod(cart);
+       response.then(res=>{
+          console.log(res.data); 
+       })
         console.log("counter", this.state.cartCounter)
     }
 
@@ -76,20 +110,12 @@ export class DashBoard extends Component {
                 })
             })
     }
-    /*componentDidMount() {
-        axios.get("https://localhost:44394/api/Book/NumOfBooks")
-            .then(response => {
-                const NumOfBooks = response.data;
-                this.setState({
-                    NumOfBooks: NumOfBooks
-                })
-            })
-    }*/
-    /*onClickButton1 = async() => {
-    await this.setState({
-     text: "Added To Bag"
-   });
- }*/
+    orderPlacedPageHandler = async () => {
+        let doesShowOrderPlacedPage = this.state.showOrderPlacedPage;
+        await this.setState({
+            showOrderPlacedPage: !doesShowOrderPlacedPage
+        })
+    }
     render() {
         return (
             <div className='dashboard-div'>
@@ -101,6 +127,7 @@ export class DashBoard extends Component {
 
                 {
                     this.state.showAddCartPage ?
+<<<<<<< HEAD
                         <>
                             <AddCartPage 
                             showCustomerDetails={this.customerDetailsShowHandler} 
@@ -110,6 +137,17 @@ export class DashBoard extends Component {
 
                             />
                        </>
+=======
+                        
+                        
+                            <AddCartPage 
+                            //showOrderPlacedPage = {this.state.showOrderPlacedPage}
+                            //orderPlacedPageHandler = {this.orderPlacedPageHandler}
+        
+
+                            />
+                       
+>>>>>>> Jayant-Fullstack
                         :
                         <>
                             <div className='card-header'>
@@ -128,7 +166,12 @@ export class DashBoard extends Component {
                             cartCounter={this.cartCountHandler} 
                             books={this.state.books} text={this.state.text} 
                             showWishlist={this.state.showWishlist} 
+<<<<<<< HEAD
                             disableButton={this.state.disableButton}  
+=======
+                            disableButton={this.state.disableButton} 
+                            clickedId={this.state.clickedId} 
+>>>>>>> Jayant-Fullstack
                             />
                         </>
                 }
