@@ -30,14 +30,9 @@ export class DashBoard extends Component {
             showAddCartPage: !doesShowCartPage
         })
     }
-    orderPlacedPageHandler = async () => {
-        let doesShowOrderPlacedPage = this.state.showOrderPlacedPage;
-        await this.setState({
-            showOrderPlacedPage: !doesShowOrderPlacedPage
-        })
-    }
+   
     
-    cartCountHandler = async (clickedID,bookAvailable) => {
+    cartCountHandler = (clickedID,bookAvailable) => {
         let count = this.state.cartCounter;
         let doesShowWishlist = this.state.showWishlist;
         let doesDisableButton = this.state.disableButton;
@@ -45,7 +40,7 @@ export class DashBoard extends Component {
         clickedidArray.push(clickedID);
         console.log(" click id is",clickedID);
         let doesShowCartCounter = this.state.showCartCounter;
-        await this.setState({
+        this.setState({
             cartCounter: count + 1,
            
             clickedId: [...clickedidArray],
@@ -80,7 +75,12 @@ export class DashBoard extends Component {
                 })
             })
     }
-   
+    orderPlacedPageHandler = async () => {
+        let doesShowOrderPlacedPage = this.state.showOrderPlacedPage;
+        await this.setState({
+            showOrderPlacedPage: !doesShowOrderPlacedPage
+        })
+    }
     render() {
         return (
             <div className='dashboard-div'>
@@ -92,14 +92,15 @@ export class DashBoard extends Component {
 
                 {
                     this.state.showAddCartPage ?
-                        <>
+                        
+                        
                             <AddCartPage 
-                            showOrderPlacedPage = {this.state.showOrderPlacedPage}
-                            orderPlacedPageHandler = {this.orderPlacedPageHandler}
+                            //showOrderPlacedPage = {this.state.showOrderPlacedPage}
+                            //orderPlacedPageHandler = {this.orderPlacedPageHandler}
         
 
                             />
-                       </>
+                       
                         :
                         <>
                             <div className='card-header'>
