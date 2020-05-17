@@ -31,7 +31,7 @@ export class Header extends Component {
                 </div>
                 <div className='cart-div'>
 
-                    <h3>Cart</h3>
+                    <h3 className="cart-h4">Cart</h3>
                     {
                         this.props.showCartCounter ?
                             <>

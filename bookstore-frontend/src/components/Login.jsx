@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import {AddUserRequestMethod} from '../Services/LoginService'
+import { AddUserRequestMethod } from '../Services/LoginService'
 
 export class Login extends Component {
     constructor(props) {
@@ -10,6 +9,7 @@ export class Login extends Component {
             password: ""
         }
     }
+    
     handleEmailChange = (event) => {
         const email = event.target.value;
         this.setState({
@@ -17,6 +17,7 @@ export class Login extends Component {
         })
         console.log("email", this.state.email)
     }
+
     handlePasswordChange = (event) => {
         const password = event.target.value;
         this.setState({
@@ -24,6 +25,7 @@ export class Login extends Component {
         })
         console.log("password", this.state.password)
     }
+
     handleSubmitButton = (event) => {
         event.preventDefault();
         var data = {
@@ -31,22 +33,19 @@ export class Login extends Component {
             password: this.state.password
 
         }
-    sessionStorage.setItem("email",this.state.email);
-    const response = AddUserRequestMethod(data);
-    response.then(res => {
-      if (res.data == data.email){
-        this.props.history.push('/dashboard');
-      }
-      
-    }).catch(() => {
-      alert("email or password is incorrect");
-     
-    })
-  }
-  
-        //console.log("data", data);
-        //console.log("status", this.state.email, this.state.password);
-    
+        sessionStorage.setItem("email", this.state.email);
+        const response = AddUserRequestMethod(data);
+        response.then(res => {
+            if (res.data == data.email) {
+                this.props.history.push('/dashboard');
+            }
+
+        }).catch(() => {
+            alert("email or password is incorrect");
+
+        })
+    }
+
     render() {
         return (
             <div className="main-div">
@@ -71,10 +70,7 @@ export class Login extends Component {
                     </div>
                 </div>
             </div>
-
         )
-    
-
     }
 
 }

@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
-import { Header } from './Header';
-import { Footer } from './Footer';
-import logo from '../logo.svg';
 import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -10,17 +7,9 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Radio from '@material-ui/core/Radio';
 import RemoveRoundedIcon from '@material-ui/icons/RemoveRounded';
 import AddRoundedIcon from '@material-ui/icons/AddRounded';
-import Demobook from '../Asserts/Demobook.jpg'
-//import { OrderPlaced } from './OrderPlaced'
-<<<<<<< HEAD
-import OrderPlaced from '../components/OrderPlaced'
-=======
-//import OrderPlaced from '../components/OrderPlaced'
 import { getCartAddedCountRequestMethod, adCustomeDetailsRequestMethod, getCartValuesRequestMethod, deleteCartValueRequestMethod } from '../Services/CartServices';
 import OrderPlaced from './OrderPlaced';
-//import {OrderPlaced} from './OrderPlaced'
 
->>>>>>> Jayant-Fullstack
 
 export class AddCartPage extends Component {
     state = {
@@ -100,8 +89,6 @@ export class AddCartPage extends Component {
     }
     addCustomerDetailsHandler = (event) => {
         event.preventDefault();
-        //const email = window.sessionStorage.getItem('email');
-        //console.log(`email is ${email}`);
         var data = {
             email: this.state.email,
             fullName: this.state.name,
@@ -170,192 +157,137 @@ export class AddCartPage extends Component {
         })
     }
     render() {
-
         return (
             <>
-            {
-                this.state.showOrderPlacedPage?
-                <OrderPlaced/>
-                :
-                <div className="cart-component">
-                <Container maxWidth="lg">
-                    <div className="grid-div">
-                        <Grid container spacing={5}>
-                            <Grid item xs={10}>
-                                <div className="cart-order">
-                                    <div className="cart-title-div">
-                                        <h3>My Cart({this.state.cartAddedCount})</h3>
-                                    </div>
-                                    {
-                                        this.state.cart.map(ele => {
-                                            return (
-                                                <div className="order-details-div">
-                                                    <div className="img-book">
-                                                        <img src={ele.bookImage} className="order-logo" />
-                                                    </div>
-                                                    <div className="book-details-div">
-                                                        <div className="book-title-div">
-                                                            <h4 >{ele.bookTitle}</h4>
-                                                        </div>
-                                                        <div className="author-name-div">
-                                                            <p>{ele.authorName}</p>
-                                                        </div>
-                                                        <div className="book-price-div">
-                                                            <p>Rs.{ele.bookPrice}</p>
-                                                        </div>
-                                                        <div className="quantity-div">
-                                                            <button className="minus-btn"><RemoveRoundedIcon className="icon" /></button>
-                                                            {
-
-                                                                <input type="text" className="input-type" />
-                                                            }
-                                                            <button className="plus-btn"><AddRoundedIcon className="icon" /></button>
-                                                            <button className="remove-btn" onClick={() => this.deleteCartHandler(ele.cartId)} >Remove</button>
-                                                        </div>
-
-                                                    </div>
+                {
+                    this.state.showOrderPlacedPage ?
+                        <OrderPlaced />
+                        :
+                        <div className="cart-component">
+                            <Container maxWidth="lg">
+                                <div className="grid-div">
+                                    <Grid container spacing={5}>
+                                        <Grid item xs={10}>
+                                            <div className="cart-order">
+                                                <div className="cart-title-div">
+                                                    <h3 className="my-cart-h4">My Cart({this.state.cartAddedCount})</h3>
                                                 </div>
-                                            )
-                                        })
-                                    }
+                                                {
+                                                    this.state.cart.map(ele => {
+                                                        return (
+                                                            <div className="order-details-div">
+                                                                <div className="img-book">
+                                                                    <img src={ele.bookImage} className="order-logo" />
+                                                                </div>
+                                                                <div className="book-details-div">
+                                                                    <div className="book-title-div">
+                                                                        <h4 className="h4-div">{ele.bookTitle}</h4>
+                                                                    </div>
+                                                                    <div className="author-name-div">
+                                                                        <p>{ele.authorName}</p>
+                                                                    </div>
+                                                                    <div className="book-price-div">
+                                                                        <p>Rs.{ele.bookPrice}</p>
+                                                                    </div>
+                                                                    <div className="quantity-div">
+                                                                        <button className="minus-btn"><RemoveRoundedIcon className="icon" /></button>
+                                                                        {
 
-                                    <div className="continue-cart-div">
-                                        <button className="continue-shopping-cart-button" onClick={this.customerDetailsShowHandler}> PLACE ORDER </button>
-                                    </div>
-                                </div>
-                            </Grid>
-                            <Grid item xs={10}>
-                                <div className="Customer-address-div">
-                                    <div className="address-title">
-                                        <h3>Customer Details</h3>
-                                    </div>
-                                    {
-                                        this.state.showCustomerDetails ?
-                                            <form action="" className=" p-5" name="myForm" id="f" onSubmit={this.addCustomerDetailsHandler}>
-                                                <div className="row">
-                                                    <div className="col">
-                                                        <div className="form-group">
-                                                            <input type="text" placeholder='Name' id="name" className="form-control " onChange={this.nameHandler} />
-                                                        </div>
-                                                    </div>
-                                                    <div className="col">
-                                                        <div className="form-group">
-                                                            <input type="text" placeholder='Phone number' id="phoneNumber" className="form-control " onChange={this.phoneNumberHandler} />
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                                            <input type="text" className="input-type" />
+                                                                        }
+                                                                        <button className="plus-btn"><AddRoundedIcon className="icon" /></button>
+                                                                        <button className="remove-btn" onClick={() => this.deleteCartHandler(ele.cartId)} >Remove</button>
+                                                                    </div>
 
-                                                <div className="row">
-                                                    <div className="col">
-                                                        <div className="form-group">
-                                                            <input type="text" placeholder='pincode' id="pincode" className="form-control " onChange={this.pincodeHandler} />
-                                                        </div>
-                                                    </div>
-                                                    <div className="col">
-                                                        <div className="form-group">
-                                                            <input type="text" placeholder='locality' id="locality" className="form-control " onChange={this.localityHandler} />
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                                </div>
+                                                            </div>
+                                                        )
+                                                    })
+                                                }
 
-                                                <div className="row">
-                                                    <div className="col">
-                                                        <div className="form-group">
-                                                            <input type="text" placeholder='city/town' id="city" className="form-control " onChange={this.cityHandler} />
-                                                        </div>
-                                                    </div>
-                                                    <div className="col">
-                                                        <div className="form-group">
-                                                            <input type="text" placeholder='landmark' id="landmark" className="form-control " onChange={this.landmarkHandler} />
-                                                        </div>
-                                                    </div>
+                                                <div className="continue-cart-div">
+                                                    <button className="continue-shopping-cart-button" onClick={this.customerDetailsShowHandler}> PLACE ORDER </button>
                                                 </div>
-
-                                                <div className="form-group">
-                                                    <input type="text" placeholder='address' id="address" className="form-control " onChange={this.addressHandler} />
-
-                                                </div>
-                                                <div className='form-group'>
-                                                    <label>type</label>
-                                                </div>
-                                                <div class="form-group form-check" id='check-box-div'>
-                                                    <RadioGroup row aria-label="position" name="position" defaultValue="top">
-                                                        <FormControlLabel value="home" control={<Radio color="primary" />} label="Home" onChange={this.typeHandler} />
-                                                        <FormControlLabel value="work" control={<Radio color="primary" />} label="Work" onChange={this.typeHandler} />
-                                                        <FormControlLabel value="other" control={<Radio color="primary" />} label="Other" onChange={this.typeHandler} />
-                                                    </RadioGroup>
-                                                </div>
-
-                                                <div className='form-group'>
-                                                    <button type="submit" id="continue" className="btn btn-primary" onClick={this.orderSummeryShowHandler}>Continue</button>
-                                                </div>
-<<<<<<< HEAD
                                             </div>
-                                        </div>
-                                        <div className="checkout-div">
-                                            <button className="checkout-button" 
-                                            onClick={this.props.orderPlacedPageHandler}
-                                            >CHECKOUT</button>
-                                        </div>
-=======
-                                            </form> : null
-                                    }
-
-
-                                </div>
-                            </Grid>
-                            <Grid item xs={10}>
-                                <div className="order-sumary">
-                                    <div className="cart-title-div">
-                                        <h3>Order Summary</h3>
->>>>>>> Jayant-Fullstack
-                                    </div>
-                                   {
-                                            this.state.cart.map(ele => {
-                                                return (
-                                                    <div className="order-details-div">
-                                                    <div className="img-book">
-                                                        <img src={ele.bookImage} className="order-logo" />
-                                                    </div>
-                                                    <div className="book-details-div">
-                                                        <div className="book-title-div">
-                                                            <h4 >{ele.bookTitle}</h4>
-                                                        </div>
-                                                        <div className="author-name-div">
-                                                            <p>{ele.authorName}</p>
-                                                        </div>
-                                                        <div className="book-price-div">
-                                                            <p>Rs.{ele.bookPrice}</p>
-                                                        </div>
-                                                    </div>
+                                        </Grid>
+                                        <Grid item xs={10}>
+                                            <div className="Customer-address-div">
+                                                <div className="address-title">
+                                                    <h3 className="my-cart-h4">Customer Details</h3>
                                                 </div>
-                                                )
-                                            })
-                                        }
-                                    
-                                   
-                                
-                                    <div className="checkout-div">
-                                        <button className="checkout-button"
-                                            onClick={this.orderPlacedPageHandler}
-                                        >CHECKOUT</button>
-                                    </div>
+                                                {
+                                                    this.state.showCustomerDetails ?
+                                                        <form action="" className=" p-5" name="myForm" id="f" onSubmit={this.addCustomerDetailsHandler}>
+                                                            <div className="form-group">
+                                                                <input type="text" placeholder='Name' id="name" className="form-control " onChange={this.nameHandler} />
+                                                                <input type="text" placeholder='Phone number' id="phoneNumber" className="form-control " onChange={this.phoneNumberHandler} />
+                                                            </div>
+                                                            <div className="form-group">
+                                                                <input type="text" placeholder='pincode' id="pincode" className="form-control " onChange={this.pincodeHandler} />
+                                                                <input type="text" placeholder='locality' id="locality" className="form-control " onChange={this.localityHandler} />
+                                                            </div>
+                                                            <div className="form-group">
+                                                                <input type="text" placeholder='city/town' id="city" className="form-control " onChange={this.cityHandler} />
+                                                                <input type="text" placeholder='landmark' id="landmark" className="form-control " onChange={this.landmarkHandler} />
+                                                            </div>
+                                                            <div className="form-group">
+                                                                <input type="text" placeholder='address' id="address" className="address-group " onChange={this.addressHandler} />
+                                                            </div>
+                                                            <div className="type-div">
+                                                                <label>Type</label>
+                                                                <RadioGroup row aria-label="position" name="position" defaultValue="top">
+                                                                    <FormControlLabel value="home" control={<Radio color="primary" />} label="Home" onChange={this.typeHandler} />
+                                                                    <FormControlLabel value="work" control={<Radio color="primary" />} label="Work" onChange={this.typeHandler} />
+                                                                    <FormControlLabel value="other" control={<Radio color="primary" />} label="Other" onChange={this.typeHandler} />
+                                                                </RadioGroup>
+                                                            </div>
+
+                                                            <div className='add-btn'>
+                                                                <button type="submit" id="continue" className="address-button" onClick={this.orderSummeryShowHandler}>CONTINUE</button>
+                                                            </div>
+                                                        </form> : null
+                                                }
+                                            </div>
+                                        </Grid>
+                                        <Grid item xs={10}>
+                                            <div className="order-sumary">
+                                                <div className="cart-title-div">
+                                                    <h3 className="my-cart-h4">Order Summary</h3>
+                                                </div>
+                                                {
+                                                    this.state.cart.map(ele => {
+                                                        return (
+                                                            <div className="order-details-div">
+                                                                <div className="img-book">
+                                                                    <img src={ele.bookImage} className="order-logo" />
+                                                                </div>
+                                                                <div className="book-details-div">
+                                                                    <div className="book-title-div">
+                                                                        <h4 >{ele.bookTitle}</h4>
+                                                                    </div>
+                                                                    <div className="author-name-div">
+                                                                        <p>{ele.authorName}</p>
+                                                                    </div>
+                                                                    <div className="book-price-div">
+                                                                        <p>Rs.{ele.bookPrice}</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        )
+                                                    })
+                                                }
+                                                <div className="checkout-div">
+                                                    <button className="checkout-button"
+                                                        onClick={this.orderPlacedPageHandler}
+                                                    >CHECKOUT</button>
+                                                </div>
+                                            </div>
+                                        </Grid>
+                                    </Grid>
                                 </div>
-                            </Grid>
-<<<<<<< HEAD
+                            </Container>
                         </div>
-                    </Container>
-                </div>
-=======
-                        </Grid>
-                    </div>
-                </Container>
-            </div>
-
-            }
->>>>>>> Jayant-Fullstack
-               
-
+                }
             </>
         );
     }

@@ -4,32 +4,31 @@ import { BookCard } from './BookCard';
 import { Footer } from './Footer';
 import axios from 'axios'
 import { AddCartPage } from './AddCartPage'
-//import { OrderPlaced } from './OrderPlaced'
-import OrderPlaced from '../components/OrderPlaced'
-<<<<<<< HEAD
-=======
 import { AddCartRequestMethod } from '../Services/CartServices'
->>>>>>> Jayant-Fullstack
-
+import Pagination from './Pagination'
 export class DashBoard extends Component {
     state = {
         books: [],
         NumOfBooks: 0,
         cartCounter: 0,
-        
         showWishlist: false,
         disableButton: false,
         showAddCartPage: false,
         showCartCounter: false,
         showCustomerDetails: false,
-<<<<<<< HEAD
-        clickedID : [] ,
-        showOrderPlacedPage: false
-=======
         clickedId: [],
         showOrderPlacedPage: false,
-         cart:[]
->>>>>>> Jayant-Fullstack
+        cart: [],
+        currentPage: 1,
+        postsPerPage: 12
+
+    }
+
+    paginate = (pageNumber) => {
+        this.setState({
+            currentPage: pageNumber
+        })
+        console.log("pagenumber after", this.state.currentPage);
     }
 
     addToCartPageHandler = async () => {
@@ -38,59 +37,31 @@ export class DashBoard extends Component {
             showAddCartPage: !doesShowCartPage
         })
     }
-<<<<<<< HEAD
-    orderPlacedPageHandler = async () => {
-        let doesShowOrderPlacedPage = this.state.showOrderPlacedPage;
-        await this.setState({
-            showOrderPlacedPage: !doesShowOrderPlacedPage
-        })
-    }
-    customerDetailsShowHandler = async () => {
-        let doesShowCustomerDetails = this.state.showCustomerDetails;
-        await this.setState({
-            showCustomerDetails: !doesShowCustomerDetails
-        })
-    }
 
-    cartCountHandler = async (clickedID) => {
-=======
-   
-    
-    cartCountHandler = (clickedID,bookAvailable) => {
->>>>>>> Jayant-Fullstack
+    cartCountHandler = (clickedID, bookAvailable) => {
         let count = this.state.cartCounter;
         let doesShowWishlist = this.state.showWishlist;
         let doesDisableButton = this.state.disableButton;
         let clickedidArray = this.state.clickedId;
         clickedidArray.push(clickedID);
-        console.log(" click id is",clickedID);
+        console.log(" click id is", clickedID);
         let doesShowCartCounter = this.state.showCartCounter;
-<<<<<<< HEAD
-        let clickedidArray = this.state.clickedID;
-        clickedidArray.push(clickedID);
-        console.log(clickedID);
-        await this.setState({
-            cartCounter: count + 1,
-            clickedID: [...clickedidArray],
-            text: "Added To Bag",
-=======
         this.setState({
             cartCounter: count + 1,
-           
+
             clickedId: [...clickedidArray],
->>>>>>> Jayant-Fullstack
             showWishlist: !doesShowWishlist,
             disableButton: !doesDisableButton,
             showCartCounter: !doesShowCartCounter
         })
         var cart = {
-            bookId: clickedID ,
+            bookId: clickedID,
             numOfCopies: bookAvailable
         }
-       const response = AddCartRequestMethod(cart);
-       response.then(res=>{
-          console.log(res.data); 
-       })
+        const response = AddCartRequestMethod(cart);
+        response.then(res => {
+            console.log(res.data);
+        })
         console.log("counter", this.state.cartCounter)
     }
 
@@ -110,49 +81,35 @@ export class DashBoard extends Component {
                 })
             })
     }
+
     orderPlacedPageHandler = async () => {
         let doesShowOrderPlacedPage = this.state.showOrderPlacedPage;
         await this.setState({
             showOrderPlacedPage: !doesShowOrderPlacedPage
         })
     }
+
     render() {
+        const indexOfLastPost = this.state.currentPage * this.state.postsPerPage;
+        const indexOfFirstPost = indexOfLastPost - this.state.postsPerPage;
+        const currentPosts = this.state.books.slice(indexOfFirstPost, indexOfLastPost)
         return (
             <div className='dashboard-div'>
-                <Header 
-                cartCount={this.state.cartCounter} 
-                showAddCartPage={this.addToCartPageHandler} 
-                showCartCounter={this.state.showCartCounter}
+                <Header
+                    cartCount={this.state.cartCounter}
+                    showAddCartPage={this.addToCartPageHandler}
+                    showCartCounter={this.state.showCartCounter}
                 />
-
                 {
                     this.state.showAddCartPage ?
-<<<<<<< HEAD
-                        <>
-                            <AddCartPage 
-                            showCustomerDetails={this.customerDetailsShowHandler} 
-                            showDetails={this.state.showCustomerDetails}        
-        showOrderPlacedPage = {this.state.showOrderPlacedPage}
-        orderPlacedPageHandler = {this.orderPlacedPageHandler}
-
-                            />
-                       </>
-=======
-                        
-                        
-                            <AddCartPage 
-                            //showOrderPlacedPage = {this.state.showOrderPlacedPage}
-                            //orderPlacedPageHandler = {this.orderPlacedPageHandler}
-        
-
-                            />
-                       
->>>>>>> Jayant-Fullstack
+                        <AddCartPage
+                        />
                         :
                         <>
                             <div className='card-header'>
-                                <div className="BookCard-Header">Books</div>
-                                <div className="book-count-div">({this.state.NumOfBooks} items)</div>
+                                <div className="BookCard-Header">
+                                    <h5>Books<span id='bookcountfont'>({this.state.NumOfBooks} items)</span></h5>
+                                </div>
                                 <div class="sort-by-div">
                                     <select className="select-bar">
                                         <option>Sort By</option>
@@ -162,20 +119,19 @@ export class DashBoard extends Component {
                                     </select>
                                 </div>
                             </div>
-                            <BookCard 
-                            cartCounter={this.cartCountHandler} 
-                            books={this.state.books} text={this.state.text} 
-                            showWishlist={this.state.showWishlist} 
-<<<<<<< HEAD
-                            disableButton={this.state.disableButton}  
-=======
-                            disableButton={this.state.disableButton} 
-                            clickedId={this.state.clickedId} 
->>>>>>> Jayant-Fullstack
+                            <BookCard
+                                books={currentPosts}
+                                cartCounter={this.cartCountHandler}
+                                //  books={this.state.books} text={this.state.text} 
+                                showWishlist={this.state.showWishlist}
+                                disableButton={this.state.disableButton}
+                                clickedId={this.state.clickedId}
                             />
+                            <Pagination postsPerPage={this.state.postsPerPage}
+                                totalPosts={this.state.books.length}
+                                paginateNumber={this.paginate} />
                         </>
                 }
-               
                 <Footer />
             </div>
         );

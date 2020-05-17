@@ -7,7 +7,6 @@
   position: fixed;
   width: 100%;
 }
-
 .book-icon {
   margin-left: 13em;
   margin-right: 15px;
@@ -32,6 +31,11 @@
 }
 .bookicon{
   font-size: 24px;
+  outline: none;
+}
+
+.logo-title{
+  margin-top: 15px;
 }
 
 .book-title{
@@ -57,8 +61,10 @@
   height: 42px;
 }
 
+
 .search {
   width: 403px;
+  outline: none;
   border-radius: 4px;
   background-color: white;
     /*height: 30px;*/
@@ -83,7 +89,7 @@
     padding-left: 47px;
     padding-right: 47px;
     height: 50%;
-    width: 58%;
+    width: 100%;
     padding-right: -135px;
     /* margin-left: 65px; */
     margin-top: 12px;
@@ -92,7 +98,7 @@
   color: #3c3636;
   margin-top: 11px;
   font-size: 13px;
-  margin-left: -777px;
+  margin-left: -57em;
 }
 /*login css*/
 
@@ -144,6 +150,7 @@ button.submit {
   border-radius: 4px;
     background-color: rgb(236, 170, 93);
     color: #fff;
+  outline: none;
     border: 1px solid #000;
     outline: none;
     height: 35px;
@@ -234,23 +241,18 @@ button.submit:hover{
 }
 
 
-.MuiContainer-root {
-  padding-left: 44px !important;
 
-}
-.MuiContainer-maxWidthLg{
-  max-width: 1320px !important;
-}
-.card-header{
+.card-header {
   padding-top: 75px;
-  padding-left: 164px;
   padding-bottom: 1px;
+  padding-left: 12px;
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
 }
 
-.sort-by-div{
-  margin-right: 230px;
+.sort-by-div {
+  margin-right: 164px;
 }
 .select-bar{
   height: 30px;
@@ -260,9 +262,22 @@ button.submit:hover{
   outline: none;
   /*background-color: #eae6e6;*/
 }
+
+.dashboard-div{
+  overflow: hidden;
+}
+
+.cart-h4 {
+  font-size: 21px;
+  font-weight: 400;
+  margin-top: 15px;
+}
+
 .book-title-div{
     font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 26px;
 }
 .author-name-div{
   font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -280,11 +295,13 @@ button.submit:hover{
 
 .button-div{
     display: flex;
+    outline: none;
     justify-content: space-around;
     margin: 5px;
 }
 .add-bag-button{
   height: 29px;
+  outline: none;
   width: 110px;
   background-color: #791212;
   color: whitesmoke;
@@ -324,6 +341,22 @@ button.submit:hover{
     border-radius: 5px;
     outline: none;
 }
+
+.p-5{
+  padding: 1rem!important;
+}
+
+.input-type{
+  width: 10%;
+  height: 30px;
+  padding-top: 3px;
+  border-radius: 11px;
+  border: 1px solid #aaa;
+  outline: none;
+  display: inline;
+  text-align: center;
+}
+
 .wishlist-button:hover{
   background-color: #f7f3f3;
   transition-duration: .3s;
@@ -339,7 +372,7 @@ button.submit:hover{
 .BookCard-Header {
   font-size: 22px;
   font-family: cursive;
-  margin-left: 60px;
+  padding-left: 164px;
 }
 .card-container {
   display: flex;
@@ -347,6 +380,7 @@ button.submit:hover{
   justify-content: flex-start;
   padding-left: 133px;
   min-height: 578px;
+  margin-left: 32px;
 }
 
 /* OrderPlaced Css */
@@ -397,12 +431,13 @@ table {
 display: flex;
     /* margin-top: 2px; */
     position: absolute;
-    top: 607px;
+    top: 576px;
     height: 35px;
 }
 .continue-shopping-button{
   background-color: dodgerblue;
     border: none;
+    outline: none;
     color: white;
     border-radius: 5px;
     width: 190px;
@@ -421,6 +456,7 @@ display: flex;
   /* padding-bottom: 5px; */
   border: none;
   color: white;
+  outline: none;
   border-radius: 5px;
   width: 190px;
   font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -428,6 +464,7 @@ display: flex;
 .continue-shopping-details-button{
   background-color: dodgerblue;
   border: none;
+  outline: none;
   color: white;
   height: 32px;
   border-radius: 5px;
@@ -446,6 +483,37 @@ display: flex;
     align-items: center;
     justify-content: center;
     height: auto;
+}
+
+.form-group{
+  display: flex;
+    justify-content: space-around;
+    width: 93%;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.form-control {
+  width: 51%;
+  outline: none;
+  border-radius: 4px;
+  height: 36px;
+  padding: 3px;
+  margin-left: 26px;
+  border: 1px solid #aaa;
+}
+
+.type-div{
+  padding-left: 26px;
+}
+
+.address-group{
+  width: 100%;
+  border-radius: 4px;
+  height: 36px;
+  padding: 3px;
+  margin-left: 26px;
+  border: 1px solid #aaa;
 }
 
 .MuiGrid-spacing-xs-5 {
@@ -472,6 +540,7 @@ display: flex;
     /* border: 2px solid; */
     margin-left: 26px;
     margin-bottom: 15px;
+    outline: none;
 }
 
 .plus-btn {
@@ -479,32 +548,38 @@ display: flex;
     border: 1px solid gray;
     margin: 6px;
     width: 27px;
+    outline: none;
+    outline: none;
     height: 27px;
     width: 28px;
 }
 
-.MuiInputBase-input {
-  height:7px !important;
-}
-
-.input-type{
-  width: 51px;
-  height: 20px;
-  text-align: center;
-  padding-top: 10px;
-  border: 1px solid gray;
-  border-radius: 5px;
-}
 .quantity-div {
   align-items: center;
     justify-content: center;
     display: flex;
+    outline: none;
     padding: 14px;
+}
+
+.pagination-nav{
+  display: flex;
+    justify-content: center;
+}
+
+.my-cart-h4{
+  font-size: 21px;
+    padding: 11px;
+}
+
+.pagination{
+  border: 1px solid #aaa;
 }
 
 .remove-btn {
   margin-left: 20px;
   height: 29px;
+  outline: none;
   width: 73px;
   border: 2px solid brown;
   color: brown;
@@ -517,22 +592,23 @@ display: flex;
   position: relative; 
   border-radius: 4px;
 }
-.order-logo{
-  width: 106px;
-  margin-left: 30px;
+.order-logo {
+  width: 136px;
+  margin-left: 40px;
   margin-top: 16px;
-  /* font-size: 31px; */
-  height: 134px;
+  outline: none;
+  height: 158px;
 }
 .book-details-div{
-  margin-left: -23px;
-  /* margin-right: -159px; */
-  margin-top: -10px;
+  
+  margin-top: 13px;
+  outline: none;
 }
 
 .icon {
   margin-left: -5px;
   margin-top: -1px;
+  outline: none;
 }
 
 .minus-btn {
@@ -541,6 +617,7 @@ display: flex;
     margin: 6px;
     width: 27px;
     height: 25px;
+    outline: none;
 }
 
 .checkout-div{
@@ -628,86 +705,70 @@ display: flex;
     padding: 15px;
 }
 
-/* .MuiFormControl-root {
-  border: 1px solid black;
-} */
-
-.text-field-address{
-  width: 918px;
-}
-
-.text{
-  width:30px;
-  height:30px;
-}
-
-.text-field{
-  border-radius: 2px;
-  width: 395px;
-}
-
-.radio-div{
-  margin-left: 27px;
-}
-
-.radio-values{
-  display:flex;
-}
-
-
-.continue-details-div{
-  display: flex;
-  justify-content: flex-end;
-  /* padding: 11px; */
-  margin-right: 21px;
-  padding-bottom: 10px;
-  padding-right: -14px;
-  justify-content: flex-end;
-}
-.address-button{
+.address-button {
   color: whitesmoke;
-    background-color: #0D47A1;
-    height: 31px;
-    width: 160px;
-    border-radius: 5px;
-    border: 1px;
+  background-color: dodgerblue;
+  height: 33px;
+  width: 199px;
+  border-radius: 5px;
+  border: 1px;
+  outline: none;
 }
 
-<<<<<<< HEAD
+.add-btn{
+  display: flex;
+    justify-content: flex-end;
+    margin: 18px;
+    outline: none;
+}
+
+
 /* media query for width 1280px */
 
 @media only screen and (min-width: 1280px) {
   .book-icon {
-    margin-left: 13em !important;
+    margin-left: 13em ;
+}
+
+.book-details-div {
+  margin-left: -25px !important;
 }
 
 .search {
-  width: 403px!important;
+  width: 403px;
 }
 
 .cart-div {
-  margin-left: 193px;
+  margin-left: 70px !important;
 }
 
-.bookicon {
-  font-size: 24px !important;
-}
-
-h2 {
-  font-size: 1.2em !important;
-}
-
-.search-bar {
-  margin: 19px !important;
-  margin-left: 4em !important;
-}
-
-.BookCard-Header {
-  margin-left: 60px !important;
+.select-bar {
+  margin-right: -52px !important;
 }
 
 .sort-by-div {
-  padding-right: 56px;
+  margin-right: 184px !important;
+}
+
+.bookicon {
+  font-size: 24px ;
+}
+
+.grid-div {
+  margin-left: -7px;
+  width: 89%;
+}
+
+.card-header{
+  padding-left: 135px;
+}
+
+h2 {
+  font-size: 1.2em ;
+}
+
+.search-bar {
+  padding-left: 141px;
 }
 
 .book-count-div {
@@ -722,22 +783,19 @@ h2 {
 .quantity-div {
   display: flex !important;
   padding: 14px !important;
+  justify-content: normal;
 }
 
 .cart-order {
-    margin-left: 106px;
+    margin-left: 3px;
 }
 
 .Customer-address-div{
-  margin-left: 106px;
-}
-
-.MuiContainer-root {
-  width: 84%!important;
+  margin-left: 3px;
 }
 
 .order-sumary{
-  margin-left: 106px;
+  margin-left: 3px;
 }
 
 .row-3{
@@ -768,106 +826,7 @@ h2 {
   
 }
 
-@media only screen and (min-width: 768px) {
-/* Header media query */
-.book-icon {
-  margin-left: 6em !important;
-  margin-right: 15px;
-  margin-top: 3px;
-  color: whitesmoke;
-}
-
-.search {
-  width: 285px!important;
-}
-
-.search-bar{
-  margin-left: 2em!important;
-}
-
-.cart-div {
-  padding-left: 45px !important;
-}
-
-.BookCard-Header {
-  margin-left: -70px !important;
-}
-
-.sort-by-div {
-  margin-right: 95px !important;
-}
-
-.book-count-div {
-  margin-left: -308px !important;
-}
-
-.card-container {
-  height: auto;
-  min-height: 862px!important;
-}
-
-
-/* AddCartPAge medis querry */
-.MuiOutlinedInput-root {
-  border-radius: 4px;
-  width: 254px !important;
-  margin-left: 51px !important;
-}
-
-.MuiInputLabel-outlined {
-  margin-left: 23px;
-}
-
-.cart-title-div {
-  margin-left: 15px;
-}
-.order-details-div {
-  margin-left: -40px;
-}
-
-.book-details-div {
-  margin-left: -75px;
-}
-
-.continue-shopping-cart-button {
-  width: 136px;
-}
-
-.checkout-div {
-  padding: 11px;
-  margin-right: 23px;
-}
-
-.checkout-button {
-  width: 153px;
-}
-
-.grid-div {
-  height: 1495px;
-}
-
-.MuiGrid-spacing-xs-5 {
-  padding-bottom: 59px;
-}
-
-/* orderPlaced mediaquerry */
-.upper-image-div {
-  margin-top: 48px;
-}
-
-.table-div {
-  width: 604px !important;
-}
-
-.order-placed-container {
-  margin-top: 129px;
-}
-
-.continue-shopping-button-div {
-  margin-top: 50px !important;
-}
-}
-
+/* media query of 1024px */
 
 @media only screen and (min-width: 1024px)
 {
@@ -879,6 +838,10 @@ h2 {
   font-size: 19px!important;
 }
 
+
+.card-header{
+  padding-left: 137px;
+}
 .search-bar {
   margin-left: 4em !important;
 }
@@ -888,20 +851,27 @@ h2 {
 }
 
 .cart-div {
-  padding-left: 81px !important;
+  padding-left: 176px !important;
 }
 
-.BookCard-Header {
-  margin-left: -39px !important;
+.card-container {
+  padding-left: 172px;
 }
 
 .sort-by-div {
-  margin-right: 129px !important;
+  padding-right: 32px;
+}
+.dashboard-div{
+  overflow: hidden;
+}
+
+.select-bar{
+  margin-right: 70px;
 }
 
 .book-count-div {
-  margin-top: 7px !important;
-  margin-left: -512px !important;
+  margin-left: -34em;
+    margin-top: 9px;
 }
 
 /* AddCartPage */
@@ -919,415 +889,172 @@ h2 {
   margin-left: 25px;
 }
 
+.MuiGrid-spacing-xs-5 > .MuiGrid-item {
+  padding: 20px;
+  margin-left: 0px;
+}
+
 .grid-div {
-  margin-top: -290px;
-  margin-left: 85px;
-  width: 85%;
-} 
+  margin-left: 94px;
+}
 
 /* orderplaced */
 .table-div {
   width: 90% !important;
 }
+}
+
+
+/* 768 px medis query */
+
+@media only screen and (min-width: 768px) and (min-height: 1024px)
+{
+  .card-container {
+    padding-left: 178px;
+}
+
+.card-header {
+  padding-left: 119px;
+}
+
+.logo-title{
+  font-size:17px !important;
+}
+
+.book-icon {
+  margin-left: 7em !important;
+  display: flex;
+  margin-top: -1px;
+  margin-right: 5px;
+}
+.search-bar {
+  margin-left: 2em !important;
+}
+
+.book-details-div {
+  margin-left: -40px !important;
+}
+
+.table-div {
+  width: 601px !important;
+}
+.cart-div{
+  padding-left: 75px !important;
+}
+
+.grid-div {
+  margin-left: 73px;
+}
+.MuiGrid-spacing-xs-5 > .MuiGrid-item {
+  margin-bottom: 45px;
+}
 
 .order-placed-container {
-  margin-top: 64px;
+  min-height: 1024px;
 }
 
-.continue-shopping-button-div {
-  top: 547px !important;
-}
-}
-
-
-/* media query for width 700px */
-
-@media only screen and (min-width: 700px){
-
-/* Header media query */
-.book-icon {
-  margin-left: 2em;
-  margin-right: 15px;
-  margin-top: 3px;
-  color: whitesmoke;
+.MuiSvgIcon-root {
+  width: 1em !important;
+  font-size: 1.75rem !important;
 }
 
-.search {
-  width: 285px;
-}
 
-.cart-div {
-  padding-left: 42px;
-}
 
+.sort-by-div {
+  padding-right: 129px;
+}
 .BookCard-Header {
-  margin-left: -95px;
-}
-
-.sort-by-div {
-  margin-right: 72px;
-}
-
-
-/* AddCartPAge medis querry */
-.MuiOutlinedInput-root {
-  border-radius: 4px;
-  width: 231px;
-  margin-left: 48px;
-}
-
-.MuiInputLabel-outlined {
-  z-index: 1;
-  transform: translate(60px, 20px) scale(1) !important;
-  pointer-events: none;
-}
-
-.cart-title-div {
-  margin-left: 15px;
-}
-.order-details-div {
-  margin-left: -40px;
-}
-
-.book-details-div {
-  margin-left: -75px;
-}
-
-.continue-shopping-cart-button {
-  width: 136px;
-}
-
-.checkout-div {
-  padding: 11px;
-  margin-right: 23px;
-}
-
-.checkout-button {
-  width: 153px;
-}
-
-.grid-div {
-  margin-top: -274px;
-}
-
-.MuiGrid-spacing-xs-5 {
-  padding-bottom: 59px;
-}
-
-/* orderPlaced mediaquerry */
-.upper-image-div {
-  margin-top: 48px;
-}
-
-.table-div {
-  width: 604px;
-}
-
-.continue-shopping-button-div {
-  margin-top: -69px;
+  padding-left: 118px;
 }
 
 }
 
 
-/* media query for width 400px */
-
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 360px)
+{
   .book-icon {
-    margin-left: 1em;
+    margin-left: 1rem;
+    margin-right: 5px;
   }
 
-  .logo-title{
-    font-size: 15px;
+  .book-title{
+    font-size:9px;
   }
-
-  .MuiContainer-maxWidthLg {
-     margin-left: 0px !important;
-
+  .logo-title {
+    margin-top: 15px;
+    font-size: 16px;
 }
-
-  .search {
-    width: 110px;
-  }
 
   .search-bar {
-    margin: 1px;
     margin-left: 1em;
 }
 
-  .cart-div{
-    padding-left: 26px;
-  }
-  
-  .book-count-div {
-    color: #3c3636;
-    margin-top: 6px;
-    font-size: 15px;
-    margin-left: -102px;
+.MuiTextField-root {
+  width: 100%;
 }
 
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  padding-left: 133px;
-  height: auto;
-  min-height: 612px;
+.MuiInput-root {
+  width: 99%;
 }
 
-  .BookCard-Header {
-    margin-left: -142px;
-}
-.sort-by-div {
-  margin-right: 19px;
+.cart-div{
+  padding-left: 24px;
+    margin-right: 5px;
+    margin-left: -33px;
 }
 
-/* cartpage media query */
 .cart-title-div {
   padding: 1px;
-  margin-left: 13px;
-}
-.order-details-div {
-  display: flex;
-  margin-left: -38px;
+  margin-left: 12px;
 }
 
-.img-book {
-  width: 152px;
+.order-details-div {
+  margin-left: -42px;
 }
 
 .book-details-div {
-  margin-left: -4px;
-  margin-top: -10px;
-}
-
-.remove-btn {
-  margin-top: 8px;
+  margin-left: -6px;
 }
 
 .quantity-div {
-  display: flex;
-  padding: 9px;
   display: block;
-}
-.input-type {
-  width: 40px;
-  height: 13px;
-  padding-top: 14px;
-}
-
-.continue-shopping-cart-button {
-  width: 132px;
-}
-
-.continue-shopping-details-button {
-  width: 132px;
-}
-
-.MuiOutlinedInput-root {
-  position: relative;
-  border-radius: 4px;
-  width: 122px;
-  margin-left: 35px;
-}
-
-.MuiGrid-spacing-xs-5 {
-  width: calc(100% + 40px);
-  margin: -24px !important;
-}
-
-.MuiInputLabel-outlined {
-  z-index: 1;
-  transform: translate(42px, 20px) scale(1)!important;
-  pointer-events: none;
-}
-
-.grid-div {
-  margin-top: -293px;
-}
-
-.MuiGrid-spacing-xs-5 {
-  padding-bottom: 21px;
-}
-
-.checkout-div {
-  display: flex;
-  justify-content: flex-end;
-  padding: 14px;
-  margin-right: 0px;
-}
-
-.checkout-button{
-  width: 132px;
-}
-
-/* ordersummary media querry */
-.table-div {
-  width: 387px;
-  height: 52px;
-}
-  
-}
-
-
-@media only screen and (min-width: 360px){
-  .book-icon {
-    margin-left: 1em;
-  }
-
-  .logo-title{
-    font-size: 15px;
-  }
-
-  .MuiContainer-maxWidthLg {
-     margin-left: 0px !important;
-
-}
-
-  .search {
-    width: 110px;
-  }
-
-  .search-bar {
-    margin: 1px;
-    margin-left: 1em;
-}
-
-  .cart-div{
-    padding-left: 26px;
-  }
-  
-  .book-count-div {
-    color: #3c3636;
-    margin-top: 6px;
-    font-size: 15px;
-    margin-left: -50px;
-}
-
-.p-footer {
-  font-size: 11px;
-}
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  padding-left: 133px;
-  height: auto;
-  min-height: 612px;
-}
-
-  .BookCard-Header {
-    margin-left: -142px;
-}
-.sort-by-div {
-  margin-right: 19px;
-}
-
-/* cartpage media query */
-.cart-title-div {
-  padding: 1px;
-  margin-left: 13px;
-}
-.order-details-div {
-  display: flex;
-  margin-left: -38px;
-}
-
-.img-book {
-  width: 152px;
-}
-
-.book-details-div {
-  margin-left: -4px;
-  margin-top: -10px;
+  padding: 8px;
 }
 
 .remove-btn {
-  margin-top: 8px;
-}
-
-.quantity-div {
-  display: flex;
-  padding: 9px;
-  display: block;
-}
-.input-type {
-  width: 40px;
-  height: 13px;
-  padding-top: 14px;
-}
-
-.continue-shopping-cart-button {
-  width: 132px;
-}
-
-.continue-shopping-details-button {
-  width: 132px;
-}
-
-.MuiOutlinedInput-root {
-  position: relative;
-  border-radius: 4px;
-  width: 122px;
-  margin-left: 35px;
-}
-
-.MuiGrid-spacing-xs-5 {
-  width: calc(100% + 40px);
-  margin: -24px !important;
-}
-
-.MuiInputLabel-outlined {
-  z-index: 1;
-  transform: translate(42px, 20px) scale(1)!important;
-  pointer-events: none;
-}
-
-.grid-div {
-  margin-top: -293px;
- /* width: 115%; */
-}
-
-.cart-order {
-  width:115%;
-}
-
-.Customer-address-div {
-  width:115%;
+  margin-left: 29px;
+  margin-top: 3px;
 }
 
 .order-sumary{
-  width:115%;
+  margin-right: -37px;
 }
 
-.continue-shopping-button-div {
-  top: 662px;
-  height: 35px;
-  margin-bottom: 2em;
+.cart-order{
+  margin-right: -37px;
 }
 
-.MuiGrid-spacing-xs-5 {
-  padding-bottom: 21px;
+.Customer-address-div{
+  margin-right: -37px;
 }
 
-.checkout-div {
-  display: flex;
-  justify-content: flex-end;
-  padding: 14px;
-  margin-right: 0px;
-}
-
-.checkout-button{
-  width: 132px;
-}
-
-/* ordersummary media querry */
 .table-div {
-  width: 361px;
+  width: 377px;
 }
-  
+
+.sort-by-div {
+  margin-right: 13px;
 }
-=======
->>>>>>> Jayant-Fullstack
+
+.BookCard-Header {
+  padding-left: 0;
+}
+.card-container{
+margin-left: -116px;
+}
+
+.p-footer {
+  font-size: 12px;
+}
+
+}
