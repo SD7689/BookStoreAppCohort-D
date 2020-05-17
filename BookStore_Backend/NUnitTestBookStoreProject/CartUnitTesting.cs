@@ -15,7 +15,7 @@ namespace NUnitTestBookStoreProject
     {
         Cart cart = new Cart();
         [Test]
-        public void AddToCartTestInController()
+        public void AddABookToCart_WhenPassToBookCartController_ShouldAddPerticularBookToCart()
         {
             var service = new Mock<ICartManager>();
             var controller = new CartController(service.Object);
@@ -24,7 +24,7 @@ namespace NUnitTestBookStoreProject
             Assert.NotNull(data);
         }
         [Test]
-        public void AddToCartTestInManager()
+        public void AddABookToCart_WhenPassToBookCartManager_ShouldAddPerticularBookToCart()
         {
             var service = new Mock<ICartRepo>();
             var manager = new ImpCartManager(service.Object);
@@ -33,7 +33,7 @@ namespace NUnitTestBookStoreProject
             Assert.NotNull(data);
         }
         [Test]
-        public void RemoveCartTestInController()
+        public void RemoveBookFromCartList_FromCartController_ShouldRemoveThePerticlarBook()
         {
             var service = new Mock<ICartManager>();
             var controller = new CartController(service.Object);
@@ -41,7 +41,7 @@ namespace NUnitTestBookStoreProject
             Assert.NotNull(data);
         }
         [Test]
-        public void RemoveCartTestInManager()
+        public void RemoveBookFromCartList_FromCartManager_ShouldRemoveThePerticlarBook()
         {
             var service = new Mock<ICartRepo>();
             var manager = new ImpCartManager(service.Object);
@@ -49,7 +49,7 @@ namespace NUnitTestBookStoreProject
             Assert.Null(data);
         }
         [Test]
-        public void GetAllCartTestInController()
+        public void GetAllCart_WhenPasseToCartController_ShouldReturn_AllBookAddedToCart()
         {
             var service = new Mock<ICartManager>();
             var controller = new CartController(service.Object);
@@ -58,7 +58,7 @@ namespace NUnitTestBookStoreProject
         }
 
         [Test]
-        public void GetAllCartTestInManager()
+        public void GetAllCart_WhenPasseToCartManager_ShouldReturn_AllBookAddedToCart()
         {
             var service = new Mock<ICartRepo>();
             var manager = new ImpCartManager(service.Object);
