@@ -6,7 +6,7 @@ export class Footer extends Component {
         return (
             <div className="footer">
                  <p className="p-footer"> Copyright &copy; 2020. BookStore 
-                     private Limited. All Right Reversed</p>
+                     private Limited. All Right Reserved</p>
             </div>
         );
     }

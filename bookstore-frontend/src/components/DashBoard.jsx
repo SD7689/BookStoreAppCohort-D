@@ -1,25 +1,35 @@
-import React, { Component } from 'react';
+import React,{Component } from 'react';
 import { Header } from './Header';
 import { BookCard } from './BookCard';
 import { Footer } from './Footer';
 import axios from 'axios'
 import { AddCartPage } from './AddCartPage'
-//import { OrderPlaced } from './OrderPlaced'
-import OrderPlaced from '../components/OrderPlaced'
-
+import { AddCartRequestMethod } from '../Services/CartServices'
+import Pagination from './Pagination'
 export class DashBoard extends Component {
     state = {
         books: [],
         NumOfBooks: 0,
         cartCounter: 0,
-        text: "Add To Bag",
         showWishlist: false,
         disableButton: false,
         showAddCartPage: false,
         showCartCounter: false,
         showCustomerDetails: false,
-        clickedID : [] ,
-        showOrderPlacedPage: false
+        clickedId: [],
+        showOrderPlacedPage: false,
+         cart:[],
+         currentPage:1,
+         postsPerPage:12
+
+    }
+
+
+    paginate=(pageNumber)=>{
+        this.setState({
+            currentPage:pageNumber
+        })
+        console.log("pagenumber after", this.state.currentPage);
     }
 
     addToCartPageHandler = async () => {
@@ -28,35 +38,32 @@ export class DashBoard extends Component {
             showAddCartPage: !doesShowCartPage
         })
     }
-    orderPlacedPageHandler = async () => {
-        let doesShowOrderPlacedPage = this.state.showOrderPlacedPage;
-        await this.setState({
-            showOrderPlacedPage: !doesShowOrderPlacedPage
-        })
-    }
-    customerDetailsShowHandler = async () => {
-        let doesShowCustomerDetails = this.state.showCustomerDetails;
-        await this.setState({
-            showCustomerDetails: !doesShowCustomerDetails
-        })
-    }
-
-    cartCountHandler = async (clickedID) => {
+   
+    
+    cartCountHandler = (clickedID,bookAvailable) => {
         let count = this.state.cartCounter;
         let doesShowWishlist = this.state.showWishlist;
-        let doesDisableButton = this.state.disableButton
-        let doesShowCartCounter = this.state.showCartCounter;
-        let clickedidArray = this.state.clickedID;
+        let doesDisableButton = this.state.disableButton;
+        let clickedidArray = this.state.clickedId;
         clickedidArray.push(clickedID);
-        console.log(clickedID);
-        await this.setState({
+        console.log(" click id is",clickedID);
+        let doesShowCartCounter = this.state.showCartCounter;
+        this.setState({
             cartCounter: count + 1,
-            clickedID: [...clickedidArray],
-            text: "Added To Bag",
+           
+            clickedId: [...clickedidArray],
             showWishlist: !doesShowWishlist,
             disableButton: !doesDisableButton,
             showCartCounter: !doesShowCartCounter
         })
+        var cart = {
+            bookId: clickedID ,
+            numOfCopies: bookAvailable
+        }
+       const response = AddCartRequestMethod(cart);
+       response.then(res=>{
+          console.log(res.data); 
+       })
         console.log("counter", this.state.cartCounter)
     }
 
@@ -76,21 +83,18 @@ export class DashBoard extends Component {
                 })
             })
     }
-    /*componentDidMount() {
-        axios.get("https://localhost:44394/api/Book/NumOfBooks")
-            .then(response => {
-                const NumOfBooks = response.data;
-                this.setState({
-                    NumOfBooks: NumOfBooks
-                })
-            })
-    }*/
-    /*onClickButton1 = async() => {
-    await this.setState({
-     text: "Added To Bag"
-   });
- }*/
+    orderPlacedPageHandler = async () => {
+        let doesShowOrderPlacedPage = this.state.showOrderPlacedPage;
+        await this.setState({
+            showOrderPlacedPage: !doesShowOrderPlacedPage
+        })
+    }
     render() {
+
+        const indexOfLastPost = this.state.currentPage * this.state.postsPerPage;
+        const indexOfFirstPost = indexOfLastPost - this.state.postsPerPage;
+        const currentPosts = this.state.books.slice(indexOfFirstPost, indexOfLastPost)
+
         return (
             <div className='dashboard-div'>
                 <Header 
@@ -98,23 +102,18 @@ export class DashBoard extends Component {
                 showAddCartPage={this.addToCartPageHandler} 
                 showCartCounter={this.state.showCartCounter}
                 />
-
                 {
                     this.state.showAddCartPage ?
-                        <>
                             <AddCartPage 
-                            showCustomerDetails={this.customerDetailsShowHandler} 
-                            showDetails={this.state.showCustomerDetails}        
-        showOrderPlacedPage = {this.state.showOrderPlacedPage}
-        orderPlacedPageHandler = {this.orderPlacedPageHandler}
-
+                            //showOrderPlacedPage = {this.state.showOrderPlacedPage}
+                            //orderPlacedPageHandler = {this.orderPlacedPageHandler}
                             />
-                       </>
                         :
                         <>
                             <div className='card-header'>
-                                <div className="BookCard-Header">Books</div>
-                                <div className="book-count-div">({this.state.NumOfBooks} items)</div>
+                                <div className="BookCard-Header">
+                                    <h5>Books<span id='bookcountfont'>({this.state.NumOfBooks} items)</span></h5>
+                                </div>
                                 <div class="sort-by-div">
                                     <select className="select-bar">
                                         <option>Sort By</option>
@@ -125,14 +124,18 @@ export class DashBoard extends Component {
                                 </div>
                             </div>
                             <BookCard 
+                            books = {currentPosts}
                             cartCounter={this.cartCountHandler} 
-                            books={this.state.books} text={this.state.text} 
+                          //  books={this.state.books} text={this.state.text} 
                             showWishlist={this.state.showWishlist} 
-                            disableButton={this.state.disableButton}  
+                            disableButton={this.state.disableButton} 
+                            clickedId={this.state.clickedId} 
                             />
+                            <Pagination postsPerPage={this.state.postsPerPage}
+                            totalPosts={this.state.books.length}
+                            paginateNumber={this.paginate}/>
                         </>
                 }
-               
                 <Footer />
             </div>
         );
