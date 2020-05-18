@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Manager.LoginManager;
+using Microsoft.AspNetCore.Mvc;
+using Model;
+
+// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+namespace BookStore_Api.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class LoginController : ControllerBase
+    {
+        private readonly ILoginManager manager;
+
+        public LoginController(ILoginManager manager)
+        {
+            this.manager = manager;
+        }
+        [Route("Login")]
+        [HttpPost]
+        public IActionResult LoginUser(string email, string password)
+        {
+            var result=this.manager.Login(email, password);
+            if (result != null)
+<<<<<<< HEAD
+                return this.Ok(result);
+            return this.BadRequest();
+=======
+                return this.Ok(email);
+            return this.BadRequest("Login Failed");
+>>>>>>> Jayant-Fullstack
+            
+        }
+        [Route("AddUser")]
+        [HttpPost]
+        public async Task<IActionResult> AddUser(User user)
+        {
+            var result =await this.manager.AddUser(user);
+            if (result == 1)
+            {
+                return this.Ok(user);
+            }
+            return this.BadRequest();
+        }
+    }
+}
