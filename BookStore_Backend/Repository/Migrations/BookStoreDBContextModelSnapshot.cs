@@ -27,7 +27,7 @@ namespace Repository.Migrations
                     b.Property<string>("AuthorName")
                         .IsRequired();
 
-                    b.Property<bool>("Availability");
+                    b.Property<int>("Availability");
 
                     b.Property<string>("BookImage")
                         .IsRequired();
@@ -35,6 +35,9 @@ namespace Repository.Migrations
                     b.Property<double>("BookPrice");
 
                     b.Property<string>("BookTitle")
+                        .IsRequired();
+
+                    b.Property<string>("Description")
                         .IsRequired();
 
                     b.HasKey("BookID");

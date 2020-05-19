@@ -45,10 +45,23 @@ namespace BookStore_Api.Controllers
         /// <returns></returns>
         [Route("GetCustomerAddress")]
         [HttpGet]
-        public CustomerAdress GetCustomerAddress(string bookId)
+        public CustomerAdress GetCustomerAddress(string Email_Id)
         {
             sender.Send("Get all address");
-            return this.imanager.GetCustomerAddress(bookId);
+            return this.imanager.GetCustomerAddress(Email_Id);
+        }
+
+        /// <summary>
+        /// Custmor login.
+        /// </summary>
+        /// <param name="Email_Id"></param>
+        /// <param name="Password"></param>
+        /// <returns></returns>
+        [Route("CustmorLogin")]
+        [HttpGet]
+        public object CustmorLogin(string Email_Id, string Password)
+        {
+            return this.imanager.Login(Email_Id, Password);
         }
 
     }

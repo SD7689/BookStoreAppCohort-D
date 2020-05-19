@@ -9,8 +9,8 @@ using Repository;
 namespace Repository.Migrations
 {
     [DbContext(typeof(BookStoreDBContext))]
-    [Migration("20200514083943_initial")]
-    partial class initial
+    [Migration("20200519164127_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -55,7 +55,7 @@ namespace Repository.Migrations
 
                     b.Property<int>("BookId");
 
-                    b.Property<int>("NumOfCopies");
+                    b.Property<int>("BooksCount");
 
                     b.HasKey("CartID");
 
@@ -70,8 +70,6 @@ namespace Repository.Migrations
                     b.Property<string>("Address")
                         .IsRequired();
 
-                    b.Property<string>("AddressType");
-
                     b.Property<string>("Citytown")
                         .IsRequired();
 
@@ -79,6 +77,9 @@ namespace Repository.Migrations
                         .IsRequired();
 
                     b.Property<string>("Landmark");
+
+                    b.Property<string>("Password")
+                        .IsRequired();
 
                     b.Property<int>("PhoneNumber");
 

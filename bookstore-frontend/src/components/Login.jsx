@@ -31,9 +31,9 @@ export class Login extends Component {
 
         }
     sessionStorage.setItem("email",this.state.email);
-    AddUserRequestMethod(data).then(res => {
-        console.log("Email is", res.data)
-      if (res.data == data.email){
+    AddUserRequestMethod(this.state.email, this.state.password).then(res => {
+        console.log("Email is", res.data.email)
+      if (res.data.email == data.email){
         this.props.history.push('/dashboard');
       }
       

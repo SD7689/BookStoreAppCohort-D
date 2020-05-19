@@ -41,6 +41,5 @@ namespace NUnitTestBookStoreProject
             var data = controller.AddCustomerAddress(address);
             Assert.IsNotNull(data);
         }
-        
     }
 }

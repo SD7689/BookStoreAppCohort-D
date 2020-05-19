@@ -1,15 +1,1 @@
-Add the book details
-Add custmor address
-Add the book details
-Get all books details
-Count the number of books
-Image Uploaded 
-Add book in cart
-Remove book in cart
-Add custmor address
-Add the book details
-Get all books details
-Count the number of books
-Image Uploaded 
-Add book in cart
-Remove book in cart
+Get all address
