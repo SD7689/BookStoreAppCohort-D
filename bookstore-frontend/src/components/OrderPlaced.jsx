@@ -4,6 +4,10 @@ import { Header } from './Header';
 import Celebration from '../Asserts/Celebration.png';
 
 export default class OrderPlaced extends Component {
+      
+    continueShoppingButtonHandler = (event) => {
+        window.location.reload("/dashboard");
+    }
     render() {
         return (
             <>
@@ -38,7 +42,7 @@ export default class OrderPlaced extends Component {
                         </table>
                     </div>
                     <div className="continue-shopping-button-div">
-                        <button className="continue-shopping-button"> CONTINUE SHOPPING</button>
+                        <button className="continue-shopping-button" onClick={this.continueShoppingButtonHandler}> CONTINUE SHOPPING</button>
                         </div>
                 </div>
 

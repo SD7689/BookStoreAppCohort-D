@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
+import { Header } from './Header';
+import { Footer } from './Footer';
+import logo from '../logo.svg';
 import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -27,7 +30,8 @@ export class AddCartPage extends Component {
         address: "",
         landmark: "",
         type: "",
-        email: "abc"
+        email: "cohortD",
+        sameBook: 1
 
     }
     nameHandler = (event) => {
@@ -89,6 +93,8 @@ export class AddCartPage extends Component {
     }
     addCustomerDetailsHandler = (event) => {
         event.preventDefault();
+        //const email = window.sessionStorage.getItem('email');
+        //console.log(`email is ${email}`);
         var data = {
             email: this.state.email,
             fullName: this.state.name,
@@ -150,6 +156,24 @@ export class AddCartPage extends Component {
             )
         })
     }
+    sameBookAddHandler = async (cartId) => {
+        let count = this.state.sameBook;
+        // this.state.cart.map((ele) =>{
+        //     e=ele.cartId
+        // })
+        await this.setState({
+            sameBook: count + 1
+        })
+    }
+    sameBookRemoveHandler = async (id) => {
+        let count = this.state.sameBook;
+        // const response = removeCartMethod({ params: { cartId: id } });
+        // await response.then(res => {
+            this.setState({
+                sameBook: count - 1
+            })
+        
+    }
     orderPlacedPageHandler = async () => {
         let doesShowOrderPlacedPage = this.state.showOrderPlacedPage;
         await this.setState({
@@ -157,9 +181,10 @@ export class AddCartPage extends Component {
         })
     }
     render() {
+
         return (
             <>
-                {
+           {
                     this.state.showOrderPlacedPage ?
                         <OrderPlaced />
                         :
@@ -173,6 +198,7 @@ export class AddCartPage extends Component {
                                                     <h3 className="my-cart-h4">My Cart({this.state.cartAddedCount})</h3>
                                                 </div>
                                                 {
+                                                    
                                                     this.state.cart.map(ele => {
                                                         return (
                                                             <div className="order-details-div">
@@ -190,12 +216,14 @@ export class AddCartPage extends Component {
                                                                         <p>Rs.{ele.bookPrice}</p>
                                                                     </div>
                                                                     <div className="quantity-div">
-                                                                        <button className="minus-btn"><RemoveRoundedIcon className="icon" /></button>
-                                                                        {
-
-                                                                            <input type="text" className="input-type" />
-                                                                        }
-                                                                        <button className="plus-btn"><AddRoundedIcon className="icon" /></button>
+                                                                        <button className="minus-btn" onClick={this.sameBookRemoveHandler}><RemoveRoundedIcon className="icon" /></button>
+                                                                        
+                                                                            <div className="input-type">
+                                                                                {this.state.sameBook}
+                                                                            </div>
+                                                                            {/* <input type="text"  className="input-type"> */}
+                                                                       
+                                                                        <button className="plus-btn"onClick={this.sameBookAddHandler}><AddRoundedIcon className="icon" /></button>
                                                                         <button className="remove-btn" onClick={() => this.deleteCartHandler(ele.cartId)} >Remove</button>
                                                                     </div>
 
@@ -204,10 +232,13 @@ export class AddCartPage extends Component {
                                                         )
                                                     })
                                                 }
-
-                                                <div className="continue-cart-div">
+                                                {
+                                                    this.state.cartAddedCount!=0?
+                                                    <div className="continue-cart-div">
                                                     <button className="continue-shopping-cart-button" onClick={this.customerDetailsShowHandler}> PLACE ORDER </button>
-                                                </div>
+                                                </div>: null
+                                                }
+                                                
                                             </div>
                                         </Grid>
                                         <Grid item xs={10}>
@@ -255,6 +286,7 @@ export class AddCartPage extends Component {
                                                     <h3 className="my-cart-h4">Order Summary</h3>
                                                 </div>
                                                 {
+                                                    this.state.showOrderSummery?
                                                     this.state.cart.map(ele => {
                                                         return (
                                                             <div className="order-details-div">
@@ -274,7 +306,7 @@ export class AddCartPage extends Component {
                                                                 </div>
                                                             </div>
                                                         )
-                                                    })
+                                                    }):null
                                                 }
                                                 <div className="checkout-div">
                                                     <button className="checkout-button"

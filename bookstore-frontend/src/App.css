@@ -6,6 +6,7 @@
   align-items: center;
   position: fixed;
   width: 100%;
+  z-index: 1;
 }
 .book-icon {
   margin-left: 13em;
@@ -111,10 +112,11 @@
 }
 .links {
   text-align: center;
-    margin-top: 12px;
-    font-size: 13px;
-    display: flex;
-    margin-left: 153px;}
+  margin-top: 6px;
+  font-size: 13px;
+  display: flex;
+  margin-left: 109px;
+}
 
 .login-div {
   display: flex;
@@ -141,36 +143,43 @@
 }
 .input-email-div{
   padding-left: 6px;
-  height: 25px;
+  height: 35px;
   width: 252px;
   margin-top: 47px;
 }
 
 button.submit {
   border-radius: 4px;
-    background-color: rgb(236, 170, 93);
-    color: #fff;
+  background-color: rgb(105, 197, 79);
+  color: #fff;
   outline: none;
-    border: 1px solid #000;
-    outline: none;
-    height: 35px;
-    width: 122px;
+  border: 1px solid #000;
+  outline: none;
+  height: 35px;
+  width: 122px;
 }
 button.submit:hover{
-  background-color:sienna;
+  background-color:rgb(83, 171, 58);
 }
 .app-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 32px;
+  margin-top: 20px;
 }
 
 
 .email-div{
-  padding: 7px;
+  margin: 7px;
   height: 84px;
     margin-top: -28px;
+}
+.password-div{
+  
+    margin: 7px;
+    height: 84px;
+      margin-top: -28px;
+  
 }
 .cart-icon-div {
   margin-top: 14px;
@@ -243,12 +252,19 @@ button.submit:hover{
 
 
 .card-header {
-  padding-top: 75px;
-  padding-bottom: 1px;
-  padding-left: 12px;
+  padding-top: 90px !important;
+  /* padding-bottom: 1px;
+  padding-left: 12px; */
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  padding: .75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: white !important;
+  border-bottom: none !important;
+  position: relative;
+    padding-bottom: 10px;
+  /* margin-left: 14%; */
 }
 
 .sort-by-div {
@@ -268,16 +284,24 @@ button.submit:hover{
 }
 
 .cart-h4 {
-  font-size: 21px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 700;
   margin-top: 15px;
+  margin-left: 1em;
 }
 
+/* .card-header {
+  padding: .75rem 1.25rem;
+  margin-bottom: 0;
+   background-color:0; 
+  border-bottom: 0;
+} */
 .book-title-div{
-    font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    margin-left: 20px;
-    margin-top: 5px;
-    margin-bottom: 26px;
+  font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin-left: 20px;
+  margin-top: 16px;
+  margin-bottom: 27px;
+  /* font-size: 18px !important; */
 }
 .author-name-div{
   font-family: adobe-clean, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -347,10 +371,12 @@ button.submit:hover{
 }
 
 .input-type{
-  width: 10%;
+  width: 14%;
+  padding: 0px 6px;
   height: 30px;
   padding-top: 3px;
-  border-radius: 11px;
+  /* padding-right: 10px; */
+  border-radius: 0px;
   border: 1px solid #aaa;
   outline: none;
   display: inline;
@@ -369,6 +395,7 @@ button.submit:hover{
 .MuiContainer-maxWidthLg {
     margin-left: 22px !important;
 }
+
 .BookCard-Header {
   font-size: 22px;
   font-family: cursive;
@@ -391,7 +418,7 @@ button.submit:hover{
   /* justify-content: center; */
   align-items: center;
   /* margin-top: 81px; */
-  min-height: 683px;
+  min-height: 696px;
   flex-direction: column;
 }
 .upper-image-div{
@@ -548,8 +575,8 @@ display: flex;
     border: 1px solid gray;
     margin: 6px;
     width: 27px;
-    outline: none;
-    outline: none;
+   
+    outline: none !important;
     height: 27px;
     width: 28px;
 }
@@ -604,7 +631,9 @@ display: flex;
   margin-top: 13px;
   outline: none;
 }
-
+.book-title-div h4{
+  font-size: 18px;
+}
 .icon {
   margin-left: -5px;
   margin-top: -1px;
@@ -617,7 +646,7 @@ display: flex;
     margin: 6px;
     width: 27px;
     height: 25px;
-    outline: none;
+    outline: none !important;
 }
 
 .checkout-div{
@@ -658,7 +687,7 @@ display: flex;
 .MuiGrid-spacing-xs-5 {
   width: calc(100% + 40px);
   margin: -20px;
-  padding-bottom: 292px;
+  padding-bottom: 87px;
   }
 .Customer-address-div{
   border: 1px solid #757575;
@@ -737,13 +766,16 @@ display: flex;
 .search {
   width: 403px;
 }
-
+.MuiContainer-root {
+  padding-left: 123px !important;
+  padding-right: 0px !important;
+}
 .cart-div {
   margin-left: 70px !important;
 }
 
 .select-bar {
-  margin-right: -52px !important;
+  margin-right: 0px !important;
 }
 
 .sort-by-div {
@@ -760,15 +792,18 @@ display: flex;
 }
 
 .card-header{
-  padding-left: 135px;
+  margin-left: 14%;
+  padding-top: 90px !important;
+  position: relative;
+    padding-bottom: 10px;
 }
 
 h2 {
-  font-size: 1.2em ;
+  font-weight: 700;
 }
 
 .search-bar {
-  padding-left: 141px;
+  padding-left: 67px;
 }
 
 .book-count-div {
@@ -778,12 +813,15 @@ h2 {
 .p-footer {
   font-size: 14px !important;
 }
-
+.book-title-div{
+  font-size: 18px !important;
+}
 /* cartpage  */
 .quantity-div {
   display: flex !important;
   padding: 14px !important;
   justify-content: normal;
+  width: 270px;
 }
 
 .cart-order {
@@ -839,9 +877,9 @@ h2 {
 }
 
 
-.card-header{
+/* .card-header{
   padding-left: 137px;
-}
+} */
 .search-bar {
   margin-left: 4em !important;
 }
