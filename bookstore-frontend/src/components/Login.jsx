@@ -34,7 +34,11 @@ export class Login extends Component {
     AddUserRequestMethod(this.state.email, this.state.password).then(res => {
         console.log("Email is", res.data.email)
       if (res.data.email == data.email){
+        alert("Successfully login");
         this.props.history.push('/dashboard');
+      }
+      else{
+        alert("email or password is incorrect");
       }
       
     }).catch(() => {
