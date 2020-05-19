@@ -1,31 +1,28 @@
 import React, { Component } from 'react';
-import { AddUserRequestMethod } from '../Services/LoginService'
+import axios from 'axios';
+import {AddUserRequestMethod} from '../Services/LoginService'
 
 export class Login extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
+    
+        state = {
             email: "",
             password: ""
         }
-    }
     
     handleEmailChange = (event) => {
-        const email = event.target.value;
+       let email = event.target.value;
         this.setState({
             email: email
         })
         console.log("email", this.state.email)
     }
-
     handlePasswordChange = (event) => {
-        const password = event.target.value;
+        let password = event.target.value;
         this.setState({
             password: password
         })
         console.log("password", this.state.password)
     }
-
     handleSubmitButton = (event) => {
         event.preventDefault();
         var data = {
@@ -33,19 +30,22 @@ export class Login extends Component {
             password: this.state.password
 
         }
-        sessionStorage.setItem("email", this.state.email);
-        const response = AddUserRequestMethod(data);
-        response.then(res => {
-            if (res.data == data.email) {
-                this.props.history.push('/dashboard');
-            }
-
-        }).catch(() => {
-            alert("email or password is incorrect");
-
-        })
-    }
-
+    sessionStorage.setItem("email",this.state.email);
+    AddUserRequestMethod(data).then(res => {
+        console.log("Email is", res.data)
+      if (res.data == data.email){
+        this.props.history.push('/dashboard');
+      }
+      
+    }).catch(() => {
+      alert("email or password is incorrect");
+     
+    })
+  }
+  
+        //console.log("data", data);
+        //console.log("status", this.state.email, this.state.password);
+    
     render() {
         return (
             <div className="main-div">
@@ -56,7 +56,7 @@ export class Login extends Component {
                         <div className="email-div">
                             <input type="email" className="input-email-div" placeholder="Email" onChange={this.handleEmailChange} />
                         </div>
-                        <div className="email-div">
+                        <div className="password-div">
                             <input type="password" className="input-email-div" placeholder="Password" onChange={this.handlePasswordChange} />
                         </div>
 
@@ -70,7 +70,10 @@ export class Login extends Component {
                     </div>
                 </div>
             </div>
+
         )
+    
+
     }
 
 }

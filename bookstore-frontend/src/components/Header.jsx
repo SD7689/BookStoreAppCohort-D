@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import MenuBookRoundedIcon from '@material-ui/icons/MenuBookRounded';
 import AddShoppingCartTwoToneIcon from '@material-ui/icons/AddShoppingCartTwoTone';
 import { Search } from '@material-ui/icons'
-import { TextField, InputAdornment } from '@material-ui/core';
+import { TextField, InputAdornment, Badge } from '@material-ui/core';
+
 
 export class Header extends Component {
     render() {
@@ -17,9 +18,10 @@ export class Header extends Component {
                 <div className='search-bar'>
                     <TextField
                         className='search'
+                        onChange={this.props.searchHandler}
                         InputProps={{
                             startAdornment: (
-
+                               
                                 <InputAdornment className="search-icon" position="start">
                                     <Search />
                                 </InputAdornment>
@@ -32,21 +34,15 @@ export class Header extends Component {
                 <div className='cart-div'>
 
                     <h3 className="cart-h4">Cart</h3>
-                    {
-                        this.props.showCartCounter ?
-                            <>
-                                <div className='cart-icon-div'>
-                                    <button className="cart-button" onClick={this.props.showAddCartPage}><AddShoppingCartTwoToneIcon className="cart-icon" fontSize='medium' /></button>
-                                </div>
-
-                                <span className="counter-div">{this.props.cartCount}</span>
-                            </>
-                            :
-                            <div className='cart-icon-div'>
-                                <button className="cart-button" onClick={this.props.showAddCartPage}><AddShoppingCartTwoToneIcon className="cart-icon" fontSize='medium' /></button>
-                            </div>
-                    }
-
+                   
+                                {/* <div className='cart-icon-div'>
+                                    <button className="cart-button"></button>
+                                </div> */}
+                                <Badge className ="cart-icon-div" badgeContent= {this.props.cartCount}>
+                                
+                                <AddShoppingCartTwoToneIcon className="cart-icon" fontSize='medium'  onClick={this.props.showAddCartPage} />
+                                </Badge>
+                           
                 </div>
             </div>
         );

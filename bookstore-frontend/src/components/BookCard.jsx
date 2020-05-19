@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import logo from '../logo.svg';
 import Container from '@material-ui/core/Container';
 
 export class BookCard extends Component {
@@ -10,10 +11,10 @@ export class BookCard extends Component {
                         this.props.books.map((ele) => {
                             return (
                                 <div className="book-card-div" key={ele.bookID}>
-                                    <img src={ele.bookImage} className="App-logo" />
+                                    <img src={ ele.bookImage } className="App-logo" />
                                     <div className="book-item-info">
                                         <div className="book-title-div">
-                                            <h4 className="title-h4" >{ele.bookTitle}</h4>
+                                            <h4 id="book-title-by-id" >{ele.bookTitle}</h4>
                                         </div>
                                         <div className="author-name-div">
                                             <p>{ele.authorName}</p>
@@ -23,27 +24,28 @@ export class BookCard extends Component {
                                         </div>
                                     </div>
                                     <div className="button-div">
-
-                                        {
-                                            this.props.clickedId.includes(ele.bookID) ?
-                                                <>
-                                                    <button className="added-bag-button"
-                                                        onClick={() => { this.props.cartCounter(ele.bookID, ele.numOfCopies) }}
-                                                        disabled={this.props.disableButton}
-                                                    >
-                                                        Added To Bag
+                            
+                            {
+                             this.props.clickedId.includes(ele.bookID)?
+                             <>
+                                <button className="added-bag-button" 
+                                onClick={()=>{this.props.cartCounter(ele.bookID, ele.numOfCopies)}}
+                                disabled={this.props.disableButton} 
+                                >
+                                   Added To Bag
                                 </button>
-                                                </>
-                                                : <>
-                                                    <button className="add-bag-button"
-                                                        onClick={() => { this.props.cartCounter(ele.bookID, ele.numOfCopies) }}
-                                                    >
-                                                        Add To Bag
+                                </>
+                            :<>
+                            <button className="add-bag-button" 
+                            onClick={()=>{this.props.cartCounter(ele.bookID,ele.numOfCopies)}}
+                            >
+                                Add To Bag
                             </button>
-
-                                                    <button className="wishlist-button">Wishlist</button>
-                                                </>
-                                        }
+                            
+                            <button className="wishlist-button">Wishlist</button>
+                            </>
+                            }
+                            
                                     </div>
                                 </div>
                             );
@@ -51,6 +53,7 @@ export class BookCard extends Component {
                     }
                 </div>
             </Container>
+           
         );
     }
 }
