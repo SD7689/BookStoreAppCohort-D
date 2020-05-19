@@ -37,7 +37,7 @@ namespace NUnitTestBookStoreProject
         public void AddAddressControllerTest()
         {
             var service = new Mock<ICustomerManager>();
-            var controller = new CustomerAddressController(service.Object);
+            var controller = new CustomerController(service.Object);
             var data = controller.AddCustomerAddress(address);
             Assert.IsNotNull(data);
         }
