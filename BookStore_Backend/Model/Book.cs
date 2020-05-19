@@ -23,6 +23,9 @@ namespace Model
         [Required]
         public double BookPrice { get; set; }
         [Required]
-        public bool Availability { get; set; }
+
+        public string Description { get; set; }
+
+        public int Availability { get; set; }
     }
 }

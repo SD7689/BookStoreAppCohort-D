@@ -25,17 +25,16 @@ namespace BookStore_Api.Controllers
         public IActionResult LoginUser(string email, string password)
         {
             var result = this.manager.Login(email, password);
-            if (result == true)
-            {
-                return this.Ok(email);
-            }
-            return this.BadRequest();
+            if (result == null)
+                return this.BadRequest("Login Failed");
+            return this.Ok(email);
         }
+
         [Route("AddUser")]
         [HttpPost]
         public async Task<IActionResult> AddUser(User user)
         {
-            var result =await this.manager.AddUser(user);
+            var result = await this.manager.AddUser(user);
             if (result == 1)
             {
                 return this.Ok(user);

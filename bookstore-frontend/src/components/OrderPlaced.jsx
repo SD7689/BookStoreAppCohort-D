@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import Container from '@material-ui/core/Container';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import Celebration from '../Asserts/Celebration.png';
@@ -8,7 +7,7 @@ export default class OrderPlaced extends Component {
     render() {
         return (
             <>
-                <Header />
+                
                 <div className="order-placed-container">
                     <div className="upper-image-div">
                         <img className="order-image-div" src={Celebration} />
@@ -43,7 +42,7 @@ export default class OrderPlaced extends Component {
                         </div>
                 </div>
 
-                <Footer />
+               
             </>
         );
     }

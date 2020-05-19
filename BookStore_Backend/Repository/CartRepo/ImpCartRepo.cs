@@ -30,6 +30,7 @@ namespace Repository.CartRepo
                 (Cart, Book) =>
                 new
                 {
+                    cartId = Cart.CartID,
                     bookId = Book.BookID,
                     bookTitle = Book.BookTitle,
                     authorName = Book.AuthorName,

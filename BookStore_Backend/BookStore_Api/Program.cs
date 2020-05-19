@@ -16,11 +16,14 @@ namespace BookStore_Api
         {
             Receiver receiver = new Receiver();
             receiver.Receive();
-            CreateWebHostBuilder(args).Build().Run();
+            BuildWebHost(args).Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+        public static IWebHost BuildWebHost(string[] args) =>
+                 WebHost.CreateDefaultBuilder(args)
+                 .UseKestrel()
+                 .UseIISIntegration()
+                     .UseStartup<Startup>()
+                     .Build();
     }
 }

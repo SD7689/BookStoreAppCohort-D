@@ -42,13 +42,5 @@ namespace NUnitTestBookStoreProject
             Assert.IsNotNull(data);
         }
         
-        [Test]
-        public void Test_CustmorLogin()
-        {
-            var service = new Mock<ICustomerManager>();
-            var controller = new CustomerAddressController(service.Object);
-            Object data = controller.CustmorLogin("string", "string");
-            Assert.IsNotNull(data);
-        }
     }
 }

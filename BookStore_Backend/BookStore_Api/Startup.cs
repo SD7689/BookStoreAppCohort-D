@@ -70,7 +70,12 @@ namespace BookStore_Api
             {
                 app.UseHsts();
             }
-
+            app.UseCors(builder =>
+            {
+                builder.AllowAnyOrigin();
+                builder.AllowAnyHeader();
+                builder.AllowAnyMethod();
+            });
             app.UseHttpsRedirection();
             app.UseMvc();
         }
