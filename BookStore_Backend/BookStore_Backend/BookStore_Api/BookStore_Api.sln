@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore_Api", "BookStore_Api.csproj", "{D1C367AB-C04B-4C5A-8D31-E8821D96EBC0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "..\Model\Model.csproj", "{66C8698F-480E-499F-B3B8-D41F2608350F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStoreCommonLayer", "..\Model\BookStoreCommonLayer.csproj", "{66C8698F-480E-499F-B3B8-D41F2608350F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStoreBussinessLayer", "..\Manager\BookStoreBussinessLayer.csproj", "{6386A1D7-8B7D-4640-ADC3-1A56057AE152}"
 EndProject

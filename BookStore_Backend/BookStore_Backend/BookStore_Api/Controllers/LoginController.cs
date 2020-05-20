@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BookStoreBussinessLayer.LoginManager;
 using Microsoft.AspNetCore.Mvc;
-using Model;
+using BookStoreCommonLayer;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

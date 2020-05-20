@@ -2,7 +2,7 @@
 using BookStoreBussinessLayer.CartManager;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Model;
+using BookStoreCommonLayer;
 using Moq;
 using NUnit.Framework;
 using BookStoreRepositoryLayer;

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using BookStoreBussinessLayer.BookManager;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Model;
+using BookStoreCommonLayer;
 
 namespace BookStore_Api.Controllers
 {

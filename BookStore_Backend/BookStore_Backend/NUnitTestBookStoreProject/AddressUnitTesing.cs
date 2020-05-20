@@ -1,6 +1,6 @@
 ﻿using BookStore_Api.Controllers;
 using BookStoreBussinessLayer.CustomerManager;
-using Model;
+using BookStoreCommonLayer;
 using Moq;
 using NUnit.Framework;
 using BookStoreRepositoryLayer;
