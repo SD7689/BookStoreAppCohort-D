@@ -9,12 +9,11 @@ using Repository;
 namespace Repository.Migrations
 {
     [DbContext(typeof(BookStoreDBContext))]
-<<<<<<< HEAD:BookStore_Backend/Repository/Migrations/20200512191243_initial.Designer.cs
+
     [Migration("20200512191243_initial")]
-=======
-    [Migration("20200518114827_initial")]
->>>>>>> 41e2233c0cf37e07ab57331558a962cd059fd0be:BookStore_Backend/BookStore_Backend/Repository/Migrations/20200518114827_initial.Designer.cs
-    partial class initial
+
+   
+ partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
