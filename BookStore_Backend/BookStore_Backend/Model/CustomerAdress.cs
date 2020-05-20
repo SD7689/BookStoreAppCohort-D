@@ -12,6 +12,8 @@ namespace BookStoreCommonLayer
    public class CustomerAdress
     {
         [Key]
+        public int CustomerID { get; set; }
+        [Required]
         public string Email { get; set; }
         [Required]
         public string FullName { get; set; }
