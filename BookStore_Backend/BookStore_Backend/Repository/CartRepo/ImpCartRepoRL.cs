@@ -10,7 +10,7 @@ namespace Repository.CartRepo
     public class ImpCartRepo:ICartRepoRL
     {
         private readonly BookStoreDBContext bookStoreDB;
-        public  List<Cart> cartList = new List<Cart>();
+        public  List<CartCL> cartList = new List<CartCL>();
         public  List<BookCL> getAllCartByBookType = new List<BookCL>();
 
         public ImpCartRepo(BookStoreDBContext bookStoreDB)
@@ -18,7 +18,7 @@ namespace Repository.CartRepo
             this.bookStoreDB = bookStoreDB;
         }
 
-        public Task<int> AddToCart(Cart cart)
+        public Task<int> AddToCart(CartCL cart)
         {
             bookStoreDB.Cart.Add(cart);
             var result = bookStoreDB.SaveChangesAsync();
@@ -44,9 +44,9 @@ namespace Repository.CartRepo
             return result;
         }
 
-        public Cart RemoveCart(int CartID)
+        public CartCL RemoveCart(int CartID)
         {
-            Cart cart = bookStoreDB.Cart.Find(CartID);
+            CartCL cart = bookStoreDB.Cart.Find(CartID);
             if (cart != null)
             {
                 bookStoreDB.Cart.Remove(cart);
@@ -56,7 +56,7 @@ namespace Repository.CartRepo
         }
         public int NumOfBook()
         {
-            int count = bookStoreDB.Cart.Count<Cart>();
+            int count = bookStoreDB.Cart.Count<CartCL>();
             return count;
         }
     }

@@ -13,7 +13,7 @@ namespace NUnitTestBookStoreProject
 {
    public class CartUnitTesting
     {
-        Cart cart = new Cart();
+        CartCL cart = new CartCL();
         [Test]
         public void AddToCartTestInController()
         {

@@ -23,7 +23,7 @@ namespace BookStore_Api.Controllers
        
         [Route("Login")]
         [HttpPost]
-        public IActionResult LoginUser(User user)
+        public IActionResult LoginUser(UserCL user)
         {
             var result = this.manager.Login(user);
             if (result == true)
@@ -39,7 +39,7 @@ namespace BookStore_Api.Controllers
         }
         [Route("AddUser")]
         [HttpPost]
-        public async Task<IActionResult> AddUser(User user)
+        public async Task<IActionResult> AddUser(UserCL user)
         {
             var result =await this.manager.AddUser(user);
             if (result == 1)

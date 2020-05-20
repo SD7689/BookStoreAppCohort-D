@@ -16,7 +16,7 @@ namespace Repository.LoginRepo
             this.context = context;
         }
 
-        public Task<int> AddUser(User user)
+        public Task<int> AddUser(UserCL user)
         {
             context.Users.Add(user);
             var result = context.SaveChangesAsync();
@@ -29,7 +29,7 @@ namespace Repository.LoginRepo
         /// <param name="email"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public bool Login(User user)
+        public bool Login(UserCL user)
         {
 
             var result = context.Users.Where(id => id.Email == user.Email && id.Password == user.Password).FirstOrDefault();

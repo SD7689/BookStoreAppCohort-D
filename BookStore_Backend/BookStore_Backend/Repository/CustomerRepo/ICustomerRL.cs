@@ -8,8 +8,8 @@ namespace Repository.CustomerRepo
 {
    public interface ICustomerRL
     {
-        Task<int> AddCustomerAddress(CustomerAdress address);
+        Task<int> AddCustomerAddress(CustomerAdressCL address);
    
-        CustomerAdress GetCustomerAddress(string email);
+        CustomerAdressCL GetCustomerAddress(string email);
     }
 }

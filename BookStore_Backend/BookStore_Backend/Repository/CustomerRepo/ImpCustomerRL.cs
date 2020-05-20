@@ -15,14 +15,14 @@ namespace Repository.CustomerRepo
             this.bookStoreDB = bookStoreDB;
         }
 
-        public Task<int> AddCustomerAddress(CustomerAdress address)
+        public Task<int> AddCustomerAddress(CustomerAdressCL address)
         {
             bookStoreDB.Address.Add(address);
             var result = bookStoreDB.SaveChangesAsync();
             return result;
         }
 
-        public CustomerAdress GetCustomerAddress(string email)
+        public CustomerAdressCL GetCustomerAddress(string email)
         {
             return bookStoreDB.Address.Find(email);
         }

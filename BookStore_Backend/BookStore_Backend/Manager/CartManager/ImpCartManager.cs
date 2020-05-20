@@ -16,7 +16,7 @@ namespace Manager.CartManager
             this.manager = manager;
         }
 
-        public Task<int> AddToCart(Cart cart)
+        public Task<int> AddToCart(CartCL cart)
         {
             return this.manager.AddToCart(cart);
         }
@@ -26,7 +26,7 @@ namespace Manager.CartManager
             return this.manager.GetAllCartValue();
         }
 
-        public Cart RemoveCart(int CartID)
+        public CartCL RemoveCart(int CartID)
         {
             return this.manager.RemoveCart(CartID);
         }

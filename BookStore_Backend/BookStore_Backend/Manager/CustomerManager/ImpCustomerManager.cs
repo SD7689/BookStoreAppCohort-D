@@ -14,11 +14,11 @@ namespace Manager.CustomerManager
         {
             this.irepo = irepo;
         }
-        public Task<int> AddCustomerAddress(CustomerAdress address)
+        public Task<int> AddCustomerAddress(CustomerAdressCL address)
         {
             return this.irepo.AddCustomerAddress(address);
         }
-        public CustomerAdress GetCustomerAddress(string email)
+        public CustomerAdressCL GetCustomerAddress(string email)
         {
             return this.irepo.GetCustomerAddress(email);
 

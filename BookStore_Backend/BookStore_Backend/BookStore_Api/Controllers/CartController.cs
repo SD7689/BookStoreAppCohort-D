@@ -23,7 +23,7 @@ namespace BookStore_Api.Controllers
 
         [Route("AddToCart")]
         [HttpPost]
-        public async Task<IActionResult> AddToCart(Cart cart)
+        public async Task<IActionResult> AddToCart(CartCL cart)
         {
             var result = await this.manager.AddToCart(cart);
             sender.Send("Add book in cart");

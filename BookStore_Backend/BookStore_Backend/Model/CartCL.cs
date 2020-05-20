@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Model
 {
-   public class Cart
+   public class CartCL
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

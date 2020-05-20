@@ -15,11 +15,11 @@ namespace Manager.LoginManager
         {
             this.repo = repo;
         }
-        public bool Login(User user)
+        public bool Login(UserCL user)
         {
             return repo.Login(user);
         }
-        public Task<int> AddUser(User user)
+        public Task<int> AddUser(UserCL user)
         {
             return repo.AddUser(user);
         } 

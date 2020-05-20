@@ -9,8 +9,8 @@ namespace Manager.CartManager
 {
     public interface ICartManager
     {
-        Task<int> AddToCart(Cart cart);
-        Cart RemoveCart(int CartID);
+        Task<int> AddToCart(CartCL cart);
+        CartCL RemoveCart(int CartID);
         int NumOfBook();
         IQueryable GetAllCartValue();
     }
