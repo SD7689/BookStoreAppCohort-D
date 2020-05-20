@@ -47,6 +47,7 @@ namespace BookStore_Api
             services.AddTransient<ICartRepo, ImpCartRepo>();
             services.AddTransient<ILoginRepo, LoginRepo>();
             services.AddTransient<ILoginManager, LoginManger>();
+            services.AddSingleton<IConfiguration>(Configuration);
 
             services.AddSwaggerGen(c =>
             {

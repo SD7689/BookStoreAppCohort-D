@@ -9,7 +9,7 @@ using Repository;
 namespace Repository.Migrations
 {
     [DbContext(typeof(BookStoreDBContext))]
-    [Migration("20200518114827_initial")]
+    [Migration("20200519200150_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
