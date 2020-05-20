@@ -9,8 +9,8 @@ namespace Manager.BookManager
 {
    public interface IManager
     {
-        Task<int> AddBook(Book book);
-        IEnumerable<Book> GetAllBook();
+        Task<int> AddBook(BookCL book);
+        IEnumerable<BookCL> GetAllBook();
         string Image(IFormFile file, int id);
         int GetNumOfBook();
        

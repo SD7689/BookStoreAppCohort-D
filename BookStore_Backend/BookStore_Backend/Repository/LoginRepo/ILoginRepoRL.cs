@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Repository.LoginRepo
 {
-    public interface ILoginRepo
+    public interface ILoginRepoRL
     {
         bool Login(User user);
         Task<int> AddUser(User user);

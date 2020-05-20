@@ -9,8 +9,8 @@ namespace Manager.CustomerManager
 {
     public class ImpCustomerManager : ICustomerManager
     {
-        private readonly ICustomer irepo;
-        public ImpCustomerManager(ICustomer irepo)
+        private readonly ICustomerRL irepo;
+        public ImpCustomerManager(ICustomerRL irepo)
         {
             this.irepo = irepo;
         }

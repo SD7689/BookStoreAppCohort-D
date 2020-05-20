@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BookStore_Api\BookStore_Api.csproj" />
-    <ProjectReference Include="..\Model\CommonLayer.csproj" />
+    <ProjectReference Include="..\BookStore_Api\BookStoreWeb_Api.csproj" />
+    <ProjectReference Include="..\Model\BookStoreCommonLayer.csproj" />
   </ItemGroup>
 
 </Project>

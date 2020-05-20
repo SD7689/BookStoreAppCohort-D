@@ -10,8 +10,8 @@ namespace Manager.CartManager
 {
     public class ImpCartManager:ICartManager
     {
-        private readonly ICartRepo manager;
-        public ImpCartManager(ICartRepo manager)
+        private readonly ICartRepoRL manager;
+        public ImpCartManager(ICartRepoRL manager)
         {
             this.manager = manager;
         }

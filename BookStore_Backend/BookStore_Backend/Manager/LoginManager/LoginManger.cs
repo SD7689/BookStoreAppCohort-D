@@ -9,9 +9,9 @@ namespace Manager.LoginManager
 {
     public class LoginManger : ILoginManager
     {
-        private readonly ILoginRepo repo;
+        private readonly ILoginRepoRL repo;
 
-        public LoginManger(ILoginRepo repo)
+        public LoginManger(ILoginRepoRL repo)
         {
             this.repo = repo;
         }

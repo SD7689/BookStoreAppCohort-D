@@ -13,7 +13,7 @@ namespace NUnitTestBookStoreProject
 {
     public class BookUnitTesting
     {
-        Book book = new Book();
+        BookCL book = new BookCL();
         [Test]
         public void AddBookTestInController()
         {
@@ -25,7 +25,7 @@ namespace NUnitTestBookStoreProject
             book.BookImage = "images.jpg";
             book.BookPrice = 85.00;
             book.Availability = 10;
-            var data = controller.AddBook(book);
+            var data = controller.AddBooks(book);
             Assert.NotNull(data);
 
         }
@@ -33,7 +33,7 @@ namespace NUnitTestBookStoreProject
         [Test]
         public void AddBookTestInManager()
         {
-            var service = new Mock<IBook>();
+            var service = new Mock<IBookRL>();
             var manager = new ImpBookManager(service.Object);
             book.BookTitle = "Never Happen Twice";
             book.AuthorName = "BDEC";
@@ -55,7 +55,7 @@ namespace NUnitTestBookStoreProject
         [Test]
         public void GetAllBookTestInManager()
         {
-            var service = new Mock<IBook>();
+            var service = new Mock<IBookRL>();
             var manager = new ImpBookManager(service.Object);
             var data = manager.GetAllBook();
             Assert.NotNull(data);

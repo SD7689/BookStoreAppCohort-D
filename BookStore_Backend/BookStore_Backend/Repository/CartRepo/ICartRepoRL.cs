@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Repository.CartRepo
 {
-    public interface ICartRepo
+    public interface ICartRepoRL
     {
         Task<int> AddToCart(Cart cart);
         Cart RemoveCart(int CartID);

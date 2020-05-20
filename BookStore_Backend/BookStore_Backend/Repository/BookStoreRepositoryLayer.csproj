@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Model\CommonLayer.csproj" />
+    <ProjectReference Include="..\Model\BookStoreCommonLayer.csproj" />
   </ItemGroup>
 
 </Project>

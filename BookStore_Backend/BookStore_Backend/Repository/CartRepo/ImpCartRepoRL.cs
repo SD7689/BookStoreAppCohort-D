@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Repository.CartRepo
 {
-    public class ImpCartRepo:ICartRepo
+    public class ImpCartRepo:ICartRepoRL
     {
         private readonly BookStoreDBContext bookStoreDB;
         public  List<Cart> cartList = new List<Cart>();
-        public  List<Book> getAllCartByBookType = new List<Book>();
+        public  List<BookCL> getAllCartByBookType = new List<BookCL>();
 
         public ImpCartRepo(BookStoreDBContext bookStoreDB)
         {

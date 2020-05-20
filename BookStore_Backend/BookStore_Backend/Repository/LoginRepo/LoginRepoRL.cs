@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Repository.LoginRepo
 {
-    public class LoginRepo : ILoginRepo
+    public class LoginRepoRL : ILoginRepoRL
     {
         private readonly BookStoreDBContext context;
 
-        public LoginRepo(BookStoreDBContext context)
+        public LoginRepoRL(BookStoreDBContext context)
         {
             this.context = context;
         }

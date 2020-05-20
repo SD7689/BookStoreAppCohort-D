@@ -11,12 +11,12 @@ namespace Model
     /// </summary>
    public class CustomerAdress
     {
+       
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CustomerId { get; set; }
-
+        [Required]
         public string Email { get; set; }
-
         [Required]
         public string FullName { get; set; }
         [Required]
@@ -27,7 +27,9 @@ namespace Model
         public int Pincode { get; set; }
         [Required]
         public string Citytown { get; set; }
+        [Required]
         public string Landmark { get; set; }
+        [Required]
         public string AddressType { get; set; }
 
     }

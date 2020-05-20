@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Repository.CustomerRepo
 {
-    public class ImpCustomer : ICustomer
+    public class ImpCustomerRL : ICustomerRL
     {
         private readonly BookStoreDBContext bookStoreDB;
 
-        public ImpCustomer(BookStoreDBContext bookStoreDB)
+        public ImpCustomerRL(BookStoreDBContext bookStoreDB)
         {
             this.bookStoreDB = bookStoreDB;
         }

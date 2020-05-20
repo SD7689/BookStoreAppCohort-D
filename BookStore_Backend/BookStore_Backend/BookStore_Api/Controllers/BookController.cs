@@ -28,7 +28,7 @@ namespace BookStore_Api.Controllers
         /// <returns> IActionResult. </returns>
         [Route("AddBook")]
         [HttpPost]
-        public async Task<IActionResult> AddBook(Book book)
+        public async Task<IActionResult> AddBooks(Book book)
         {
             var result = await this.manager.AddBook(book);
             sender.Send("Add the book details");
