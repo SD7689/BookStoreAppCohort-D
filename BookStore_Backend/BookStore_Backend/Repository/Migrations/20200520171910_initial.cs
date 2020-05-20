@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Repository.Migrations
+namespace BookStoreRepositoryLayer.Migrations
 {
     public partial class initial : Migration
     {
@@ -11,6 +11,8 @@ namespace Repository.Migrations
                 name: "Address",
                 columns: table => new
                 {
+                    CustomerID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Email = table.Column<string>(nullable: false),
                     FullName = table.Column<string>(nullable: false),
                     PhoneNumber = table.Column<string>(nullable: false),
@@ -22,7 +24,7 @@ namespace Repository.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Address", x => x.Email);
+                    table.PrimaryKey("PK_Address", x => x.CustomerID);
                 });
 
             migrationBuilder.CreateTable(
@@ -61,12 +63,14 @@ namespace Repository.Migrations
                 name: "Users",
                 columns: table => new
                 {
+                    UserID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Email = table.Column<string>(nullable: false),
                     Password = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.Email);
+                    table.PrimaryKey("PK_Users", x => x.UserID);
                 });
         }
 
