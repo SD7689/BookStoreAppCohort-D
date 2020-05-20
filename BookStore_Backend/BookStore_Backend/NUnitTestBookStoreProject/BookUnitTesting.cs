@@ -15,7 +15,7 @@ namespace NUnitTestBookStoreProject
     {
         Book book = new Book();
         [Test]
-        public void AddBookTestInController()
+        public void GivenBookDetail_ToController_ShouldReturnBookDetails()
         {
             var service = new Mock<IManagerBL>();
             var controller = new BookController(service.Object);
@@ -31,7 +31,7 @@ namespace NUnitTestBookStoreProject
         }
 
         [Test]
-        public void AddBookTestInManager()
+        public void GivenBookDetail_ToBookStoreBusinesLayer_ShouldReturnBookDetails()
         {
             var service = new Mock<IBookRL>();
             var manager = new ImpBookManagerBL(service.Object);
@@ -45,7 +45,7 @@ namespace NUnitTestBookStoreProject
         }
 
         [Test]
-        public void GetAllBookTestControler()
+        public void BookStoreController_ShouldReturnAllBook()
         {
             var service = new Mock<IManagerBL>();
             var controller = new BookController(service.Object);
@@ -53,7 +53,7 @@ namespace NUnitTestBookStoreProject
             Assert.NotNull(data);
         }
         [Test]
-        public void GetAllBookTestInManager()
+        public void BookStoreBussinessLayer_ShouldReturnAllBook()
         {
             var service = new Mock<IBookRL>();
             var manager = new ImpBookManagerBL(service.Object);
@@ -62,7 +62,7 @@ namespace NUnitTestBookStoreProject
         }
 
         [Test]
-        public void Test_GetNumber_Books()
+        public void BookStoreController_ShouldReturnNumOfBook()
         {
             var service = new Mock<IManagerBL>();
             var Controller = new BookController(service.Object);
@@ -71,7 +71,7 @@ namespace NUnitTestBookStoreProject
         }
 
         [Test]
-        public void Test_ImageUpload()
+        public void Test_ImBookStoreController_ShouldReturnLinkOfImage()
         {
             IFormFile file=null;
             var service = new Mock<IManagerBL>();
