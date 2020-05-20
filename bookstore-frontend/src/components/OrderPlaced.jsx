@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-//import Container from '@material-ui/core/Container';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import Celebration from '../Asserts/Celebration.png';
 
 export default class OrderPlaced extends Component {
+      
+    continueShoppingButtonHandler = (event) => {
+        window.location.reload("/dashboard");
+    }
     render() {
         return (
             <>
-                <Header />
+                
                 <div className="order-placed-container">
                     <div className="upper-image-div">
                         <img className="order-image-div" src={Celebration} />
@@ -39,11 +42,11 @@ export default class OrderPlaced extends Component {
                         </table>
                     </div>
                     <div className="continue-shopping-button-div">
-                        <button className="continue-shopping-button"> CONTINUE SHOPPING</button>
+                        <button className="continue-shopping-button" onClick={this.continueShoppingButtonHandler}> CONTINUE SHOPPING</button>
                         </div>
                 </div>
 
-                <Footer />
+               
             </>
         );
     }
