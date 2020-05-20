@@ -15,7 +15,7 @@ namespace NUnitTestBookStoreProject
     {
         Cart cart = new Cart();
         [Test]
-        public void AddToCartTestInController()
+        public void GivenCartDetail_CartController_ShouldReturnCartValue()
         {
             var service = new Mock<ICartManagerBL>();
             var controller = new CartController(service.Object);
@@ -24,7 +24,7 @@ namespace NUnitTestBookStoreProject
             Assert.NotNull(data);
         }
         [Test]
-        public void AddToCartTestInManager()
+        public void GivenCartDetail_CartBL_ShouldReturnCartValue()
         {
             var service = new Mock<ICartRepoRL>();
             var manager = new ImpCartManagerBL(service.Object);
@@ -33,7 +33,7 @@ namespace NUnitTestBookStoreProject
             Assert.NotNull(data);
         }
         [Test]
-        public void RemoveCartTestInController()
+        public void RemoveCartValue_CartController_ShouldReturnCartValue()
         {
             var service = new Mock<ICartManagerBL>();
             var controller = new CartController(service.Object);
@@ -41,7 +41,7 @@ namespace NUnitTestBookStoreProject
             Assert.NotNull(data);
         }
         [Test]
-        public void RemoveCartTestInManager()
+        public void RemoveCartValue_CartBL_ShouldReturnCartValue()
         {
             var service = new Mock<ICartRepoRL>();
             var manager = new ImpCartManagerBL(service.Object);
@@ -49,7 +49,7 @@ namespace NUnitTestBookStoreProject
             Assert.Null(data);
         }
         [Test]
-        public void GetAllCartTestInController()
+        public void AllCartValue_CartController_ShouldReturnAllCartValue()
         {
             var service = new Mock<ICartManagerBL>();
             var controller = new CartController(service.Object);
@@ -58,7 +58,7 @@ namespace NUnitTestBookStoreProject
         }
 
         [Test]
-        public void GetAllCartTestInManager()
+        public void AllCartValue_CartBL_ShouldReturnAllCartValue()
         {
             var service = new Mock<ICartRepoRL>();
             var manager = new ImpCartManagerBL(service.Object);
