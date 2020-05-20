@@ -22,13 +22,19 @@ namespace BookStore_Api.Controllers
         }
         [Route("Login")]
         [HttpPost]
-        public IActionResult LoginUser(string email, string password)
+        public IActionResult LoginUser(User user)
         {
-            var result=this.manager.Login(email, password);
-            if (result != null)
-                return this.Ok(result);
-            return this.BadRequest();
-            
+            var result = this.manager.Login(user);
+            if (result == true)
+            {
+                return this.Ok(user.Email);
+            }
+            else
+            {
+                return this.BadRequest("Login Failed");
+
+            }
+
         }
         [Route("AddUser")]
         [HttpPost]

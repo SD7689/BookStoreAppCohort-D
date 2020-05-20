@@ -25,7 +25,7 @@ namespace NUnitTestBookStoreProject
 
         };
         [Test]
-        public void AddAddressManagerTest()
+        public void GivenAddressDetail_CustomerAddressBL_ShouldReturnAddress()
         {
             var repo = new Mock<ICustomer>();
             var manager = new ImpCustomerManager(repo.Object);
@@ -35,7 +35,7 @@ namespace NUnitTestBookStoreProject
            
         }
         [Test]
-        public void AddAddressControllerTest()
+        public void GivenAddressDetail_CustomerAddressController_ShouldReturnAddress( )
         {
             var service = new Mock<ICustomerManager>();
             var controller = new CustomerAddressController(service.Object);

@@ -8,7 +8,7 @@ namespace Manager.LoginManager
 {
     public interface ILoginManager
     {
-        Object Login(string email, string password);
+        bool Login(User user);
         Task<int> AddUser(User user);
     }
 }

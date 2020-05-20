@@ -29,19 +29,15 @@ namespace Repository.LoginRepo
         /// <param name="email"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public Object Login(string email, string password)
+        public bool Login(User user)
         {
-            try
+
+            var result = context.Users.Where(id => id.Email == user.Email && id.Password == user.Password).FirstOrDefault();
+            if (result == null)
             {
-                var result = context.Users.Where(id => id.Email == email && id.Password == password).FirstOrDefault();
-                if (result == null)
-                    throw new Exception("Email or password is not correct");
-                return true;
+                return false;
             }
-            catch (Exception e)
-            {
-                return e.Message;
-            }
+            return true;
         }
     }
 }

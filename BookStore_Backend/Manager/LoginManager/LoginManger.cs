@@ -15,9 +15,9 @@ namespace Manager.LoginManager
         {
             this.repo = repo;
         }
-        public Object Login(string email, string password)
+        public bool Login(User user)
         {
-            return repo.Login(email, password);
+            return repo.Login(user);
         }
         public Task<int> AddUser(User user)
         {
