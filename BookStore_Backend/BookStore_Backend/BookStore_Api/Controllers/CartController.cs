@@ -21,7 +21,6 @@ namespace BookStore_Api.Controllers
             this.manager = manager;
         }
 
-        [Route("AddToCart")]
         [HttpPost]
         public async Task<IActionResult> AddToCart(Cart cart)
         {
@@ -37,7 +36,6 @@ namespace BookStore_Api.Controllers
             }
         }
 
-        [Route("RemoveCart")]
         [HttpDelete]
         public IActionResult RemoveCart(int cartId)
         {
@@ -49,7 +47,6 @@ namespace BookStore_Api.Controllers
             }
             return this.BadRequest();
         }
-        [Route("GetCartValue")]
         [HttpGet]
         public IQueryable GetCartValue()
         {

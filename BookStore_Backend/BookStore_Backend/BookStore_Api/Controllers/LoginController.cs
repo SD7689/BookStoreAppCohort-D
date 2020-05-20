@@ -20,7 +20,6 @@ namespace BookStore_Api.Controllers
         {
             this.manager = manager;
         }
-        [Route("Login")]
         [HttpPost]
         public IActionResult LoginUser(User user)
         {
