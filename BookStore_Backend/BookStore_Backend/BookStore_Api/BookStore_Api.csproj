@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Manager\Manager.csproj" />
+    <ProjectReference Include="..\Manager\BookStoreBussinessLayer.csproj" />
     <ProjectReference Include="..\Repository\BookStoreRepositoryLayer.csproj" />
   </ItemGroup>
 

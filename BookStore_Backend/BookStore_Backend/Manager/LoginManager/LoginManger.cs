@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Manager.LoginManager
+namespace BookStoreBussinessLayer.LoginManager
 {
     public class LoginManger : ILoginManager
     {

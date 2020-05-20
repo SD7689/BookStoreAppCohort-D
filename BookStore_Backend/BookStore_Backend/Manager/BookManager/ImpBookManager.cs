@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Manager.BookManager
+namespace BookStoreBussinessLayer.BookManager
 {
     public class ImpBookManager : IManager
     {

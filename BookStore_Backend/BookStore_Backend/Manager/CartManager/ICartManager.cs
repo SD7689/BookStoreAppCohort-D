@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
 
-namespace Manager.CartManager
+namespace BookStoreBussinessLayer.CartManager
 {
     public interface ICartManager
     {

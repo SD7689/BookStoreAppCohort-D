@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Manager.BookManager;
-using Manager.CartManager;
-using Manager.CustomerManager;
-using Manager.LoginManager;
+using BookStoreBussinessLayer.BookManager;
+using BookStoreBussinessLayer.CartManager;
+using BookStoreBussinessLayer.CustomerManager;
+using BookStoreBussinessLayer.LoginManager;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;

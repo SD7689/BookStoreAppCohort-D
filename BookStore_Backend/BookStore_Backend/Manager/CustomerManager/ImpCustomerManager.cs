@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Manager.CustomerManager
+namespace BookStoreBussinessLayer.CustomerManager
 {
     public class ImpCustomerManager : ICustomerManager
     {

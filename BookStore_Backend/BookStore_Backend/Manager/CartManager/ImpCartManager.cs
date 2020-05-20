@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Manager.CartManager
+namespace BookStoreBussinessLayer.CartManager
 {
     public class ImpCartManager:ICartManager
     {
