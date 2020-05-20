@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using Model;
 
-namespace Repository
+namespace BookStoreRepositoryLayer
 {
    public class BookStoreDBContext : DbContext
     {

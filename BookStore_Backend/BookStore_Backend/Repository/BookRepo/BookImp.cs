@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 using System.Linq;
 using Microsoft.Extensions.Configuration;
 
-namespace Repository.BookRepo
+namespace BookStoreRepositoryLayer.BookRepo
 {
     public class BookImp : IBook
     {

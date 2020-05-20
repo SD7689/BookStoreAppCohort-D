@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using Model;
 using Moq;
 using NUnit.Framework;
-using Repository;
-using Repository.CartRepo;
+using BookStoreRepositoryLayer;
+using BookStoreRepositoryLayer.CartRepo;
 using System.Threading.Tasks;
 
 namespace NUnitTestBookStoreProject

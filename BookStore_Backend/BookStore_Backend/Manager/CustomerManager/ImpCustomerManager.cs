@@ -1,5 +1,5 @@
 ﻿using Model;
-using Repository.CustomerRepo;
+using BookStoreRepositoryLayer.CustomerRepo;
 using System;
 using System.Collections.Generic;
 using System.Text;

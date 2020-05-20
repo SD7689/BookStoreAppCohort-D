@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repository.CartRepo
+namespace BookStoreRepositoryLayer.CartRepo
 {
     public interface ICartRepo
     {

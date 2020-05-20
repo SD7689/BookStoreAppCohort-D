@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repository.BookRepo
+namespace BookStoreRepositoryLayer.BookRepo
 {
     public interface IBook
     {

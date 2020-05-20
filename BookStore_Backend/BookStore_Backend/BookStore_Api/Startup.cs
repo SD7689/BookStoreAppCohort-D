@@ -15,11 +15,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Repository;
-using Repository.BookRepo;
-using Repository.CartRepo;
-using Repository.CustomerRepo;
-using Repository.LoginRepo;
+using BookStoreRepositoryLayer;
+using BookStoreRepositoryLayer.BookRepo;
+using BookStoreRepositoryLayer.CartRepo;
+using BookStoreRepositoryLayer.CustomerRepo;
+using BookStoreRepositoryLayer.LoginRepo;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace BookStore_Api
