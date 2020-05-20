@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookStoreBussinessLayer.LoginManager
+namespace BookStoreRepositoryLayer.LoginRepo
 {
-    public interface ILoginManager
+    public interface ILoginRepoRL
     {
         bool Login(User user);
         Task<int> AddUser(User user);

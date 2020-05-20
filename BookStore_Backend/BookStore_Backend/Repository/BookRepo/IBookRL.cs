@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BookStoreRepositoryLayer.BookRepo
 {
-    public interface IBook
+    public interface IBookRL
     {
         Task<int> AddBook(Book book);
         IEnumerable<Book> GetAllBook();

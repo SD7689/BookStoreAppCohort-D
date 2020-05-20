@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace BookStoreBussinessLayer.LoginManager
 {
-    public class LoginManger : ILoginManager
+    public class LoginMangerBL : ILoginManagerBL
     {
-        private readonly ILoginRepo repo;
+        private readonly ILoginRepoRL repo;
 
-        public LoginManger(ILoginRepo repo)
+        public LoginMangerBL(ILoginRepoRL repo)
         {
             this.repo = repo;
         }

@@ -39,14 +39,14 @@ namespace BookStore_Api
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             
             services.AddDbContextPool<BookStoreDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("UserDbConnection")));
-            services.AddTransient<IManager, ImpBookManager>();
-            services.AddTransient<IBook, BookImp>();
-            services.AddTransient<ICustomerManager, ImpCustomerManager>();
-            services.AddTransient<ICustomer, CustomerImp>();
-            services.AddTransient<ICartManager, ImpCartManager>();
-            services.AddTransient<ICartRepo, ImpCartRepo>();
-            services.AddTransient<ILoginRepo, LoginRepo>();
-            services.AddTransient<ILoginManager, LoginManger>();
+            services.AddTransient<IManagerBL, ImpBookManagerBL>();
+            services.AddTransient<IBookRL, BookImpRL>();
+            services.AddTransient<ICustomerManagerBL, ImpCustomerManagerBL>();
+            services.AddTransient<ICustomerRL, CustomerImpRL>();
+            services.AddTransient<ICartManagerBL, ImpCartManagerBL>();
+            services.AddTransient<ICartRepoRL, ImpCartRepoRL>();
+            services.AddTransient<ILoginRepoRL, LoginRepoRL>();
+            services.AddTransient<ILoginManagerBL, LoginMangerBL>();
             services.AddSingleton<IConfiguration>(Configuration);
 
             services.AddSwaggerGen(c =>

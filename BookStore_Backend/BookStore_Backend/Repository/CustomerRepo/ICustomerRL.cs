@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookStoreRepositoryLayer.CustomerRepo
 {
-   public interface ICustomer
+   public interface ICustomerRL
     {
         Task<int> AddCustomerAddress(CustomerAdress address);
         CustomerAdress GetCustomerAddress(string email);

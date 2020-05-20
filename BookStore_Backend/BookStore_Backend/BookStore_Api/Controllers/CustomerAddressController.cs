@@ -14,8 +14,8 @@ namespace BookStore_Api.Controllers
     public class CustomerAddressController : ControllerBase
     {
         private readonly Sender sender = new Sender();
-        private readonly ICustomerManager imanager;
-        public CustomerAddressController(ICustomerManager imanager)
+        private readonly ICustomerManagerBL imanager;
+        public CustomerAddressController(ICustomerManagerBL imanager)
         {
             this.imanager = imanager;
         }

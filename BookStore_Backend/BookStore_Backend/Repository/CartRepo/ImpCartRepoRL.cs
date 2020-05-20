@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace BookStoreRepositoryLayer.CartRepo
 {
-    public class ImpCartRepo:ICartRepo
+    public class ImpCartRepoRL:ICartRepoRL
     {
         private readonly BookStoreDBContext bookStoreDB;
-        public ImpCartRepo(BookStoreDBContext bookStoreDB)
+        public ImpCartRepoRL(BookStoreDBContext bookStoreDB)
         {
             this.bookStoreDB = bookStoreDB;
         }

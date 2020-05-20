@@ -1,17 +1,20 @@
 ﻿using BookStoreCommonLayer;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
-namespace BookStoreRepositoryLayer.CartRepo
+namespace BookStoreBussinessLayer.CartManager
 {
-    public interface ICartRepo
+    public interface ICartManagerBL
     {
         Task<int> AddToCart(Cart cart);
         Cart RemoveCart(int CartID);
+
+        
         int NumOfBook();
+
         IQueryable GetAllCartValue();
 
     }

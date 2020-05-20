@@ -14,9 +14,9 @@ namespace BookStore_Api.Controllers
     public class BookController : ControllerBase
     {
         private readonly Sender sender = new Sender();
-        private readonly IManager manager;
+        private readonly IManagerBL manager;
 
-        public BookController(IManager manager)
+        public BookController(IManagerBL manager)
         {
             this.manager = manager;
         }

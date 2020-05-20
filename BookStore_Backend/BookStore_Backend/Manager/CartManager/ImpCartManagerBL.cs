@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace BookStoreBussinessLayer.CartManager
 {
-    public class ImpCartManager:ICartManager
+    public class ImpCartManagerBL:ICartManagerBL
     {
-        private readonly ICartRepo manager;
-        public ImpCartManager(ICartRepo manager)
+        private readonly ICartRepoRL manager;
+        public ImpCartManagerBL(ICartRepoRL manager)
         {
             this.manager = manager;
         }

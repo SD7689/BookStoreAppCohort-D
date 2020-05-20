@@ -12,12 +12,12 @@ using Microsoft.Extensions.Configuration;
 
 namespace BookStoreRepositoryLayer.BookRepo
 {
-    public class BookImp : IBook
+    public class BookImpRL : IBookRL
     {
         private readonly BookStoreDBContext bookStoreDB;
         private readonly IConfiguration configuration;
 
-        public BookImp(BookStoreDBContext bookStoreDB, IConfiguration configuration)
+        public BookImpRL(BookStoreDBContext bookStoreDB, IConfiguration configuration)
         {
             this.bookStoreDB = bookStoreDB;
             this.configuration = configuration;

@@ -14,9 +14,9 @@ namespace BookStore_Api.Controllers
     public class CartController : ControllerBase
     {
         private readonly Sender sender = new Sender();
-        private readonly ICartManager manager;
+        private readonly ICartManagerBL manager;
 
-        public CartController(ICartManager manager)
+        public CartController(ICartManagerBL manager)
         {
             this.manager = manager;
         }

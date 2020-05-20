@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookStoreBussinessLayer.CustomerManager
 {
-   public interface ICustomerManager
+   public interface ICustomerManagerBL
     {
         Task<int> AddCustomerAddress(CustomerAdress address);
         CustomerAdress GetCustomerAddress(string email);

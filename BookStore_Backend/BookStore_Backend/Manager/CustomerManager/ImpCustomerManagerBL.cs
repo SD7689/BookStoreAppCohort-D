@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace BookStoreBussinessLayer.CustomerManager
 {
-    public class ImpCustomerManager : ICustomerManager
+    public class ImpCustomerManagerBL : ICustomerManagerBL
     {
-        private readonly ICustomer irepo;
-        public ImpCustomerManager(ICustomer irepo)
+        private readonly ICustomerRL irepo;
+        public ImpCustomerManagerBL(ICustomerRL irepo)
         {
             this.irepo = irepo;
         }

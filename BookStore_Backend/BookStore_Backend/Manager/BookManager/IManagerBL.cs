@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BookStoreBussinessLayer.BookManager
 {
-   public interface IManager
+   public interface IManagerBL
     {
         Task<int> AddBook(Book book);
         IEnumerable<Book> GetAllBook();
