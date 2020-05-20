@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Manager.CustomerManager
 {
-   public interface ICustomerManager
+   public interface ICustomerManagerBL
     {
         Task<int> AddCustomerAddress(CustomerAdressCL address);
    

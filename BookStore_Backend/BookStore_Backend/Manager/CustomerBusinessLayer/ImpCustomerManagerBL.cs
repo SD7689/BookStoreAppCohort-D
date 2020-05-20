@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Manager.CustomerManager
 {
-    public class ImpCustomerManager : ICustomerManager
+    public class ImpCustomerManagerBL : ICustomerManagerBL
     {
         private readonly ICustomerRL irepo;
-        public ImpCustomerManager(ICustomerRL irepo)
+        public ImpCustomerManagerBL(ICustomerRL irepo)
         {
             this.irepo = irepo;
         }

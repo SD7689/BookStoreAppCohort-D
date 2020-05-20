@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Manager.LoginManager
 {
-    public class LoginManger : ILoginManager
+    public class LoginMangerBL : ILoginManagerBL
     {
         private readonly ILoginRepoRL repo;
 
-        public LoginManger(ILoginRepoRL repo)
+        public LoginMangerBL(ILoginRepoRL repo)
         {
             this.repo = repo;
         }

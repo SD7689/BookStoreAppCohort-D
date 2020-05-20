@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Manager.LoginManager
 {
-    public interface ILoginManager
+    public interface ILoginManagerBL
     {
         bool Login(UserCL user);
         Task<int> AddUser(UserCL user);

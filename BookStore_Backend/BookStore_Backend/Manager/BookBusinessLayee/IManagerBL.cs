@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Manager.BookManager
 {
-   public interface IManager
+   public interface IManagerBL
     {
         Task<int> AddBook(BookCL book);
         IEnumerable<BookCL> GetAllBook();

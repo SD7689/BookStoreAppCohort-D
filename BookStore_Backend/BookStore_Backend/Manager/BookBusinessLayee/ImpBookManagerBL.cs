@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Manager.BookManager
 {
-    public class ImpBookManager : IManager
+    public class ImpBookManagerBL : IManagerBL
     {
         private readonly IBookRL irepo;
-        public ImpBookManager(IBookRL irepo)
+        public ImpBookManagerBL(IBookRL irepo)
         {
             this.irepo = irepo;
         }

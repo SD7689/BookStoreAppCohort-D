@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Manager.CartManager
 {
-    public class ImpCartManager:ICartManager
+    public class ImpCartManagerBL:ICartManagerBL
     {
         private readonly ICartRepoRL manager;
-        public ImpCartManager(ICartRepoRL manager)
+        public ImpCartManagerBL(ICartRepoRL manager)
         {
             this.manager = manager;
         }
