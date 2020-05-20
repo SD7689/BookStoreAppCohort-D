@@ -15,7 +15,7 @@ namespace NUnitTestBookStoreProject
         CustomerAdress address = new CustomerAdress()
         {
           FullName="Imran",
-          PhoneNumber=7847456,
+          PhoneNumber=7847535,
           Email="Imr57@gmail.com",
           Address="ABC",
           Pincode=845,

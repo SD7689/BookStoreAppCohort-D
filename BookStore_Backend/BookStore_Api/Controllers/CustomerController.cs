@@ -59,9 +59,12 @@ namespace BookStore_Api.Controllers
         /// <returns></returns>
         [Route("CustmorLogin")]
         [HttpGet]
-        public object CustmorLogin(string Email_Id, string Password)
+        public IActionResult CustmorLogin(string Email_Id, string Password)
         {
-            return this.imanager.Login(Email_Id, Password);
+            var result= this.imanager.Login(Email_Id, Password);
+            if (result != null)
+                return this.Ok(result);
+            return this.BadRequest("Please enter the valid email id and password");
         }
 
     }

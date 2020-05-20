@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Manager.BookManager;
 using Manager.CartManager;
 using Manager.CustomerManager;
-using Manager.LoginManager;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -19,7 +18,6 @@ using Repository;
 using Repository.BookRepo;
 using Repository.CartRepo;
 using Repository.CustomerRepo;
-using Repository.LoginRepo;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace BookStore_Api
@@ -45,8 +43,6 @@ namespace BookStore_Api
             services.AddTransient<ICustomer, ImpCustomer>();
             services.AddTransient<ICartManager, ImpCartManager>();
             services.AddTransient<ICartRepo, ImpCartRepo>();
-            services.AddTransient<ILoginRepo, LoginRepo>();
-            services.AddTransient<ILoginManager, LoginManger>();
 
             services.AddSwaggerGen(c =>
             {

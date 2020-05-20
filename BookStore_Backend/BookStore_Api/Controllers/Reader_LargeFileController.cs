@@ -21,7 +21,7 @@ namespace BookStore_Api.Controllers
             Configuration = configuration;
         }
 
-        [Route("ReadFile")]
+        [Route("ReadBookData")]
         [HttpGet]
         public IEnumerable<Book> GetAllBook()
         {
@@ -47,13 +47,11 @@ namespace BookStore_Api.Controllers
                             Description = rd["BookPrice"].ToString(),
                             Availability = Convert.ToInt32(rd["Availability"])
                         });
-
                     }
                 }
                 con.Close();
             }
             return Books;
         }
-
-    }
+    } 
 }

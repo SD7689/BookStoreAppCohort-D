@@ -43,14 +43,12 @@ namespace Repository.CustomerRepo
         /// <param name="Email_Id">Email_Id.</param>
         /// <param name="Password">Password.</param>
         /// <returns>Object.</returns>
-        public Object Login(string Email_Id, string Password)
+        public CustomerAdress Login(string Email_Id, string Password)
         {
-            CustomerAdress customerAdress=  bookStoreDB.Address.Find(Email_Id);
-            if(customerAdress == null)
-                return "Please Enter the Valid Email_Id and Password ";
-            else if(customerAdress.Password == Password || customerAdress != null)
+            CustomerAdress customerAdress = bookStoreDB.Address.Find(Email_Id);
+            if (customerAdress.Password == Password || customerAdress != null)
                 return customerAdress;
-            return "Please Enter the Valid Email_Id and Password ";
+            return null;
         }
     }
 }
