@@ -54,7 +54,7 @@ export class Login extends Component {
         return (
             <div className="main-div">
                 <div className="test">
-                    <div className="login-div">Login Form</div>
+                    <div className="login-div">Login</div>
                     <div className="main-Test-div">
 
                         <div className="email-div">
@@ -66,7 +66,7 @@ export class Login extends Component {
 
                     </div>
                     <div className="app-button">
-                        <button className="submit" onClick={this.handleSubmitButton}>Submit</button>
+                        <button className="submit" onClick={this.handleSubmitButton}>Login</button>
                     </div>
                     <div className="links">
                         <a href="/Sign-up">Sign up  |  </a>
