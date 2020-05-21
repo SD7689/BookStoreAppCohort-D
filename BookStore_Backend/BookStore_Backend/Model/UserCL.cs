@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Model
 {
-    public class User
+    public class UserCL
     {
         [Key]
         public string Email { get; set; }

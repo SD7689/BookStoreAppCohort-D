@@ -14,9 +14,9 @@ namespace BookStore_Api.Controllers
     public class BookController : ControllerBase
     {
         private readonly Sender sender = new Sender();
-        private readonly IManager manager;
+        private readonly IManagerBL manager;
 
-        public BookController(IManager manager)
+        public BookController(IManagerBL manager)
         {
             this.manager = manager;
         }
@@ -28,7 +28,7 @@ namespace BookStore_Api.Controllers
         /// <returns> IActionResult. </returns>
         [Route("AddBook")]
         [HttpPost]
-        public async Task<IActionResult> AddBooks(Book book)
+        public async Task<IActionResult> AddBooks(BookCL book)
         {
             var result = await this.manager.AddBook(book);
             sender.Send("Add the book details");
@@ -46,7 +46,7 @@ namespace BookStore_Api.Controllers
         /// <returns> List of Book </returns>
         [Route("GetAllBook")]
         [HttpGet]
-        public IEnumerable<Book> GetAllBook()
+        public IEnumerable<BookCL> GetAllBook()
         {
             sender.Send("Get all books details");
             return this.manager.GetAllBook();

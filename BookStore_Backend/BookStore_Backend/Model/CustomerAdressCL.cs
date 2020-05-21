@@ -9,7 +9,7 @@ namespace Model
     /// <summary>
     /// Customer Adress Model class
     /// </summary>
-   public class CustomerAdress
+   public class CustomerAdressCL
     {
        
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
