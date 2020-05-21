@@ -1,7 +1,9 @@
-﻿using Model;
+﻿using Microsoft.OpenApi.Writers;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,13 +18,39 @@ namespace Repository.LoginRepo
             this.context = context;
         }
 
+        //public Task<int> AddUser(UserCL user)
+        //{
+        //    context.Users.Add(user);
+        //    var result = context.SaveChangesAsync();
+        //    return result;
+        //}
+
         public Task<int> AddUser(UserCL user)
         {
+            var plainP = user.Password;
+            var encryptedData = EncryptPassword(plainP);
+
+            user.Password = encryptedData;
             context.Users.Add(user);
             var result = context.SaveChangesAsync();
             return result;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="plainText"></param>
+        /// <returns></returns>
+        public string EncryptPassword(string plainPassword)
+        {
+            byte[] data;
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+            {
+                UTF8Encoding utf8 = new UTF8Encoding();
+                data = md5.ComputeHash(utf8.GetBytes(plainPassword));
+                return Convert.ToBase64String(data);
+            }
 
+        }
         /// <summary>
         /// Login for Customer with email and password
         /// </summary>
@@ -39,5 +67,7 @@ namespace Repository.LoginRepo
             }
             return true;
         }
+       
+       
     }
 }
