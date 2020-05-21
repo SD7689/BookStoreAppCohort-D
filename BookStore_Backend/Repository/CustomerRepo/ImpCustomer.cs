@@ -32,9 +32,9 @@ namespace Repository.CustomerRepo
         /// </summary>
         /// <param name="Email_Id"></param>
         /// <returns>CustomerAdress.</returns>
-        public CustomerAdress GetCustomerAddress(string Email_Id)
+        public CustomerAdress GetCustomerAddress(int CustomerId)
         {
-            return bookStoreDB.Address.Find(Email_Id);
+            return bookStoreDB.Address.Find(CustomerId);
         }
 
         /// <summary>

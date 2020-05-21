@@ -13,8 +13,8 @@ namespace Model
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int CustomerIdID { get; set; }
-        [Key]
+        public int CustomerId { get; set; }
+        [Required]
         public string Email { get; set; }
         [Required]
         public string FullName { get; set; }

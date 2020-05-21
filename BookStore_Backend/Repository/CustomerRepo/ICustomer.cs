@@ -9,7 +9,7 @@ namespace Repository.CustomerRepo
    public interface ICustomer
     {
         Task<int> AddCustomerAddress(CustomerAdress address);
-        CustomerAdress GetCustomerAddress(string Email_Id);
+        CustomerAdress GetCustomerAddress(int CustomerId);
         CustomerAdress Login(string Email_Id, string Password);
     }
 }

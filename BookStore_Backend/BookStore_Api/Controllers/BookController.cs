@@ -26,7 +26,7 @@ namespace BookStore_Api.Controllers
         /// </summary>
         /// <param name="book"></param>
         /// <returns> IActionResult. </returns>
-        [Route("AddBook")]
+        [Route("Its Api add the book data")]
         [HttpPost]
         public async Task<IActionResult> AddBook(Book book)
         {
@@ -44,14 +44,15 @@ namespace BookStore_Api.Controllers
         /// Get all Books details
         /// </summary>
         /// <returns> List of Book </returns>
-        [Route("GetAllBook")]
+        [Route("Its show the all book data")]
         [HttpGet]
         public IEnumerable<Book> GetAllBook()
         {
             sender.Send("Get all books details");
             return this.manager.GetAllBook();
         }
-        [Route("AddBookImage")]
+
+        [Route(" Its add the book image")]
         [HttpPost]
         public ActionResult AddBookImage(IFormFile file,int id)
         {
@@ -63,7 +64,8 @@ namespace BookStore_Api.Controllers
             }
             return this.BadRequest();
         }
-        [Route("NumOfBooks")]
+
+        [Route("Its show the number of books ")]
         [HttpGet]
         public ActionResult NumOfBooks()
         {

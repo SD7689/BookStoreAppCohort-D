@@ -25,7 +25,7 @@ namespace BookStore_Api.Controllers
         /// </summary>
         /// <param name="address"></param>
         /// <returns></returns>
-        [Route("AddCustomerAddress")]
+        [Route(" Enter the customer details ")]
         [HttpPost]
         public async Task<IActionResult> AddCustomerAddress(CustomerAdress address)
         {
@@ -35,21 +35,24 @@ namespace BookStore_Api.Controllers
             {
                 return this.Ok(address);
             }
-
-            return this.BadRequest();
+            return this.BadRequest("Incorrect data");
         }
         /// <summary>
         /// Add GetCustomerAddress 
         /// </summary>
         /// <param name="enterAddres"></param>
         /// <returns></returns>
-        [Route("GetCustomerAddress")]
+        [Route(" Its show the customer details ")]
         [HttpGet]
-        public CustomerAdress GetCustomerAddress(string Email_Id)
+        public IActionResult GetCustomerAddress(int CustomerId)
         {
-            sender.Send("Get all address");
-            return this.imanager.GetCustomerAddress(Email_Id);
+            sender.Send(" Its show the all customer details ");
+            var result = this.imanager.GetCustomerAddress(CustomerId);
+            if (result != null)
+                return this.Ok(result);
+            return this.BadRequest("Enter the correct custmor id");
         }
+        
 
         /// <summary>
         /// Custmor login.
@@ -57,11 +60,11 @@ namespace BookStore_Api.Controllers
         /// <param name="Email_Id"></param>
         /// <param name="Password"></param>
         /// <returns></returns>
-        [Route("CustmorLogin")]
+        [Route(" Its check the customer data present or not ")]
         [HttpGet]
         public IActionResult CustmorLogin(string Email_Id, string Password)
         {
-            var result= this.imanager.Login(Email_Id, Password);
+            var result = this.imanager.Login(Email_Id, Password);
             if (result != null)
                 return this.Ok(result);
             return this.BadRequest("Please enter the valid email id and password");
