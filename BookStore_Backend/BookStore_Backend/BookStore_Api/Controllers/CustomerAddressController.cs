@@ -43,10 +43,19 @@ namespace BookStore_Api.Controllers
         /// <param name="enterAddres"></param>
         /// <returns></returns>
         [HttpGet]
-        public IQueryable GetCustomerAddress(string email)
+        public ActionResult GetCustomerAddress(string email)
         {
             sender.Send("Get all address");
-            return this.imanager.GetCustomerAddressBL(email);
+            var result=this.imanager.GetCustomerAddressBL(email);
+            if (result.Count<CustomerAdress>() != 0)
+            {
+                return this.Ok(result);
+            }
+            else
+            {
+                var error = new JsonErrorModel { ErrorMessage = "No Such Customer having this email Id" };
+                return this.BadRequest(error);
+            }
         }
 
     }

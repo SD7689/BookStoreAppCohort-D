@@ -23,7 +23,7 @@ namespace BookStoreRepositoryLayer.CustomerRepo
             return result;
         }
 
-        public IQueryable GetCustomerAddressRL(string email)
+        public IEnumerable<CustomerAdress> GetCustomerAddressRL(string email)
         {
             var result = bookStoreDB.Address.Where(emailId => emailId.Email == email);
             return result;

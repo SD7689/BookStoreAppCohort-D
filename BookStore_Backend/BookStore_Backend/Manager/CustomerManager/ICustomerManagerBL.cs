@@ -10,6 +10,6 @@ namespace BookStoreBussinessLayer.CustomerManager
    public interface ICustomerManagerBL
     {
         Task<int> AddCustomerAddressBL(CustomerAdress address);
-        IQueryable GetCustomerAddressBL(string email);
+        IEnumerable<CustomerAdress> GetCustomerAddressBL(string email);
     }
 }

@@ -10,6 +10,6 @@ namespace BookStoreRepositoryLayer.CustomerRepo
    public interface ICustomerRL
     {
         Task<int> AddCustomerAddressRL(CustomerAdress address);
-        IQueryable GetCustomerAddressRL(string email);
+        IEnumerable<CustomerAdress> GetCustomerAddressRL(string email);
     }
 }

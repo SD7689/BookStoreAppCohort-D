@@ -20,7 +20,7 @@ namespace BookStoreBussinessLayer.CustomerManager
             return this.irepo.AddCustomerAddressRL(address);
         }
 
-        public IQueryable GetCustomerAddressBL(string email)
+        public IEnumerable<CustomerAdress> GetCustomerAddressBL(string email)
         {
             return this.irepo.GetCustomerAddressRL(email);
         }
