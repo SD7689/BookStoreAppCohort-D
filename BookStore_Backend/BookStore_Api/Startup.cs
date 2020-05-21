@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Manager.BookManager;
 using Manager.CartManager;
 using Manager.CustomerManager;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -14,6 +16,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Repository;
 using Repository.BookRepo;
 using Repository.CartRepo;
@@ -34,8 +37,24 @@ namespace BookStore_Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string securitykey = "This_is_our_super_Long_security_key_for_validation";
+            var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(securitykey));
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            //what is valid data
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateIssuerSigningKey = true,
+            //setup valid data
+            ValidIssuer = "smesh.in",
+            ValidAudience = "reader",
+            IssuerSigningKey = symmetricSecurityKey
+        };
+    });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            
+
             services.AddDbContextPool<BookStoreDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("UserDbConnection")));
             services.AddTransient<IManager, ImpBookManager>();
             services.AddTransient<IBook, BookImp>();
@@ -47,6 +66,13 @@ namespace BookStore_Api
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "BookStorWeb API", Version = "v1" });
+                c.AddSecurityDefinition("Bearer", new ApiKeyScheme
+                {
+                    Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
+                    Name = "Administrator",
+                    In = "header",
+                    Type = "apiKey"
+                });
             });
         }
 
@@ -72,6 +98,8 @@ namespace BookStore_Api
                 builder.AllowAnyHeader();
                 builder.AllowAnyMethod();
             });
+
+            app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseMvc();
         }

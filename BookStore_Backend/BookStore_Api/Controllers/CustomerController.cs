@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
+using BookStoreRepositoryLayer.ApiResponseErroeMessage;
 using Manager.CustomerManager;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model;
@@ -11,6 +14,8 @@ namespace BookStore_Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles ="Administrator")]
+
     public class CustomerController : ControllerBase
     {
         private readonly Sender sender = new Sender();
@@ -25,18 +30,19 @@ namespace BookStore_Api.Controllers
         /// </summary>
         /// <param name="address"></param>
         /// <returns></returns>
-        //[Route("Customer details")]
+        // [Route("Customer details")]
         [HttpPost]
         public async Task<IActionResult> AddCustomerAddress(CustomerAdress address)
         {
             var result = await this.imanager.AddCustomerAddress(address);
             sender.Send("Add custmor address");
-            if (result == 1)
+            if (result != 1)
             {
-                return this.Ok(address);
+                return BadRequest();
             }
-            return this.BadRequest("Incorrect data");
+            return this.Ok(result);
         }
+
         /// <summary>
         /// Add GetCustomerAddress 
         /// </summary>
@@ -68,6 +74,32 @@ namespace BookStore_Api.Controllers
             if (result != null)
                 return this.Ok(result);
             return this.BadRequest("Please enter the valid email id and password");
+        }
+
+        public static JsonErrorModel ErrorMessage()
+        {
+            if (HttpStatusCode.InternalServerError.Equals(400))
+            {
+                var error = new JsonErrorModel
+                {
+                    ErrorCode = (int)HttpStatusCode.InternalServerError,
+                    ErrorMessage = "Invalid data enter"
+                };
+
+                return error;
+            }
+            else if (HttpStatusCode.InternalServerError.Equals(500))
+            {
+                var error = new JsonErrorModel
+                {
+                    ErrorCode = (int)HttpStatusCode.InternalServerError,
+                    ErrorMessage = "This Email Id already used"
+                };
+
+                return error;
+            }
+
+            return null;
         }
 
     }

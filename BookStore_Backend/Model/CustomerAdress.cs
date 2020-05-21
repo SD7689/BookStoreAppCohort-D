@@ -14,7 +14,7 @@ namespace Model
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CustomerId { get; set; }
-
+        [Required (ErrorMessage ="This email id is already used")]
         public string Email { get; set; }
         [Required]
         public string FullName { get; set; }
