@@ -8,7 +8,7 @@ namespace BookStoreRepositoryLayer.CustomerRepo
 {
    public interface ICustomerRL
     {
-        Task<int> AddCustomerAddress(CustomerAdress address);
-        CustomerAdress GetCustomerAddress(string email);
+        Task<int> AddCustomerAddressRL(CustomerAdress address);
+        CustomerAdress GetCustomerAddressRL(string email);
     }
 }

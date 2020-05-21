@@ -15,14 +15,14 @@ namespace BookStoreRepositoryLayer.CustomerRepo
             this.bookStoreDB = bookStoreDB;
         }
 
-        public Task<int> AddCustomerAddress(CustomerAdress address)
+        public Task<int> AddCustomerAddressRL(CustomerAdress address)
         {
             bookStoreDB.Address.Add(address);
             var result = bookStoreDB.SaveChangesAsync();
             return result;
         }
 
-        public CustomerAdress GetCustomerAddress(string email)
+        public CustomerAdress GetCustomerAddressRL(string email)
         {
             return bookStoreDB.Address.Find(email);
         }
