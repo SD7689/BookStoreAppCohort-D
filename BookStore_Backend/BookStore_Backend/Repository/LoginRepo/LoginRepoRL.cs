@@ -32,10 +32,10 @@ namespace Repository.LoginRepo
             var encryptedData = EncodePasswordToBase64(plainPassword);
             user.Password = encryptedData;
 
-            //var encodedValue = user.Password;
-            //var decData = DecodeFrom64(encodedValue);
+            var encodedData = user.Password;
+            var decrymentData = DecodeFrom64(encodedData);
 
-            //user.Password = decData;
+            user.Password = decrymentData;
 
             context.Users.Add(user);
             var result = context.SaveChangesAsync();
