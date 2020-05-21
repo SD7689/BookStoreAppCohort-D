@@ -6,10 +6,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repository;
 
-namespace Repository.Migrations
+namespace BookStoreRepositoryLayer.Migrations
 {
     [DbContext(typeof(BookStoreDBContext))]
-    [Migration("20200520162612_init")]
+    [Migration("20200521035427_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

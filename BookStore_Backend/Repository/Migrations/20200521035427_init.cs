@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Repository.Migrations
+namespace BookStoreRepositoryLayer.Migrations
 {
     public partial class init : Migration
     {

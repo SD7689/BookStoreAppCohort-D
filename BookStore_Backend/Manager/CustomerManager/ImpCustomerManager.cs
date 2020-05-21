@@ -2,6 +2,7 @@
 using Repository.CustomerRepo;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,9 +25,9 @@ namespace Manager.CustomerManager
             return this.irepo.GetCustomerAddress(CustomerId);
         }
 
-        public CustomerAdress Login(string Email_Id, string Password)
+        public IQueryable Login(string Email, string Password)
         {
-            return this.irepo.Login(Email_Id, Password);
+            return this.irepo.Login(Email, Password);
         }
 
     }

@@ -23,7 +23,6 @@ namespace Model
         [Required]
         public double BookPrice { get; set; }
         [Required]
-
         public string Description { get; set; }
 
         public int Availability { get; set; }

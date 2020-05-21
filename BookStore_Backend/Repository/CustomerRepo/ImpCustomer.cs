@@ -1,6 +1,8 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,6 +26,7 @@ namespace Repository.CustomerRepo
         {
             bookStoreDB.Address.Add(address);
             var result = bookStoreDB.SaveChangesAsync();
+            Encode(address.Password);
             return result;
         }
 
@@ -43,12 +46,19 @@ namespace Repository.CustomerRepo
         /// <param name="Email_Id">Email_Id.</param>
         /// <param name="Password">Password.</param>
         /// <returns>Object.</returns>
-        public CustomerAdress Login(string Email_Id, string Password)
+        public IQueryable Login(string Email_Id, string Password)
         {
-            CustomerAdress customerAdress = bookStoreDB.Address.Find(Email_Id);
-            if (customerAdress.Password == Password || customerAdress != null)
+            var customerAdress = this.bookStoreDB.Address.Where(Address => Address.Email == Email_Id && Address.Password==Password);
+            if (customerAdress != null)
                 return customerAdress;
             return null;
+        }
+
+        private static void Encode(string password)
+        {
+            byte[] EncDataByte = new byte[password.Length];
+            EncDataByte = System.Text.Encoding.UTF8.GetBytes(password);
+            string EncrypData = Convert.ToBase64String(EncDataByte);
         }
     }
 }

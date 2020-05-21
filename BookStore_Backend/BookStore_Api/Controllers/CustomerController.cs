@@ -25,7 +25,7 @@ namespace BookStore_Api.Controllers
         /// </summary>
         /// <param name="address"></param>
         /// <returns></returns>
-        [Route(" Enter the customer details ")]
+        [Route("Customer details")]
         [HttpPost]
         public async Task<IActionResult> AddCustomerAddress(CustomerAdress address)
         {
@@ -42,7 +42,7 @@ namespace BookStore_Api.Controllers
         /// </summary>
         /// <param name="enterAddres"></param>
         /// <returns></returns>
-        [Route(" Its show the customer details ")]
+        [Route("Its show the customer details")]
         [HttpGet]
         public IActionResult GetCustomerAddress(int CustomerId)
         {
@@ -60,7 +60,7 @@ namespace BookStore_Api.Controllers
         /// <param name="Email_Id"></param>
         /// <param name="Password"></param>
         /// <returns></returns>
-        [Route(" Its check the customer data present or not ")]
+        [Route("UserLogin")]
         [HttpGet]
         public IActionResult CustmorLogin(string Email_Id, string Password)
         {

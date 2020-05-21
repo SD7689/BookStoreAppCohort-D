@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Manager.BookManager;
 using Microsoft.AspNetCore.Http;
@@ -26,7 +27,7 @@ namespace BookStore_Api.Controllers
         /// </summary>
         /// <param name="book"></param>
         /// <returns> IActionResult. </returns>
-        [Route("Its Api add the book data")]
+        //[Route(" Book ")]
         [HttpPost]
         public async Task<IActionResult> AddBook(Book book)
         {
@@ -37,7 +38,7 @@ namespace BookStore_Api.Controllers
                 return this.Ok(book);
             }
 
-            return this.BadRequest();
+            return this.BadRequest(ErrorMessage());
         }
         
         /// <summary>
@@ -52,7 +53,7 @@ namespace BookStore_Api.Controllers
             return this.manager.GetAllBook();
         }
 
-        [Route(" Its add the book image")]
+        [Route("BookImage")]
         [HttpPost]
         public ActionResult AddBookImage(IFormFile file,int id)
         {
@@ -62,7 +63,7 @@ namespace BookStore_Api.Controllers
             {
                 return this.Ok(result);
             }
-            return this.BadRequest();
+            return this.BadRequest(ErrorMessage());
         }
 
         [Route("Its show the number of books ")]
@@ -75,7 +76,33 @@ namespace BookStore_Api.Controllers
             {
                 return this.Ok(count);
             }
-            return this.BadRequest();
+            return this.BadRequest(ErrorMessage());
+        }
+
+        public static JsonErrorModel ErrorMessage()
+        {
+            if (HttpStatusCode.InternalServerError.Equals(400))
+            {
+                var error = new JsonErrorModel
+                {
+                    ErrorCode = (int)HttpStatusCode.InternalServerError,
+                    ErrorMessage = "Invalid data enter"
+                };
+
+                return error;
+            }
+            else if (HttpStatusCode.InternalServerError.Equals(500))
+            {
+                var error = new JsonErrorModel
+                {
+                    ErrorCode = (int)HttpStatusCode.InternalServerError,
+                    ErrorMessage = "Internal server error "
+                };
+
+                return error;
+            }
+
+            return null;
         }
 
     }

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repository;
 
-namespace Repository.Migrations
+namespace BookStoreRepositoryLayer.Migrations
 {
     [DbContext(typeof(BookStoreDBContext))]
     partial class BookStoreDBContextModelSnapshot : ModelSnapshot
