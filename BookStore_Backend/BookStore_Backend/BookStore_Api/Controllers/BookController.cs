@@ -35,7 +35,6 @@ namespace BookStore_Api.Controllers
             {
                 return this.Ok(book);
             }
-
             return this.BadRequest();
         }
         
