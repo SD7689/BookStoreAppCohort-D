@@ -18,6 +18,8 @@ namespace BookStoreRepositoryLayer.LoginRepo
 
         public Task<int> AddUserRL(User user)
         {
+            var encodedPassword=base64Encode(user.Password);
+            user.Password = encodedPassword;
             context.Users.Add(user);
             var result = context.SaveChangesAsync();
             return result;
@@ -38,6 +40,20 @@ namespace BookStoreRepositoryLayer.LoginRepo
                 return false;
             }
             return true;
+        }
+        public static string base64Encode(string password) // Encode    
+        {
+            try
+            {
+                byte[] encData_byte = new byte[password.Length];
+                encData_byte = System.Text.Encoding.UTF8.GetBytes(password);
+                string encodedData = Convert.ToBase64String(encData_byte);
+                return encodedData;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error in base64Encode" + ex.Message);
+            }
         }
     }
 }

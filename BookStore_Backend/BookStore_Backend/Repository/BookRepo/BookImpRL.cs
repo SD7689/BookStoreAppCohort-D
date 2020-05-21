@@ -67,5 +67,6 @@ namespace BookStoreRepositoryLayer.BookRepo
             var NumOfBook=bookStoreDB.Book.Count<Book>();
             return NumOfBook;
         }
+       
     }
 }
