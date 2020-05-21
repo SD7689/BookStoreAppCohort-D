@@ -24,9 +24,10 @@ namespace Repository.CustomerRepo
         /// <returns>int.</returns>
         public Task<int> AddCustomerAddress(CustomerAdress address)
         {
+            var encodedPassword = base64Encode(address.Password);
+            address.Password = encodedPassword;
             bookStoreDB.Address.Add(address);
             var result = bookStoreDB.SaveChangesAsync();
-            Encode(address.Password);
             return result;
         }
 
@@ -48,17 +49,44 @@ namespace Repository.CustomerRepo
         /// <returns>Object.</returns>
         public IQueryable Login(string Email_Id, string Password)
         {
-            var customerAdress = this.bookStoreDB.Address.Where(Address => Address.Email == Email_Id && Address.Password==Password);
-            if (customerAdress != null)
+            var customerAdress = this.bookStoreDB.Address.Where(Address => Address.Email == Email_Id && Password == base64Decode(Address.Password));
+            if (customerAdress != null )
                 return customerAdress;
             return null;
         }
 
-        private static void Encode(string password)
+        public static string base64Encode(string password) // Encode    
         {
-            byte[] EncDataByte = new byte[password.Length];
-            EncDataByte = System.Text.Encoding.UTF8.GetBytes(password);
-            string EncrypData = Convert.ToBase64String(EncDataByte);
+            try
+            {
+                byte[] encData_byte = new byte[password.Length];
+                encData_byte = System.Text.Encoding.UTF8.GetBytes(password);
+                string encodedData = Convert.ToBase64String(encData_byte);
+                return encodedData;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error in base64Encode" + ex.Message);
+            }
+        }
+
+        public static string base64Decode(string sData) //Decode    
+        {
+            try
+            {
+                var encoder = new System.Text.UTF8Encoding();
+                System.Text.Decoder utf8Decode = encoder.GetDecoder();
+                byte[] todecodeByte = Convert.FromBase64String(sData);
+                int charCount = utf8Decode.GetCharCount(todecodeByte, 0, todecodeByte.Length);
+                char[] decodedChar = new char[charCount];
+                utf8Decode.GetChars(todecodeByte, 0, todecodeByte.Length, decodedChar, 0);
+                string result = new String(decodedChar);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error in base64Decode" + ex.Message);
+            }
         }
     }
 }
