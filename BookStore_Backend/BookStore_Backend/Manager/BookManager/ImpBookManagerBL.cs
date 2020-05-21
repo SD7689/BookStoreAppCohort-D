@@ -17,21 +17,21 @@ namespace BookStoreBussinessLayer.BookManager
         }
         public Task<int> AddBook(Book book)
         {
-            return this.irepo.AddBook(book);
+            return this.irepo.AddBookRL(book);
         }
 
         public IEnumerable<Book> GetAllBook()
         {
-            return this.irepo.GetAllBook();
+            return this.irepo.GetAllBookRL();
         }
 
         public string Image(IFormFile file, int id)
         {
-            return irepo.Image(file, id);
+            return irepo.ImageRL(file, id);
         }
         public int GetNumOfBook()
         {
-            return irepo.GetNumOfBook();
+            return irepo.GetNumOfBookRL();
         }
     }
 }

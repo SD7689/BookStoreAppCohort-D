@@ -22,19 +22,19 @@ namespace BookStoreRepositoryLayer.BookRepo
             this.bookStoreDB = bookStoreDB;
             this.configuration = configuration;
         }
-        public Task<int> AddBook(Book book)
+        public Task<int> AddBookRL(Book book)
         {
             bookStoreDB.Book.Add(book);
             var result = bookStoreDB.SaveChangesAsync();
             return result;
         }
 
-        public IEnumerable<Book> GetAllBook()
+        public IEnumerable<Book> GetAllBookRL()
         {
             return bookStoreDB.Book;
         }
 
-        public string Image(IFormFile file, int id)
+        public string ImageRL(IFormFile file, int id)
         {
             if (file == null)
             {
@@ -62,7 +62,7 @@ namespace BookStoreRepositoryLayer.BookRepo
                 return e.Message;
             }
         }
-        public int GetNumOfBook()
+        public int GetNumOfBookRL()
         {
             var NumOfBook=bookStoreDB.Book.Count<Book>();
             return NumOfBook;

@@ -9,9 +9,9 @@ namespace BookStoreRepositoryLayer.BookRepo
 {
     public interface IBookRL
     {
-        Task<int> AddBook(Book book);
-        IEnumerable<Book> GetAllBook();
-        string Image(IFormFile file, int id);
-        int GetNumOfBook();
+        Task<int> AddBookRL(Book book);
+        IEnumerable<Book> GetAllBookRL();
+        string ImageRL(IFormFile file, int id);
+        int GetNumOfBookRL();
     }
 }
