@@ -29,8 +29,8 @@ namespace BookStore_Api.Controllers
             }
             else
             {
-                return this.BadRequest("Login Failed");
-
+                var error = new JsonErrorModel { ErrorMessage = "Email or Password does not match" };
+                return this.BadRequest(error);
             }
 
         }

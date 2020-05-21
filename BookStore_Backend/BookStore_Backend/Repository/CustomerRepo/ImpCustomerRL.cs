@@ -1,6 +1,7 @@
 ﻿using BookStoreCommonLayer;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,9 +23,10 @@ namespace BookStoreRepositoryLayer.CustomerRepo
             return result;
         }
 
-        public CustomerAdress GetCustomerAddressRL(string email)
+        public IQueryable GetCustomerAddressRL(string email)
         {
-            return bookStoreDB.Address.Find(email);
+            var result = bookStoreDB.Address.Where(emailId => emailId.Email == email);
+            return result;
         }
     }
 }
