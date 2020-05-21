@@ -17,11 +17,11 @@ namespace BookStoreBussinessLayer.LoginManager
         }
         public bool Login(User user)
         {
-            return repo.Login(user);
+            return repo.LoginRL(user);
         }
         public Task<int> AddUser(User user)
         {
-            return repo.AddUser(user);
+            return repo.AddUserRL(user);
         } 
     }
 }

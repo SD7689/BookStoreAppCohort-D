@@ -16,7 +16,7 @@ namespace BookStoreRepositoryLayer.LoginRepo
             this.context = context;
         }
 
-        public Task<int> AddUser(User user)
+        public Task<int> AddUserRL(User user)
         {
             context.Users.Add(user);
             var result = context.SaveChangesAsync();
@@ -29,7 +29,7 @@ namespace BookStoreRepositoryLayer.LoginRepo
         /// <param name="email"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public bool Login(User user)
+        public bool LoginRL(User user)
         {
 
             var result = context.Users.Where(id => id.Email == user.Email && id.Password == user.Password).FirstOrDefault();

@@ -8,7 +8,7 @@ namespace BookStoreRepositoryLayer.LoginRepo
 {
     public interface ILoginRepoRL
     {
-        bool Login(User user);
-        Task<int> AddUser(User user);
+        bool LoginRL(User user);
+        Task<int> AddUserRL(User user);
     }
 }
