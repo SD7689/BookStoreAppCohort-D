@@ -23,7 +23,7 @@ namespace BookStore_Api.Controllers
         [HttpPost]
         public IActionResult LoginUser(User user)
         {
-            var result=this.manager.Login(user);
+            var result=this.manager.LoginBL(user);
             if (result == true) {
                 return this.Ok(user.Email);
             }
@@ -38,7 +38,7 @@ namespace BookStore_Api.Controllers
         [HttpPost]
         public async Task<IActionResult> AddUser(User user)
         {
-            var result =await this.manager.AddUser(user);
+            var result =await this.manager.AddUserBL(user);
             if (result == 1)
             {
                 return this.Ok(user);

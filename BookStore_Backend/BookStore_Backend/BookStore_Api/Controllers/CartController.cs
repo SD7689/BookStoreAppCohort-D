@@ -24,7 +24,7 @@ namespace BookStore_Api.Controllers
         [HttpPost]
         public async Task<IActionResult> AddToCart(Cart cart)
         {
-            var result = await this.manager.AddToCart(cart);
+            var result = await this.manager.AddToCartBL(cart);
             sender.Send("Add book in cart");
             if (result == 1)
             {
@@ -39,7 +39,7 @@ namespace BookStore_Api.Controllers
         [HttpDelete]
         public IActionResult RemoveCart(int cartId)
         {
-            var cartData = this.manager.RemoveCart(cartId);
+            var cartData = this.manager.RemoveCartBL(cartId);
             sender.Send("Remove book in cart");
             if (cartData != null)
             {
@@ -50,13 +50,13 @@ namespace BookStore_Api.Controllers
         [HttpGet]
         public IQueryable GetCartValue()
         {
-            return this.manager.GetAllCartValue();
+            return this.manager.GetAllCartValueBL();
         }
         [Route("NumOfBook")]
         [HttpGet]
         public ActionResult BookCount()
         {
-            var count=this.manager.NumOfBook();
+            var count=this.manager.NumOfBookBL();
             return this.Ok(count);
         }
     }

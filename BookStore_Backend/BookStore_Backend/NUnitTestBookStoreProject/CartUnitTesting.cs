@@ -29,7 +29,7 @@ namespace NUnitTestBookStoreProject
             var service = new Mock<ICartRepoRL>();
             var manager = new ImpCartManagerBL(service.Object);
             cart.BookId = 1;
-            var data = manager.AddToCart(cart);
+            var data = manager.AddToCartBL(cart);
             Assert.NotNull(data);
         }
         [Test]
@@ -45,7 +45,7 @@ namespace NUnitTestBookStoreProject
         {
             var service = new Mock<ICartRepoRL>();
             var manager = new ImpCartManagerBL(service.Object);
-            var data = manager.RemoveCart(11);
+            var data = manager.RemoveCartBL(11);
             Assert.Null(data);
         }
         [Test]
@@ -62,7 +62,7 @@ namespace NUnitTestBookStoreProject
         {
             var service = new Mock<ICartRepoRL>();
             var manager = new ImpCartManagerBL(service.Object);
-            var data = manager.GetAllCartValue();
+            var data = manager.GetAllCartValueBL();
             Assert.NotNull(data);
         }
     }

@@ -28,7 +28,7 @@ namespace BookStore_Api.Controllers
         [HttpPost]
         public async Task<IActionResult> AddCustomerAddress(CustomerAdress address)
         {
-            var result = await this.imanager.AddCustomerAddress(address);
+            var result = await this.imanager.AddCustomerAddressBL(address);
             sender.Send("Add custmor address");
             if (result == 1)
             {
@@ -46,7 +46,7 @@ namespace BookStore_Api.Controllers
         public CustomerAdress GetCustomerAddress(string email)
         {
             sender.Send("Get all address");
-            return this.imanager.GetCustomerAddress(email);
+            return this.imanager.GetCustomerAddressBL(email);
         }
 
     }

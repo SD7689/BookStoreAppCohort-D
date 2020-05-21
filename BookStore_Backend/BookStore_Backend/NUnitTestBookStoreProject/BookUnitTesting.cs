@@ -40,7 +40,7 @@ namespace NUnitTestBookStoreProject
             book.BookImage = "images.jpg";
             book.BookPrice = 85.00;
             book.Availability = 10;
-            var data = manager.AddBook(book);
+            var data = manager.AddBookBL(book);
             Assert.NotNull(data);
         }
 
@@ -57,7 +57,7 @@ namespace NUnitTestBookStoreProject
         {
             var service = new Mock<IBookRL>();
             var manager = new ImpBookManagerBL(service.Object);
-            var data = manager.GetAllBook();
+            var data = manager.GetAllBookBL();
             Assert.NotNull(data);
         }
 

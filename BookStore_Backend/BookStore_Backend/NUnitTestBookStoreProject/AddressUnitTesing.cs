@@ -30,7 +30,7 @@ namespace NUnitTestBookStoreProject
             var repo = new Mock<ICustomerRL>();
             var manager = new ImpCustomerManagerBL(repo.Object);
            
-            var data = manager.AddCustomerAddress(address);
+            var data = manager.AddCustomerAddressBL(address);
             Assert.NotNull(data);
            
         }

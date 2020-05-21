@@ -9,13 +9,13 @@ namespace BookStoreBussinessLayer.CartManager
 {
     public interface ICartManagerBL
     {
-        Task<int> AddToCart(Cart cart);
-        Cart RemoveCart(int CartID);
+        Task<int> AddToCartBL(Cart cart);
+        Cart RemoveCartBL(int CartID);
 
         
-        int NumOfBook();
+        int NumOfBookBL();
 
-        IQueryable GetAllCartValue();
+        IQueryable GetAllCartValueBL();
 
     }
 }

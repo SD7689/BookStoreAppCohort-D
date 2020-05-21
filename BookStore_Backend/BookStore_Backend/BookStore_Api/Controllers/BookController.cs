@@ -29,7 +29,7 @@ namespace BookStore_Api.Controllers
         [HttpPost]
         public async Task<IActionResult> AddBook(Book book)
         {
-            var result = await this.manager.AddBook(book);
+            var result = await this.manager.AddBookBL(book);
             sender.Send("Add the book details");
             if (result == 1)
             {
@@ -47,13 +47,13 @@ namespace BookStore_Api.Controllers
         public IEnumerable<Book> GetAllBook()
         {
             sender.Send("Get all books details");
-            return this.manager.GetAllBook();
+            return this.manager.GetAllBookBL();
         }
         [Route("AddBookImage")]
         [HttpPost]
         public ActionResult AddBookImage(IFormFile file,int id)
         {
-            var result = this.manager.Image(file, id);
+            var result = this.manager.ImageBL(file, id);
             if (result != null)
             {
                 return this.Ok(result);
@@ -64,7 +64,7 @@ namespace BookStore_Api.Controllers
         [HttpGet]
         public ActionResult NumOfBooks()
         {
-            var count = manager.GetNumOfBook();
+            var count = manager.GetNumOfBookBL();
             if (count >0)
             {
                 return this.Ok(count);

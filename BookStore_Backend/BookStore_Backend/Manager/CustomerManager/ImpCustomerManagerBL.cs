@@ -14,12 +14,12 @@ namespace BookStoreBussinessLayer.CustomerManager
         {
             this.irepo = irepo;
         }
-        public Task<int> AddCustomerAddress(CustomerAdress address)
+        public Task<int> AddCustomerAddressBL(CustomerAdress address)
         {
             return this.irepo.AddCustomerAddressRL(address);
         }
 
-        public CustomerAdress GetCustomerAddress(string email)
+        public CustomerAdress GetCustomerAddressBL(string email)
         {
             return this.irepo.GetCustomerAddressRL(email);
         }

@@ -8,7 +8,7 @@ namespace BookStoreBussinessLayer.CustomerManager
 {
    public interface ICustomerManagerBL
     {
-        Task<int> AddCustomerAddress(CustomerAdress address);
-        CustomerAdress GetCustomerAddress(string email);
+        Task<int> AddCustomerAddressBL(CustomerAdress address);
+        CustomerAdress GetCustomerAddressBL(string email);
     }
 }

@@ -8,7 +8,7 @@ namespace BookStoreBussinessLayer.LoginManager
 {
     public interface ILoginManagerBL
     {
-        bool Login(User user);
-        Task<int> AddUser(User user);
+        bool LoginBL(User user);
+        Task<int> AddUserBL(User user);
     }
 }
