@@ -50,7 +50,7 @@ namespace Repository.CustomerRepo
         public IQueryable Login(string Email_Id, string Password)
         {
             var customerAdress = this.bookStoreDB.Address.Where(Address => Address.Email == Email_Id && Password == base64Decode(Address.Password));
-            if (customerAdress != null )
+            if (customerAdress != null)
                 return customerAdress;
             return null;
         }

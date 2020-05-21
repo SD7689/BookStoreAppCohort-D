@@ -72,8 +72,7 @@ namespace BookStoreRepositoryLayer.Migrations
                     b.Property<string>("Citytown")
                         .IsRequired();
 
-                    b.Property<string>("Email")
-                        .IsRequired();
+                    b.Property<string>("Email");
 
                     b.Property<string>("FullName")
                         .IsRequired();
@@ -89,6 +88,10 @@ namespace BookStoreRepositoryLayer.Migrations
                     b.Property<int>("Pincode");
 
                     b.HasKey("CustomerId");
+
+                    b.HasIndex("Email")
+                        .IsUnique()
+                        .HasFilter("[Email] IS NOT NULL");
 
                     b.ToTable("Address");
                 });

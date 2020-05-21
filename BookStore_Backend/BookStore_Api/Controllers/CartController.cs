@@ -50,14 +50,14 @@ namespace BookStore_Api.Controllers
             return this.BadRequest();
         }
 
-        [Route("Its show the cart data ")]
+        //[Route("Its show the cart data ")]
         [HttpGet]
         public IQueryable GetCartValue()
         {
             return this.manager.GetAllCartValue();
         }
 
-        //[Route(" Its show the number of cart data ")]
+        [Route("GetBookNumber")]
         [HttpGet]
         public IActionResult BookCount()
         {

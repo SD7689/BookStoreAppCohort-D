@@ -25,7 +25,7 @@ namespace BookStore_Api.Controllers
         /// </summary>
         /// <param name="address"></param>
         /// <returns></returns>
-        [Route("Customer details")]
+        //[Route("Customer details")]
         [HttpPost]
         public async Task<IActionResult> AddCustomerAddress(CustomerAdress address)
         {
@@ -42,7 +42,7 @@ namespace BookStore_Api.Controllers
         /// </summary>
         /// <param name="enterAddres"></param>
         /// <returns></returns>
-        [Route("Its show the customer details")]
+        //[Route("Its show the customer details")]
         [HttpGet]
         public IActionResult GetCustomerAddress(int CustomerId)
         {

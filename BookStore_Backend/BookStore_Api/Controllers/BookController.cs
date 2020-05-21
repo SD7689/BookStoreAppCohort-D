@@ -45,7 +45,7 @@ namespace BookStore_Api.Controllers
         /// Get all Books details
         /// </summary>
         /// <returns> List of Book </returns>
-        [Route("Its show the all book data")]
+       // [Route("Its show the all book data")]
         [HttpGet]
         public IEnumerable<Book> GetAllBook()
         {
@@ -53,7 +53,7 @@ namespace BookStore_Api.Controllers
             return this.manager.GetAllBook();
         }
 
-        [Route("BookImage")]
+        [Route("AddBookImage")]
         [HttpPost]
         public ActionResult AddBookImage(IFormFile file,int id)
         {
@@ -66,7 +66,7 @@ namespace BookStore_Api.Controllers
             return this.BadRequest(ErrorMessage());
         }
 
-        [Route("Its show the number of books ")]
+        [Route("GetNumber_Books")]
         [HttpGet]
         public ActionResult NumOfBooks()
         {

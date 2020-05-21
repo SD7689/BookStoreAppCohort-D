@@ -12,8 +12,16 @@ namespace Repository
         {
 
         }
+
         public DbSet<Book> Book { get; set; }
         public DbSet<CustomerAdress> Address { get; set; }
         public DbSet<Cart> Cart { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<CustomerAdress>()
+                .HasIndex(u => u.Email)
+                .IsUnique();
+        }
     }
 }
