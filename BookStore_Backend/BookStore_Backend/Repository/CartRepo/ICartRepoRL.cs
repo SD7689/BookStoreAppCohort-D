@@ -9,10 +9,10 @@ namespace BookStoreRepositoryLayer.CartRepo
 {
     public interface ICartRepoRL
     {
-        Task<int> AddToCart(Cart cart);
-        Cart RemoveCart(int CartID);
-        int NumOfBook();
-        IQueryable GetAllCartValue();
+        Task<int> AddToCartRL(Cart cart);
+        Cart RemoveCartRL(int CartID);
+        int NumOfBookRL();
+        IQueryable GetAllCartValueRL();
 
     }
 }

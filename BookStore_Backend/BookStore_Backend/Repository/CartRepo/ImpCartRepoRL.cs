@@ -15,14 +15,14 @@ namespace BookStoreRepositoryLayer.CartRepo
             this.bookStoreDB = bookStoreDB;
         }
 
-        public Task<int> AddToCart(Cart cart)
+        public Task<int> AddToCartRL(Cart cart)
         {
             bookStoreDB.Cart.Add(cart);
             var result = bookStoreDB.SaveChangesAsync();
             return result;
         }
 
-        public IQueryable GetAllCartValue()
+        public IQueryable GetAllCartValueRL()
         {
             var result = this.bookStoreDB.Cart.Join(this.bookStoreDB.Book,
                 Cart => Cart.BookId,
@@ -41,7 +41,7 @@ namespace BookStoreRepositoryLayer.CartRepo
             return result;
         }
 
-        public Cart RemoveCart(int CartID)
+        public Cart RemoveCartRL(int CartID)
         {
             Cart cart = bookStoreDB.Cart.Find(CartID);
             if (cart != null)
@@ -51,7 +51,7 @@ namespace BookStoreRepositoryLayer.CartRepo
             }
             return cart;
         }
-        public int NumOfBook()
+        public int NumOfBookRL()
         {
             int count = bookStoreDB.Cart.Count<Cart>();
             return count;

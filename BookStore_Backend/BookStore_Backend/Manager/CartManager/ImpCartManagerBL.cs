@@ -18,21 +18,21 @@ namespace BookStoreBussinessLayer.CartManager
 
         public Task<int> AddToCart(Cart cart)
         {
-            return this.manager.AddToCart(cart);
+            return this.manager.AddToCartRL(cart);
         }
 
         public IQueryable GetAllCartValue()
         {
-            return this.manager.GetAllCartValue();
+            return this.manager.GetAllCartValueRL();
         }
 
         public Cart RemoveCart(int CartID)
         {
-            return this.manager.RemoveCart(CartID);
+            return this.manager.RemoveCartRL(CartID);
         }
         public int NumOfBook()
         {
-            return this.manager.NumOfBook();
+            return this.manager.NumOfBookRL();
         }
     }
 }
