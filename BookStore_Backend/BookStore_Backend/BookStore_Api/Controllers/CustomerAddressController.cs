@@ -43,7 +43,7 @@ namespace BookStore_Api.Controllers
         /// <param name="enterAddres"></param>
         /// <returns></returns>
         [HttpGet]
-        public CustomerAdress GetCustomerAddress(string email)
+        public IQueryable GetCustomerAddress(string email)
         {
             sender.Send("Get all address");
             return this.imanager.GetCustomerAddressBL(email);
