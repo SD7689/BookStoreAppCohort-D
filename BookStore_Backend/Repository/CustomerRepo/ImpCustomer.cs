@@ -24,20 +24,11 @@ namespace Repository.CustomerRepo
         /// <returns>int.</returns>
         public Task<int> AddCustomerAddress(CustomerAdress address)
         {
-            try
-            {
                 var encodedPassword = base64Encode(address.Password);
                 address.Password = encodedPassword;
                 bookStoreDB.Address.Add(address);
                 var result = bookStoreDB.SaveChangesAsync();
-                if (result == null)
-                    throw new Exception("This Email Id already used");
                 return result;
-            }
-            catch(Exception e)
-            {
-                throw e;
-            }
         }
 
         /// <summary>

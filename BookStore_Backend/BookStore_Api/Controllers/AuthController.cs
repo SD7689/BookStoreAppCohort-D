@@ -15,7 +15,7 @@ namespace BookStore_Api.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        [HttpPost("Token")]
+        [HttpGet("Token")]
         public IActionResult GetToken()  
         {
             // Security Key

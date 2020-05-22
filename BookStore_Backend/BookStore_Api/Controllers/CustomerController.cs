@@ -8,16 +8,18 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model;
+using Repository;
 
 namespace BookStore_Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles ="Administrator")]
+    [Authorize(Roles = "Administrator")]
     public class CustomerController : ControllerBase
     {
         private readonly Sender sender = new Sender();
         private readonly ICustomerManager imanager;
+
         public CustomerController(ICustomerManager imanager)
         {
             this.imanager = imanager;
@@ -32,29 +34,32 @@ namespace BookStore_Api.Controllers
         [HttpPost]
         public async Task<IActionResult> AddCustomerAddress(CustomerAdress address)
         {
-            var result = await this.imanager.AddCustomerAddress(address);
-            sender.Send("Add custmor address");
-            if (result != 1)
+            try
             {
-                return BadRequest();
+                var result = await this.imanager.AddCustomerAddress(address);
+                sender.Send("Add custmor address");
+                return this.Ok(address);
             }
-            return this.Ok(result);
+            catch (Exception)
+            {
+                return StatusCode(500, "{Result: This Email Id already used}");
+            }
         }
 
-        /// <summary>
-        /// Add GetCustomerAddress 
-        /// </summary>
-        /// <param name="enterAddres"></param>
-        /// <returns></returns>
-        //[Route("Its show the customer details")]
-        [HttpGet]
+                /// <summary>
+                /// Add GetCustomerAddress 
+                /// </summary>
+                /// <param name="enterAddres"></param>
+                /// <returns></returns>
+                //[Route("Its show the customer details")]
+                [HttpGet]
         public IActionResult GetCustomerAddress(int CustomerId)
         {
             sender.Send(" Its show the all customer details ");
             var result = this.imanager.GetCustomerAddress(CustomerId);
             if (result != null)
                 return this.Ok(result);
-            return this.BadRequest("Enter the correct custmor id");
+            return this.BadRequest("{Result:Enter the correct custmor id}");
         }
         
 
@@ -71,34 +76,7 @@ namespace BookStore_Api.Controllers
             var result = this.imanager.Login(Email_Id, Password);
             if (result != null)
                 return this.Ok(result);
-            return this.BadRequest("Please enter the valid email id and password");
+            return this.BadRequest(" {Result: Please enter the valid email id and password }");
         }
-
-        public static JsonErrorModel ErrorMessage()
-        {
-            if (HttpStatusCode.InternalServerError.Equals(400))
-            {
-                var error = new JsonErrorModel
-                {
-                    ErrorCode = (int)HttpStatusCode.InternalServerError,
-                    ErrorMessage = "Invalid data enter"
-                };
-
-                return error;
-            }
-            else if (HttpStatusCode.InternalServerError.Equals(500))
-            {
-                var error = new JsonErrorModel
-                {
-                    ErrorCode = (int)HttpStatusCode.InternalServerError,
-                    ErrorMessage = "This Email Id already used"
-                };
-
-                return error;
-            }
-
-            return null;
-        }
-
     }
 }
