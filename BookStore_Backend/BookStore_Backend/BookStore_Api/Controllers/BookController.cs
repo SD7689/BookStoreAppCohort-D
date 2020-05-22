@@ -6,11 +6,13 @@ using BookStoreBussinessLayer.BookManager;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using BookStoreCommonLayer;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookStore_Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class BookController : ControllerBase
     {
         private readonly Sender sender = new Sender();

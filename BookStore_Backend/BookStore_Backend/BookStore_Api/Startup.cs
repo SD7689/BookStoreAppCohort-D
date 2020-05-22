@@ -21,6 +21,9 @@ using BookStoreRepositoryLayer.CartRepo;
 using BookStoreRepositoryLayer.CustomerRepo;
 using BookStoreRepositoryLayer.LoginRepo;
 using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace BookStore_Api
 {
@@ -48,6 +51,18 @@ namespace BookStore_Api
             services.AddTransient<ILoginRepoRL, LoginRepoRL>();
             services.AddTransient<ILoginManagerBL, LoginMangerBL>();
             services.AddSingleton<IConfiguration>(Configuration);
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+               options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+               {
+                   ValidateIssuer = true,
+                   ValidateAudience = true,
+                   ValidateLifetime = true,
+                   ValidateIssuerSigningKey = true,
+                   ValidIssuer = Configuration["Jwt:Issuer"],
+                   ValidAudience = Configuration["Jwt:Issuer"],
+                   IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+               }
+           );
 
             services.AddSwaggerGen(c =>
             {
@@ -77,6 +92,7 @@ namespace BookStore_Api
                 builder.AllowAnyHeader();
                 builder.AllowAnyMethod();
             });
+            app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseMvc();
         }
