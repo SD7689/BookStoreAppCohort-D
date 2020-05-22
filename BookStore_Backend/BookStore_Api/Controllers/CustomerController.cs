@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using BookStoreRepositoryLayer.ApiResponseErroeMessage;
 using Manager.CustomerManager;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -15,7 +14,6 @@ namespace BookStore_Api.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize(Roles ="Administrator")]
-
     public class CustomerController : ControllerBase
     {
         private readonly Sender sender = new Sender();

@@ -62,17 +62,11 @@ namespace BookStore_Api
             services.AddTransient<ICustomer, ImpCustomer>();
             services.AddTransient<ICartManager, ImpCartManager>();
             services.AddTransient<ICartRepo, ImpCartRepo>();
+            services.AddSingleton<IConfiguration>(Configuration);
 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "BookStorWeb API", Version = "v1" });
-                c.AddSecurityDefinition("Bearer", new ApiKeyScheme
-                {
-                    Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
-                    Name = "Administrator",
-                    In = "header",
-                    Type = "apiKey"
-                });
             });
         }
 
