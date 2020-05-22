@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Manager.CustomerManager
 {
-   public interface ICustomerManager
+   public interface ICustomerManagerBL
     {
-        Task<int> AddCustomerAddress(CustomerAdress address);
-        CustomerAdress GetCustomerAddress(string email);
+        Task<int> AddCustomerAddress(CustomerCL address);
+        CustomerCL GetCustomerAddress(string email);
     }
 }

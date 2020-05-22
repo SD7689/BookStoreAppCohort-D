@@ -11,22 +11,22 @@ using System.Linq;
 
 namespace Repository.BookRepo
 {
-    public class BookImp : IBook
+    public class BookImpRL : IBookRL
     {
         private readonly BookStoreDBContext bookStoreDB;
 
-        public BookImp(BookStoreDBContext bookStoreDB)
+        public BookImpRL(BookStoreDBContext bookStoreDB)
         {
             this.bookStoreDB = bookStoreDB;
         }
-        public Task<int> AddBook(Book book)
+        public Task<int> AddBook(BookCL book)
         {
             bookStoreDB.Book.Add(book);
             var result = bookStoreDB.SaveChangesAsync();
             return result;
         }
 
-        public IEnumerable<Book> GetAllBook()
+        public IEnumerable<BookCL> GetAllBook()
         {
             return bookStoreDB.Book;
         }
@@ -61,7 +61,7 @@ namespace Repository.BookRepo
         }
         public int GetNumOfBook()
         {
-            var NumOfBook=bookStoreDB.Book.Count<Book>();
+            var NumOfBook=bookStoreDB.Book.Count<BookCL>();
             return NumOfBook;
         }
 

@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Repository.BookRepo
 {
-    public interface IBook
+    public interface IBookRL
     {
-        Task<int> AddBook(Book book);
-        IEnumerable<Book> GetAllBook();
+        Task<int> AddBook(BookCL book);
+        IEnumerable<BookCL> GetAllBook();
         string Image(IFormFile file, int id);
         int GetNumOfBook();
     }

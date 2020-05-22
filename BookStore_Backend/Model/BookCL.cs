@@ -9,7 +9,7 @@ namespace Model
     /// <summary>
     /// BookModel class
     /// </summary>
-   public class Book
+   public class BookCL
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

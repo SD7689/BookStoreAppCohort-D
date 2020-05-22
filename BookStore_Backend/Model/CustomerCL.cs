@@ -9,9 +9,11 @@ namespace Model
     /// <summary>
     /// Customer Adress Model class
     /// </summary>
-   public class CustomerAdress
+   public class CustomerCL
     {
         [Key]
+        public int CustomerId { get; set; }
+        [Required]
         public string Email { get; set; }
         [Required]
         public string FullName { get; set; }

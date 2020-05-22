@@ -6,10 +6,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repository;
 
-namespace Repository.Migrations
+namespace BookStoreRepositoryLayer.Migrations
 {
     [DbContext(typeof(BookStoreDBContext))]
-    [Migration("20200513074612_initial")]
+    [Migration("20200522055232_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,8 +61,9 @@ namespace Repository.Migrations
 
             modelBuilder.Entity("Model.CustomerAdress", b =>
                 {
-                    b.Property<string>("Email")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("CustomerId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Address")
                         .IsRequired();
@@ -70,6 +71,9 @@ namespace Repository.Migrations
                     b.Property<string>("AddressType");
 
                     b.Property<string>("Citytown")
+                        .IsRequired();
+
+                    b.Property<string>("Email")
                         .IsRequired();
 
                     b.Property<string>("FullName")
@@ -81,20 +85,24 @@ namespace Repository.Migrations
 
                     b.Property<int>("Pincode");
 
-                    b.HasKey("Email");
+                    b.HasKey("CustomerId");
 
                     b.ToTable("Address");
                 });
 
             modelBuilder.Entity("Model.User", b =>
                 {
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<string>("Email")
-                        .ValueGeneratedOnAdd();
+                        .IsRequired();
 
                     b.Property<string>("Password")
                         .IsRequired();
 
-                    b.HasKey("Email");
+                    b.HasKey("UserId");
 
                     b.ToTable("Users");
                 });

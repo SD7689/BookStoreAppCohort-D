@@ -8,19 +8,19 @@ using System.Threading.Tasks;
 
 namespace Manager.BookManager
 {
-    public class ImpBookManager : IManager
+    public class ImpBookManagerBL : IManagerBL
     {
-        private readonly IBook irepo;
-        public ImpBookManager(IBook irepo)
+        private readonly IBookRL irepo;
+        public ImpBookManagerBL(IBookRL irepo)
         {
             this.irepo = irepo;
         }
-        public Task<int> AddBook(Book book)
+        public Task<int> AddBook(BookCL book)
         {
             return this.irepo.AddBook(book);
         }
 
-        public IEnumerable<Book> GetAllBook()
+        public IEnumerable<BookCL> GetAllBook()
         {
             return this.irepo.GetAllBook();
         }

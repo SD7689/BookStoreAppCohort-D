@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace Manager.LoginManager
 {
-    public class LoginManger : ILoginManager
+    public class LoginMangerBL : ILoginManagerBL
     {
-        private readonly ILoginRepo repo;
+        private readonly ILoginRL repo;
 
-        public LoginManger(ILoginRepo repo)
+        public LoginMangerBL(ILoginRL repo)
         {
             this.repo = repo;
         }
-        public bool Login(User user)
+        public bool Login(UserCL user)
         {
             return repo.Login(user);
         }
-        public Task<int> AddUser(User user)
+        public Task<int> AddUser(UserCL user)
         {
             return repo.AddUser(user);
         } 

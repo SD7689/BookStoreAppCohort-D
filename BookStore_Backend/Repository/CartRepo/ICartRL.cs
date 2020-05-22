@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Repository.CartRepo
 {
-    public interface ICartRepo
+    public interface ICartRL
     {
-        Task<int> AddToCart(Cart cart);
-        Cart RemoveCart(int CartID);
+        Task<int> AddToCart(CartCL cart);
+        CartCL RemoveCart(int CartID);
         int NumOfBook();
         IQueryable GetAllCartValue();
 

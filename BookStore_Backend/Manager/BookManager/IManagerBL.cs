@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Manager.BookManager
 {
-   public interface IManager
+   public interface IManagerBL
     {
-        Task<int> AddBook(Book book);
-        IEnumerable<Book> GetAllBook();
+        Task<int> AddBook(BookCL book);
+        IEnumerable<BookCL> GetAllBook();
         string Image(IFormFile file, int id);
         int GetNumOfBook();
        

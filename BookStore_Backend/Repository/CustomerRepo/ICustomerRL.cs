@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Repository.CustomerRepo
 {
-   public interface ICustomer
+   public interface ICustomerRL
     {
-        Task<int> AddCustomerAddress(CustomerAdress address);
-        CustomerAdress GetCustomerAddress(string email);
+        Task<int> AddCustomerAddress(CustomerCL address);
+        CustomerCL GetCustomerAddress(string email);
     }
 }

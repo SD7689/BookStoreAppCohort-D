@@ -13,11 +13,11 @@ namespace NUnitTestBookStoreProject
 {
     public class BookUnitTesting
     {
-        Book book = new Book();
+        BookCL book = new BookCL();
         [Test]
         public void GivenBookDetail_ToController_ShouldReturnBookDetails()
         {
-            var service = new Mock<IManager>();
+            var service = new Mock<IManagerBL>();
             var controller = new BookController(service.Object);
 
             book.BookTitle = "Never Happen Twice";
@@ -33,8 +33,8 @@ namespace NUnitTestBookStoreProject
         [Test]
         public void GivenBookDetail_ToBookStoreBusinesLayer_ShouldReturnBookDetails()
         {
-            var service = new Mock<IBook>();
-            var manager = new ImpBookManager(service.Object);
+            var service = new Mock<IBookRL>();
+            var manager = new ImpBookManagerBL(service.Object);
             book.BookTitle = "Never Happen Twice";
             book.AuthorName = "BDEC";
             book.BookImage = "images.jpg";
@@ -47,7 +47,7 @@ namespace NUnitTestBookStoreProject
         [Test]
         public void GivenBookDetail_ToBookController_ShouldReturnAllBookDetails( )
         {
-            var service = new Mock<IManager>();
+            var service = new Mock<IManagerBL>();
             var controller = new BookController(service.Object);
             var data = controller.GetAllBook();
             Assert.NotNull(data);
@@ -55,8 +55,8 @@ namespace NUnitTestBookStoreProject
         [Test]
         public void GvenBookDetail_ToBookBusinessLayer_ShouldReturnAllBooksDetails()
         {
-            var service = new Mock<IBook>();
-            var manager = new ImpBookManager(service.Object);
+            var service = new Mock<IBookRL>();
+            var manager = new ImpBookManagerBL(service.Object);
             var data = manager.GetAllBook();
             Assert.NotNull(data);
         }
@@ -64,7 +64,7 @@ namespace NUnitTestBookStoreProject
         [Test]
         public void GivenBookDetail_ToBookController_ShouldReturnBookCounts()
         {
-            var service = new Mock<IManager>();
+            var service = new Mock<IManagerBL>();
             var Controller = new BookController(service.Object);
             var actual = Controller.NumOfBooks();
             Assert.IsNotNull(actual);
@@ -74,7 +74,7 @@ namespace NUnitTestBookStoreProject
         public void Test_ImageUpload()
         {
             IFormFile file=null;
-            var service = new Mock<IManager>();
+            var service = new Mock<IManagerBL>();
             var Controller = new BookController(service.Object);
             var actual = Controller.AddBookImage(file, 2);
             Assert.IsNotNull(actual);

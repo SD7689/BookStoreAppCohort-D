@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace Manager.CustomerManager
 {
-    public class ImpCustomerManager : ICustomerManager
+    public class ImpCustomerManagerBL : ICustomerManagerBL
     {
-        private readonly ICustomer irepo;
-        public ImpCustomerManager(ICustomer irepo)
+        private readonly ICustomerRL irepo;
+        public ImpCustomerManagerBL(ICustomerRL irepo)
         {
             this.irepo = irepo;
         }
-        public Task<int> AddCustomerAddress(CustomerAdress address)
+        public Task<int> AddCustomerAddress(CustomerCL address)
         {
             return this.irepo.AddCustomerAddress(address);
         }
 
-        public CustomerAdress GetCustomerAddress(string email)
+        public CustomerCL GetCustomerAddress(string email)
         {
             return this.irepo.GetCustomerAddress(email);
         }

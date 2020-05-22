@@ -13,7 +13,7 @@ namespace NUnitTestBookStoreProject
 {
     public class AddressUnitTesing
     {
-        CustomerAdress address = new CustomerAdress()
+        CustomerCL address = new CustomerCL()
         {
           FullName="Itr",
           PhoneNumber=7847456,
@@ -27,8 +27,8 @@ namespace NUnitTestBookStoreProject
         [Test]
         public void GivenAddressDetail_CustomerAddressBL_ShouldReturnAddress()
         {
-            var repo = new Mock<ICustomer>();
-            var manager = new ImpCustomerManager(repo.Object);
+            var repo = new Mock<ICustomerRL>();
+            var manager = new ImpCustomerManagerBL(repo.Object);
            
             var data = manager.AddCustomerAddress(address);
             Assert.NotNull(data);
@@ -37,7 +37,7 @@ namespace NUnitTestBookStoreProject
         [Test]
         public void GivenAddressDetail_CustomerAddressController_ShouldReturnAddress( )
         {
-            var service = new Mock<ICustomerManager>();
+            var service = new Mock<ICustomerManagerBL>();
             var controller = new CustomerAddressController(service.Object);
             var data = controller.AddCustomerAddress(address);
             Assert.IsNotNull(data);

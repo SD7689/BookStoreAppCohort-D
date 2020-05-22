@@ -14,8 +14,8 @@ namespace BookStore_Api.Controllers
     public class CustomerAddressController : ControllerBase
     {
         private readonly Sender sender = new Sender();
-        private readonly ICustomerManager imanager;
-        public CustomerAddressController(ICustomerManager imanager)
+        private readonly ICustomerManagerBL imanager;
+        public CustomerAddressController(ICustomerManagerBL imanager)
         {
             this.imanager = imanager;
         }
@@ -27,7 +27,7 @@ namespace BookStore_Api.Controllers
         /// <returns></returns>
         [Route("AddCustomerAddress")]
         [HttpPost]
-        public async Task<IActionResult> AddCustomerAddress(CustomerAdress address)
+        public async Task<IActionResult> AddCustomerAddress(CustomerCL address)
         {
             var result = await this.imanager.AddCustomerAddress(address);
             sender.Send("Add custmor address");
@@ -45,7 +45,7 @@ namespace BookStore_Api.Controllers
         /// <returns></returns>
         [Route("GetCustomerAddress")]
         [HttpGet]
-        public CustomerAdress GetCustomerAddress(string email)
+        public CustomerCL GetCustomerAddress(string email)
         {
             sender.Send("Get all address");
             return this.imanager.GetCustomerAddress(email);

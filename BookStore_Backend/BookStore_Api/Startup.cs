@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
+using System.Web.Http;
 using Manager.BookManager;
 using Manager.CartManager;
 using Manager.CustomerManager;
 using Manager.LoginManager;
+using Microsoft.AspNetCore.Authentication.Twitter;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +19,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.Owin;
+using Microsoft.Owin.Security.OAuth;
 using Repository;
 using Repository.BookRepo;
 using Repository.CartRepo;
@@ -25,7 +31,7 @@ using Swashbuckle.AspNetCore.Swagger;
 namespace BookStore_Api
 {
     public class Startup
-    {
+    {    //  [assembly :OwinStartup(typeof(WebApiisTokenAuth.Startup))]
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -39,14 +45,14 @@ namespace BookStore_Api
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             
             services.AddDbContextPool<BookStoreDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("UserDbConnection")));
-            services.AddTransient<IManager, ImpBookManager>();
-            services.AddTransient<IBook, BookImp>();
-            services.AddTransient<ICustomerManager, ImpCustomerManager>();
-            services.AddTransient<ICustomer, ImpCustomer>();
-            services.AddTransient<ICartManager, ImpCartManager>();
-            services.AddTransient<ICartRepo, ImpCartRepo>();
-            services.AddTransient<ILoginRepo, LoginRepo>();
-            services.AddTransient<ILoginManager, LoginManger>();
+            services.AddTransient<IManagerBL, ImpBookManagerBL>();
+            services.AddTransient<IBookRL, BookImpRL>();
+            services.AddTransient<ICustomerManagerBL, ImpCustomerManagerBL>();
+            services.AddTransient<ICustomerRL, ImpCustomerRL>();
+            services.AddTransient<ICartManagerBL, ImpCartManagerBL>();
+            services.AddTransient<ICartRL, ImpCartRL>();
+            services.AddTransient<ILoginRL, LoginRL>();
+            services.AddTransient<ILoginManagerBL, LoginMangerBL>();
 
             services.AddSwaggerGen(c =>
             {
@@ -63,7 +69,7 @@ namespace BookStore_Api
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "MyAPI V1");
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "BookStore API");
                 });
             }
             else
@@ -73,6 +79,21 @@ namespace BookStore_Api
 
             app.UseHttpsRedirection();
             app.UseMvc();
+           /* app.UseCors(Microsoft.Owin.Cors.CorsOption.AllowAll);
+            var myProvider = new AuthorizationServerProvider();
+            OAuthorizationServerOption options = new OAuthorizationServerOption
+            {
+                AllowInsecureHttp = true,
+                TokenEndPointPath = new PathString("/token"),
+                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(60),
+                ProviderAliasAttribute = myProvider,
+                RefreshTokenProvider = new RefreshTokenProvider()
+            };
+            app.UseOAuthAuthorizationServer(options);
+            app.UseOAuthBearerAuthentication(
+                new OAuthBearerAuthenticationOptions());
+            HttpConfiguration config = new HttpConfiguration();
+            WebApiConfig.Register(config);*/
         }
     }
 }

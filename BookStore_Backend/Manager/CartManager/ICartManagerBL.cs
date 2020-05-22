@@ -7,10 +7,10 @@ using System.Linq;
 
 namespace Manager.CartManager
 {
-    public interface ICartManager
+    public interface ICartManagerBL
     {
-        Task<int> AddToCart(Cart cart);
-        Cart RemoveCart(int CartID);
+        Task<int> AddToCart(CartCL cart);
+        CartCL RemoveCart(int CartID);
 
         
         int NumOfBook();
