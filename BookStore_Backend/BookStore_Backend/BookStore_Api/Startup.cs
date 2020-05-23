@@ -67,6 +67,17 @@ namespace BookStore_Api
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "BookStorWeb API", Version = "v1" });
+                var security = new Dictionary<string, IEnumerable<string>>
+                {
+                    {"Bearer", new string[0] }
+                };
+                c.AddSecurityDefinition(name:"Bearer",new ApiKeyScheme { 
+                    Description="JWT Authorization header using bearer scheme",
+                    Name="Authorization",
+                    In="header",
+                    Type="apiKey"
+                });
+                c.AddSecurityRequirement(security);
             });
         }
 
