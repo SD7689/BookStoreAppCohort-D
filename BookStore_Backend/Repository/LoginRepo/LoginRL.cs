@@ -21,7 +21,7 @@ namespace Repository.LoginRepo
         public Task<int> AddUser(UserCL user)
         {
             var results = context.Users.Where(x => x.Email == user.Email);
-            if (results==null)
+            if (results.Count()==0)
             {
                 var plainText = user.Password;
                 var encryptedData = Encrypt(plainText, "fg");
