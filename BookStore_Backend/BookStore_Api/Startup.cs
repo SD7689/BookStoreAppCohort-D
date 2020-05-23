@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Manager.BookManager;
 using Manager.CartManager;
 using Manager.CustomerManager;
 using Manager.LoginManager;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authentication.Twitter;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -19,6 +21,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
 using Repository;
@@ -31,7 +34,7 @@ using Swashbuckle.AspNetCore.Swagger;
 namespace BookStore_Api
 {
     public class Startup
-    {    //  [assembly :OwinStartup(typeof(WebApiisTokenAuth.Startup))]
+    {  
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -53,7 +56,19 @@ namespace BookStore_Api
             services.AddTransient<ICartRL, ImpCartRL>();
             services.AddTransient<ILoginRL, LoginRL>();
             services.AddTransient<ILoginManagerBL, LoginMangerBL>();
-
+            services.AddSingleton<IConfiguration>(Configuration);
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+               options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+               {
+                   ValidateIssuer = true,
+                   ValidateAudience = true,
+                   ValidateLifetime = true,
+                   ValidateIssuerSigningKey = true,
+                   ValidIssuer = Configuration["Jwt:Issuer"],
+                   ValidAudience = Configuration["Jwt:Issuer"],
+                   IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+               }
+           );
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "BookStorWeb API", Version = "v1" });
@@ -78,22 +93,9 @@ namespace BookStore_Api
             }
 
             app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseMvc();
-           /* app.UseCors(Microsoft.Owin.Cors.CorsOption.AllowAll);
-            var myProvider = new AuthorizationServerProvider();
-            OAuthorizationServerOption options = new OAuthorizationServerOption
-            {
-                AllowInsecureHttp = true,
-                TokenEndPointPath = new PathString("/token"),
-                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(60),
-                ProviderAliasAttribute = myProvider,
-                RefreshTokenProvider = new RefreshTokenProvider()
-            };
-            app.UseOAuthAuthorizationServer(options);
-            app.UseOAuthBearerAuthentication(
-                new OAuthBearerAuthenticationOptions());
-            HttpConfiguration config = new HttpConfiguration();
-            WebApiConfig.Register(config);*/
+           
         }
     }
 }

@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Helpers;
 using CloudinaryDotNet.Actions;
 using Manager.LoginManager;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Writers;
 using Model;
+using Newtonsoft.Json;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -19,24 +24,27 @@ namespace BookStore_Api.Controllers
     public class LoginController : ControllerBase
     {
         private readonly ILoginManagerBL manager;
-
-        public LoginController(ILoginManagerBL manager)
+        private readonly IConfiguration configuration;
+        public LoginController(ILoginManagerBL manager , IConfiguration configuration)
         {
             this.manager = manager;
+            this.configuration = configuration;
         }
         [Route("Login")]
         
         [HttpPost]
-        public IActionResult LoginUser(UserCL user)
+        public ActionResult LoginUser(UserCL user)
         {
             var result = this.manager.Login(user);
             if (result == true)
             {
-                return this.Ok(user.Email);
+                var token = GenerateJSONWebToken(user);
+                return this.Ok(new {Token=token });
             }
             else
             {
-                return this.BadRequest(new  JsonResult("Invalid UserName or Password"));
+
+                return this.BadRequest(new { error = "Invalid UserName or Password" });
 
             }
 
@@ -50,8 +58,17 @@ namespace BookStore_Api.Controllers
             {
                 return this.Ok(user);
             }
-            return this.BadRequest();
+            return this.BadRequest(new {v="error" });
         }
 
+        private string GenerateJSONWebToken(UserCL user)
+        {
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            var token = new JwtSecurityToken(configuration["Jwt:Issuer"],configuration["Jwt:Issuer"],
+                 null, expires: DateTime.Now.AddMinutes(120), signingCredentials: credentials);
+            
+            return new JwtSecurityTokenHandler().WriteToken(token);
+        }
     }
 }

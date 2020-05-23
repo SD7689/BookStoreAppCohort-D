@@ -8,16 +8,18 @@ using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Http;
 using System.Runtime.InteropServices;  
 using System.Linq;
+using Microsoft.Extensions.Configuration;
 
 namespace Repository.BookRepo
 {
     public class BookImpRL : IBookRL
     {
         private readonly BookStoreDBContext bookStoreDB;
-
-        public BookImpRL(BookStoreDBContext bookStoreDB)
+        private readonly IConfiguration configuration;
+        public BookImpRL(BookStoreDBContext bookStoreDB , IConfiguration configuration)
         {
             this.bookStoreDB = bookStoreDB;
+            this.configuration = configuration;
         }
         public Task<int> AddBook(BookCL book)
         {
@@ -39,7 +41,8 @@ namespace Repository.BookRepo
             }
             var stream = file.OpenReadStream();
             var name = file.FileName;
-            Account account = new Account("dwjxrmuuw", "928598494955297", "Wc0AgzT1uvQyl-0-xx5S0AzJtZo");
+            Account account = new Account(configuration["Cloudinary:CloudUser"], configuration["Cloudinary:APIKey"], configuration["Cloudinary:APISecret"]);
+
             Cloudinary cloudinary = new Cloudinary(account);
             var uploadParams = new ImageUploadParams()
             {
