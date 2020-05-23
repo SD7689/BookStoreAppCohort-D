@@ -32,12 +32,12 @@ namespace BookStore_Api.Controllers
             }
             else
             {
-                return this.BadRequest(new JsonResult ("Incorect Email and Pasword")) ;
+                return this.BadRequest(new { error="Incorect Email and Pasword" }) ;
 
             }
 
         }
-        [Route("AddUser")]
+       
         [HttpPost]
         public async Task<IActionResult> AddUser(UserCL user)
         {

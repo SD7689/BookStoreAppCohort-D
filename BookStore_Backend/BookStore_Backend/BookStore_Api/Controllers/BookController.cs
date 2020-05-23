@@ -37,7 +37,7 @@ namespace BookStore_Api.Controllers
                 return this.Ok(book);
             }
 
-            return this.BadRequest();
+            return this.BadRequest(new { error="wrong input given"});
         }
         
         /// <summary>
@@ -60,7 +60,7 @@ namespace BookStore_Api.Controllers
             {
                 return this.Ok(result);
             }
-            return this.BadRequest();
+            return this.BadRequest(new { error = "wrong input given" });
         }
         [Route("NumOfBooks")]
         [HttpGet]
@@ -71,7 +71,7 @@ namespace BookStore_Api.Controllers
             {
                 return this.Ok(count);
             }
-            return this.BadRequest();
+            return this.BadRequest(new { error = "there is no any one book" });
         }
 
     }
