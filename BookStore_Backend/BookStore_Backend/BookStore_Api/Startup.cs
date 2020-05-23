@@ -56,8 +56,21 @@ namespace BookStore_Api
             {
                 c.SwaggerDoc("v1", new Info { Title = "BookStorWeb_API", Version = "v1" });
             });
-           
-   
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = Configuration["Jwt:Issuer"],
+            ValidAudience = Configuration["Jwt:Issuer"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+        };
+    });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -83,7 +96,7 @@ namespace BookStore_Api
                 builder.AllowAnyMethod();
             });
             app.UseHttpsRedirection();
-         
+            app.UseAuthentication();
             app.UseMvc();
 
         }

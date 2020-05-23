@@ -20,10 +20,13 @@ namespace BookStore_Api
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
-                 WebHost.CreateDefaultBuilder(args)
-                 .UseKestrel()
-                 .UseIISIntegration()
-                     .UseStartup<Startup>()
-                     .Build();
+                //  WebHost.CreateDefaultBuilder(args)
+                //  .UseKestrel()
+                //.UseIISIntegration()
+                //      .UseStartup<Startup>()
+                //      .Build();
+                WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>()
+                .Build();
     }
 }
