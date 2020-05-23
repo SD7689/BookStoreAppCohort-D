@@ -38,7 +38,7 @@ namespace BookStore_Api.Controllers
             var result = this.manager.Login(user);
             if (result == true)
             {
-                var token = GenerateJSONWebToken(user);
+                var token = GenerateJSONWebToken(user);          
                 return this.Ok(new {Token=token });
             }
             else
@@ -53,12 +53,20 @@ namespace BookStore_Api.Controllers
         [HttpPost]
         public async Task<IActionResult> AddUser(UserCL user)
         {
-            var result =await this.manager.AddUser(user);
-            if (result == 1)
+            try
             {
-                return this.Ok(user);
+                var result = await this.manager.AddUser(user);
+                if (result == 1)
+                {
+                    return this.Ok(user);
+                }
+                return this.BadRequest(new { v = "error" });
             }
-            return this.BadRequest(new {v="error" });
+            catch (Exception e)
+            {
+                return this.BadRequest(new { error=e.Message});
+            }
+           
         }
 
         private string GenerateJSONWebToken(UserCL user)

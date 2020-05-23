@@ -1,4 +1,5 @@
 ﻿using Model;
+using Remotion.Linq.Parsing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,12 +20,21 @@ namespace Repository.LoginRepo
 
         public Task<int> AddUser(UserCL user)
         {
-            var plainText = user.Password;
-            var encryptedData = Encrypt(plainText,"fg");
-            user.Password = encryptedData;
-            context.Users.Add(user);
-            var result = context.SaveChangesAsync();
-            return result;
+            var results = context.Users.Where(x => x.Email == user.Email);
+            if (results==null)
+            {
+                var plainText = user.Password;
+                var encryptedData = Encrypt(plainText, "fg");
+                user.Password = encryptedData;
+                context.Users.Add(user);
+                var data = context.SaveChangesAsync();
+                return data;
+            }
+            else
+            {
+                 throw new NotImplementedException (" User is already registered");
+            }
+           
         }
 
         /// <summary>
