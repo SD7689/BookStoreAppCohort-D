@@ -42,7 +42,7 @@ namespace BookStore_Api.Controllers
             }
             catch (Exception)
             {
-                return StatusCode(500, "{Result: This Email Id already used}");
+                return StatusCode(500, new { Server_Error = "This email id already used" });
             }
         }
 
@@ -59,7 +59,8 @@ namespace BookStore_Api.Controllers
             var result = this.imanager.GetCustomerAddress(CustomerId);
             if (result != null)
                 return this.Ok(result);
-            return this.BadRequest("{Result:Enter the correct custmor id}");
+
+            return StatusCode(400, new { Result = "This id details not present in database" });
         }
         
 
@@ -76,7 +77,7 @@ namespace BookStore_Api.Controllers
             var result = this.imanager.Login(Email_Id, Password);
             if (result != null)
                 return this.Ok(result);
-            return this.BadRequest(" {Result: Please enter the valid email id and password }");
+            return StatusCode(400, new { Result= "Please enter the valid email id and password" });
         }
     }
 }

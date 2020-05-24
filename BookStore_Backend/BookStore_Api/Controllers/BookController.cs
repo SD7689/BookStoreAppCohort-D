@@ -33,20 +33,23 @@ namespace BookStore_Api.Controllers
         [HttpPost]
         public async Task<IActionResult> AddBook(Book book)
         {
-            var result = await this.manager.AddBook(book);
-            sender.Send("Add the book details");
-            if (result == 1)
+            try
             {
+                var result = await this.manager.AddBook(book);
+                sender.Send("Add the book details");
                 return this.Ok(book);
             }
-            return this.BadRequest("");
+            catch (Exception)
+            {
+                return StatusCode(500, new { Result = "Internal srever error" });
+            }
         }
-        
+
         /// <summary>
         /// Get all Books details
         /// </summary>
         /// <returns> List of Book </returns>
-       // [Route("Its show the all book data")]
+        // [Route("Its show the all book data")]
         [HttpGet]
         public IEnumerable<Book> GetAllBook()
         {
@@ -56,15 +59,18 @@ namespace BookStore_Api.Controllers
 
         [Route("AddBookImage")]
         [HttpPost]
-        public ActionResult AddBookImage(IFormFile file,int id)
+        public ActionResult AddBookImage(IFormFile file, int id)
         {
-            var result = this.manager.Image(file, id);
-            sender.Send("Image Uploaded ");
-            if (result != null)
+            try
             {
+                var result = this.manager.Image(file, id);
+                sender.Send("Image Uploaded ");
                 return this.Ok(result);
             }
-            return this.BadRequest(ErrorMessage());
+            catch (Exception)
+            {
+                return StatusCode(500, new { Result = "Internal srever error" });
+            }
         }
 
         [Route("GetNumber_Books")]
@@ -73,38 +79,13 @@ namespace BookStore_Api.Controllers
         {
             var count = manager.GetNumOfBook();
             sender.Send("Count the number of books");
-            if (count >0)
+            if (count > 0)
             {
                 return this.Ok(count);
             }
-            return this.BadRequest(ErrorMessage());
+            return StatusCode(400, new { Result = "Book table is empty" });
         }
 
-        public static JsonErrorModel ErrorMessage()
-        {
-            if (HttpStatusCode.InternalServerError.Equals(400))
-            {
-                var error = new JsonErrorModel
-                {
-                    ErrorCode = (int)HttpStatusCode.InternalServerError,
-                    ErrorMessage = "Invalid data enter"
-                };
-
-                return error;
-            }
-            else if (HttpStatusCode.InternalServerError.Equals(500))
-            {
-                var error = new JsonErrorModel
-                {
-                    ErrorCode = (int)HttpStatusCode.InternalServerError,
-                    ErrorMessage = "Internal server error "
-                };
-
-                return error;
-            }
-
-            return null;
-        }
 
     }
 }

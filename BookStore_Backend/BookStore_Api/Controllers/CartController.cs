@@ -27,16 +27,17 @@ namespace BookStore_Api.Controllers
         [HttpPost]
         public async Task<IActionResult> AddToCart(Cart cart)
         {
-            var result = await this.manager.AddToCart(cart);
-            sender.Send("Add book in cart");
-            if (result == 1)
+            try
             {
+                var result = await this.manager.AddToCart(cart);
+                sender.Send("Add book in cart");
                 return this.Ok(cart);
             }
-            else
+            catch (Exception)
             {
-                return this.BadRequest();
+                return StatusCode(500, new { Result = "Internal srever error" });
             }
+
         }
 
         //[Route("R")]
@@ -46,10 +47,9 @@ namespace BookStore_Api.Controllers
             var cartData = this.manager.RemoveCart(cartId);
             sender.Send("Remove book in cart");
             if (cartData != null)
-            {
                 return this.Ok(cartData);
-            }
-            return this.BadRequest();
+
+            return StatusCode(400, new { Result = "This Id is not presence in database" });
         }
 
         //[Route("Its show the cart data ")]
