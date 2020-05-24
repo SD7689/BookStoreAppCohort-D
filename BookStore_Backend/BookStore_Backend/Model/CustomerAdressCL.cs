@@ -15,17 +15,17 @@ namespace Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int CustomerId { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Email required")]
         public string Email { get; set; }
-        [Required]
+        [Required(ErrorMessage = "FullName required")]
         public string FullName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "PhoneNumber required")]
         public string PhoneNumber { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Address required")]
         public string Address { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Pincode required")]
         public int Pincode { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Citytown required")]
         public string Citytown { get; set; }
         [Required]
         public string Landmark { get; set; }
