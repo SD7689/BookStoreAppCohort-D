@@ -1,10 +1,10 @@
 import axios from 'axios'
 
-const addCartURL = 'https://localhost:5001/api/Cart/AddToCart';
-const cartAddedCountURL = 'https://localhost:5001/api/Cart/NumOfBook';
+const addCartURL = 'https://localhost:5001/api/Cart';
+const cartAddedCountURL = 'https://localhost:5001/api/Cart/GetBookNumber';
 const getCartValuesURL = 'https://localhost:5001/api/Cart/GetCartValue';
-const deleteCartValueURL = 'https://localhost:5001/api/Cart/RemoveCart';
-const addCustomerDetailsURL = 'https://localhost:5001/api/CustomerAddress/AddCustomerAddress';
+const deleteCartValueURL = 'https://localhost:5001/api/Cart';
+const addCustomerDetailsURL = 'https://localhost:5001/api/Customer';
 
 export const AddCartRequestMethod = async (data)=>{
     const response = await axios.post(addCartURL,data);

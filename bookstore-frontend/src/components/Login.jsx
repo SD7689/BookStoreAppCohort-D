@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import {AddUserRequestMethod} from '../Services/LoginService'
 
 export class Login extends Component {
