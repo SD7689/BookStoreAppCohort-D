@@ -12,6 +12,7 @@ namespace BookStore_Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CartController : ControllerBase
     {
         private readonly Sender sender = new Sender();

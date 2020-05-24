@@ -14,6 +14,7 @@ namespace BookStore_Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Administrator")]
     public class CustomerController : ControllerBase
     {
         private readonly Sender sender = new Sender();

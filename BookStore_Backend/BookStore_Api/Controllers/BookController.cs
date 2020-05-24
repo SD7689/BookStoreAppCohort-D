@@ -13,6 +13,7 @@ namespace BookStore_Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Administrator")]
     public class BookController : ControllerBase
     {
         private readonly Sender sender = new Sender();
