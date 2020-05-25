@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Manager.BookManager;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model;
@@ -11,6 +12,7 @@ namespace BookStore_Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class BookController : ControllerBase
     {
         private readonly Sender sender = new Sender();
@@ -26,7 +28,7 @@ namespace BookStore_Api.Controllers
         /// </summary>
         /// <param name="book"></param>
         /// <returns> IActionResult. </returns>
-        [Route("AddBook")]
+        [Route("AddBooks")]
         [HttpPost]
         public async Task<IActionResult> AddBooks(BookCL book)
         {
@@ -44,14 +46,14 @@ namespace BookStore_Api.Controllers
         /// Get all Books details
         /// </summary>
         /// <returns> List of Book </returns>
-        [Route("GetAllBook")]
+        [Route("GetAllBooks")]
         [HttpGet]
         public IEnumerable<BookCL> GetAllBook()
         {
             sender.Send("Get all books details");
             return this.manager.GetAllBook();
         }
-        [Route("AddBookImage")]
+        [Route("UploadBookImage")]
         [HttpPost]
         public ActionResult AddBookImage(IFormFile file,int id)
         {
@@ -62,7 +64,7 @@ namespace BookStore_Api.Controllers
             }
             return this.BadRequest(new { error = "wrong input given" });
         }
-        [Route("NumOfBooks")]
+        [Route("CountNumOfBooks")]
         [HttpGet]
         public ActionResult NumOfBooks()
         {

@@ -9,8 +9,9 @@ namespace Model
     public class UserCL
     {
         [Key]
+        [Required(ErrorMessage ="Email required") ]
         public string Email { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Password required")]
         public string Password { get; set; }
     }
 }

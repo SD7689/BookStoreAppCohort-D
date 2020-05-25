@@ -46,7 +46,7 @@ namespace BookStore_Api.Controllers
             }
 
         }
-       
+        [Route("AddUsers")]
         [HttpPost]
         public async Task<IActionResult> AddUser(UserCL user)
         {

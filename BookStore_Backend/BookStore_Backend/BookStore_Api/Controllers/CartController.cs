@@ -37,7 +37,7 @@ namespace BookStore_Api.Controllers
             }
         }
 
-        [Route("RemoveCart")]
+        [Route("RemoveFromCart")]
         [HttpDelete]
         public IActionResult RemoveCart(int cartId)
         {
