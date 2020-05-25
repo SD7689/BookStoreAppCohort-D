@@ -36,7 +36,7 @@ namespace BookStore_Api.Controllers
             }
         }
 
-        [HttpDelete]
+        [HttpDelete("{Id}")]
         public IActionResult RemoveCart(int cartId)
         {
             var cartData = this.manager.RemoveCartBL(cartId);
@@ -52,7 +52,7 @@ namespace BookStore_Api.Controllers
         {
             return this.manager.GetAllCartValueBL();
         }
-        [Route("NumOfBook")]
+        [Route("NumOfBooks")]
         [HttpGet]
         public ActionResult BookCount()
         {

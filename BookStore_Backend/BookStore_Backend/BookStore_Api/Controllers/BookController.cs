@@ -52,7 +52,7 @@ namespace BookStore_Api.Controllers
         }
         [Route("AddBookImage")]
         [HttpPost]
-        public ActionResult AddBookImage(IFormFile file,int id)
+        public ActionResult UploadImage(IFormFile file,int id)
         {
             var result = this.manager.ImageBL(file, id);
             if (result != null)

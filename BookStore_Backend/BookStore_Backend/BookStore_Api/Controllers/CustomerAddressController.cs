@@ -42,7 +42,7 @@ namespace BookStore_Api.Controllers
         /// </summary>
         /// <param name="enterAddres"></param>
         /// <returns></returns>
-        [HttpGet]
+        [HttpGet("{email}")]
         public ActionResult GetCustomerAddress(string email)
         {
             sender.Send("Get all address");
