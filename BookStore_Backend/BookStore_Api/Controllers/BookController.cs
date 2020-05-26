@@ -5,12 +5,14 @@ using System.Threading.Tasks;
 using Manager.BookManager;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Model;
 
 namespace BookStore_Api.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController]  
+    [Authorize]
     public class BookController : ControllerBase
     {
         private readonly Sender sender = new Sender();
