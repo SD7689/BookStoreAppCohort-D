@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,6 @@ using Manager.CustomerManager;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -21,6 +21,7 @@ using Repository;
 using Repository.BookRepo;
 using Repository.CartRepo;
 using Repository.CustomerRepo;
+using Swashbuckle.AspNetCore.Filters;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace BookStore_Api
@@ -68,15 +69,19 @@ namespace BookStore_Api
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "BookStorWeb API", Version = "v1" });
-                c.AddSecurityDefinition(name: "Bearer", new ApiKeyScheme
+                c.AddSecurityDefinition("Bearer", new ApiKeyScheme()
                 {
-                    Description = "JWT Authorization header using bearer scheme",
+                    Description = "JWT Authorization header \"Authorization: Bearer {token}\"",
                     Name = "Authorization",
                     In = "header",
                     Type = "apiKey"
                 });
+                c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>>
+                {
+                    { "Bearer", new string[] { } }
+                });
             });
-
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme);
 
         }
 
@@ -90,6 +95,8 @@ namespace BookStore_Api
                 app.UseSwaggerUI(c =>
                 {
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "MyAPI V1");
+
+                   
                 });
             }
             else

@@ -25,7 +25,7 @@ namespace Manager.CustomerManager
             return this.irepo.GetCustomerAddress(CustomerId);
         }
 
-        public IQueryable Login(string Email, string Password)
+        public CustomerAdress Login(string Email, string Password)
         {
             return this.irepo.Login(Email, Password);
         }

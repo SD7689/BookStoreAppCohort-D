@@ -11,6 +11,6 @@ namespace Manager.CustomerManager
     {
         Task<int> AddCustomerAddress(CustomerAdress address);
         CustomerAdress GetCustomerAddress(int CustomerId);
-        IQueryable Login(string Email, string Password);
+        CustomerAdress Login(string Email, string Password);
     }
 }

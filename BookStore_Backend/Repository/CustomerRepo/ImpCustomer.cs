@@ -24,11 +24,11 @@ namespace Repository.CustomerRepo
         /// <returns>int.</returns>
         public Task<int> AddCustomerAddress(CustomerAdress address)
         {
-                var encodedPassword = base64Encode(address.Password);
-                address.Password = encodedPassword;
-                bookStoreDB.Address.Add(address);
-                var result = bookStoreDB.SaveChangesAsync();
-                return result;
+            var encodedPassword = base64Encode(address.Password);
+            address.Password = encodedPassword;
+            bookStoreDB.Address.Add(address);
+            var result = bookStoreDB.SaveChangesAsync();
+            return result;
         }
 
         /// <summary>
@@ -47,10 +47,10 @@ namespace Repository.CustomerRepo
         /// <param name="Email_Id">Email_Id.</param>
         /// <param name="Password">Password.</param>
         /// <returns>Object.</returns>
-        public IQueryable Login(string Email_Id, string Password)
+        public CustomerAdress Login(string Email_Id, string Password)
         {
-            var customerAdress = this.bookStoreDB.Address.Where(Address => Address.Email == Email_Id && Password == base64Decode(Address.Password));
-            if (customerAdress.Count() > 0)
+            CustomerAdress customerAdress = this.bookStoreDB.Address.Where(Address => Address.Email == Email_Id && Password == base64Decode(Address.Password)).FirstOrDefault(); ;
+            if (customerAdress != null)
                 return customerAdress;
             return null;
         }
