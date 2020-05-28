@@ -14,6 +14,9 @@ using Model;
 
 namespace BookStore_Api.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class LoginController : ControllerBase
@@ -23,7 +26,11 @@ namespace BookStore_Api.Controllers
         /// Create Config reference variable to configure with appsetting.json file and startup.cs class
         /// </summary>
         private readonly IConfiguration _config;
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <param name="_config"></param>
         public LoginController(ILoginManagerBL manager, IConfiguration _config)
         {
             this.manager = manager;
@@ -46,6 +53,11 @@ namespace BookStore_Api.Controllers
             }
 
         }
+        /// <summary>
+        /// Add User 
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         [Route("AddUsers")]
         [HttpPost]
         public async Task<IActionResult> AddUser(UserCL user)

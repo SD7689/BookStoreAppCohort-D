@@ -10,6 +10,9 @@ using Model;
 
 namespace BookStore_Api.Controllers
 {
+    /// <summary>
+    /// BookController
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
@@ -17,7 +20,10 @@ namespace BookStore_Api.Controllers
     {
         private readonly Sender sender = new Sender();
         private readonly IManagerBL manager;
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="manager"></param>
         public BookController(IManagerBL manager)
         {
             this.manager = manager;
@@ -41,19 +47,25 @@ namespace BookStore_Api.Controllers
 
             return this.BadRequest(new { error="wrong input given"});
         }
-        
+
         /// <summary>
-        /// Get all Books details
+        /// Get all books details
         /// </summary>
-        /// <returns> List of Book </returns>
-        [Route("GetAllBooks")]
+        /// <returns></returns>
+        [Route("GetAllBook")]
         [HttpGet]
         public IEnumerable<BookCL> GetAllBook()
         {
             sender.Send("Get all books details");
             return this.manager.GetAllBook();
         }
-        [Route("UploadBookImage")]
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="file"></param>
+        /// <param name="id">mandatory</param>
+        /// <returns></returns>
+        [Route("AddBookImage")]
         [HttpPost]
         public ActionResult AddBookImage(IFormFile file,int id)
         {
@@ -64,7 +76,11 @@ namespace BookStore_Api.Controllers
             }
             return this.BadRequest(new { error = "wrong input given" });
         }
-        [Route("CountNumOfBooks")]
+        /// <summary>
+        /// CountNumOfBooks
+        /// </summary>
+        /// <returns></returns>
+        [Route("NumOfBooks")]
         [HttpGet]
         public ActionResult NumOfBooks()
         {

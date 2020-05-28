@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BookStoreWeb_Api</name>
+    </assembly>
+    <members>
+        <member name="T:BookStore_Api.Controllers.BookController">
+            <summary>
+            BookController
+            </summary>
+        </member>
+        <member name="M:BookStore_Api.Controllers.BookController.#ctor(Manager.BookManager.IManagerBL)">
+            <summary>
+            
+            </summary>
+            <param name="manager"></param>
+        </member>
+        <member name="M:BookStore_Api.Controllers.BookController.AddBooks(Model.BookCL)">
+            <summary>
+            Add book detail
+            </summary>
+            <param name="book"></param>
+            <returns> IActionResult. </returns>
+        </member>
+        <member name="M:BookStore_Api.Controllers.BookController.GetAllBook">
+            <summary>
+            Get all books details
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookStore_Api.Controllers.BookController.AddBookImage(Microsoft.AspNetCore.Http.IFormFile,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="file"></param>
+            <param name="id">mandatory</param>
+            <returns></returns>
+        </member>
+        <member name="M:BookStore_Api.Controllers.BookController.NumOfBooks">
+            <summary>
+            CountNumOfBooks
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookStore_Api.Controllers.CustomerAddressController.AddCustomerAddress(Model.CustomerAdressCL)">
+            <summary>
+            Add Customer Address.
+            </summary>
+            <param name="address"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookStore_Api.Controllers.CustomerAddressController.GetCustomerAddress(System.String)">
+            <summary>
+            Add GetCustomerAddress 
+            </summary>
+            <param name="enterAddres"></param>
+            <returns></returns>
+        </member>
+        <member name="F:BookStore_Api.Controllers.LoginController._config">
+            <summary>
+            Create Config reference variable to configure with appsetting.json file and startup.cs class
+            </summary>
+        </member>
+    </members>
+</doc>
