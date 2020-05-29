@@ -53,6 +53,12 @@ namespace BookStore_Api.Controllers
             sender.Send("Get all books details");
             return this.manager.GetAllBook();
         }
+        /// <summary>
+        /// add book image in string fomate with particular id
+        /// </summary>
+        /// <param name="file"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [Route("AddBookImage")]
         [HttpPost]
         public ActionResult AddBookImage(IFormFile file,int id)
@@ -64,6 +70,10 @@ namespace BookStore_Api.Controllers
             }
             return this.BadRequest();
         }
+        /// <summary>
+        /// It returns the number of books
+        /// </summary>
+        /// <returns></returns>
         [Route("NumOfBooks")]
         [HttpGet]
         public ActionResult NumOfBooks()

@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BookStore_Api</name>
+    </assembly>
+    <members>
+        <member name="M:BookStore_Api.Controllers.BookController.AddBook(Model.BookCL)">
+            <summary>
+            Add book detail
+            </summary>
+            <param name="book"></param>
+            <returns> IActionResult. </returns>
+        </member>
+        <member name="M:BookStore_Api.Controllers.BookController.GetAllBook">
+            <summary>
+            Get all Books details
+            </summary>
+            <returns> List of Book </returns>
+        </member>
+        <member name="M:BookStore_Api.Controllers.BookController.AddBookImage(Microsoft.AspNetCore.Http.IFormFile,System.Int32)">
+            <summary>
+            add book image in string fomate with particular id
+            </summary>
+            <param name="file"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookStore_Api.Controllers.BookController.NumOfBooks">
+            <summary>
+            It returns the number of books
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookStore_Api.Controllers.CartController.AddToCart(Model.CartCL)">
+            <summary>
+             it adds the book details
+            </summary>
+            <param name="cart"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookStore_Api.Controllers.CartController.RemoveCart(System.Int32)">
+            <summary>
+            It remove the particular cart
+            </summary>
+            <param name="cartId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookStore_Api.Controllers.CartController.GetCartValue">
+            <summary>
+             It return the all card details
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookStore_Api.Controllers.CartController.BookCount">
+            <summary>
+            It returns the book count in cart
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookStore_Api.Controllers.CustomerAddressController.AddCustomerAddress(Model.CustomerCL)">
+            <summary>
+            Add Customer Address.
+            </summary>
+            <param name="address"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookStore_Api.Controllers.CustomerAddressController.GetCustomerAddress(System.String)">
+            <summary>
+            Add GetCustomerAddress 
+            </summary>
+            <param name="enterAddres"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookStore_Api.Controllers.LoginController.LoginUser(Model.UserCL)">
+            <summary>
+            user login form
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookStore_Api.Controllers.LoginController.AddUser(Model.UserCL)">
+            <summary>
+            user registration form
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

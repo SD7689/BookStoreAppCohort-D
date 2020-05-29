@@ -19,7 +19,7 @@ using Newtonsoft.Json;
 
 namespace BookStore_Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller][action]")]
     [ApiController]
     public class LoginController : ControllerBase
     {
@@ -29,9 +29,13 @@ namespace BookStore_Api.Controllers
         {
             this.manager = manager;
             this.configuration = configuration;
-        }
-        [Route("Login")]
-        
+        }   
+        /// <summary>
+        /// user login form
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        [ActionName(" Login form")]
         [HttpPost]
         public ActionResult LoginUser(UserCL user)
         {
@@ -49,7 +53,12 @@ namespace BookStore_Api.Controllers
             }
 
         }
-        [Route("AddUser")]
+        /// <summary>
+        /// user registration form
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        [ActionName(" User Registration")]
         [HttpPost]
         public async Task<IActionResult> AddUser(UserCL user)
         {

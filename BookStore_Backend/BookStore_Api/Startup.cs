@@ -72,6 +72,8 @@ namespace BookStore_Api
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "BookStoreWeb API", Version = "v1" });
+                var xmlpath = System.AppDomain.CurrentDomain.BaseDirectory + @"BookStore_Api.xml";
+                c.IncludeXmlComments(xmlpath);
                 var security = new Dictionary<string, IEnumerable<string>>
                 {
                     {"Bearer", new string[0] }
