@@ -56,10 +56,74 @@
             <param name="enterAddres"></param>
             <returns></returns>
         </member>
+        <member name="T:BookStore_Api.Controllers.LoginController">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="F:BookStore_Api.Controllers.LoginController._config">
             <summary>
             Create Config reference variable to configure with appsetting.json file and startup.cs class
             </summary>
+        </member>
+        <member name="M:BookStore_Api.Controllers.LoginController.#ctor(Manager.LoginManager.ILoginManagerBL,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="manager"></param>
+            <param name="_config"></param>
+        </member>
+        <member name="M:BookStore_Api.Controllers.LoginController.AddUser(Model.UserCL)">
+            <summary>
+            Add User 
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BookStore_Api.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BookStore_Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:BookStore_Api.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BookStore_Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:BookStore_Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+        <member name="T:BookStoreWeb_Api.Controllers.ReadLargeFileController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BookStoreWeb_Api.Controllers.ReadLargeFileController.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BookStoreWeb_Api.Controllers.ReadLargeFileController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
         </member>
     </members>
 </doc>
